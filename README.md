@@ -9,6 +9,16 @@ Bookbuddies rails app
 
 ## Functionality
 * Users - signups/profiles
+	* Name
+	* Username
+	* Bio
+	* Bookshelf
 * Groups - based around a single book
+	* Book name
+	* Author
+	* Description
+	* Page/chapter goal by date?
+	* Members involved in group
+	* Private group? Public? (boolian)
 * discussion/comments based?
 * Potential affiliate links to purchase book, for site revenue (Amazon, etc.)

@@ -11,3 +11,4 @@ Bookbuddies rails app
 * Users - signups/profiles
 * Groups - based around a single book
 * discussion/comments based?
+* Potential affiliate links to purchase book, for site revenue (Amazon, etc.)

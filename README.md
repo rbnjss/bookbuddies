@@ -22,5 +22,12 @@ Bookbuddies rails app
 
 ## Pages
 * Edit profile page
-* Terms of agreement
+* Terms of use agreement
 * About
+
+## To Do
+* Map out potential routes (controller#action)
+* Determine model columns (data types, etc.)
+* Determine which content will be repeated, and can be made as partials
+* Sketch up rough wire-frames for each page with content placement
+* Purchase domain (bookbuddi.es)

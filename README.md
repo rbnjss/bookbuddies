@@ -1,5 +1,5 @@
 # Bookbuddies
-Bookbuddies rails app
+_Bookbuddies rails app_
 
 ## Design
 * Leverage material design principals

@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class CommentsController < ApplicationController
 
 	def index
 		
@@ -27,5 +27,5 @@ class GroupsController < ApplicationController
 	def destroy
 		
 	end
-
+	
 end

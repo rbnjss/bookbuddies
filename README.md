@@ -25,6 +25,33 @@ _Bookbuddies rails app_
 * Terms of use agreement
 * About
 
+## Controller#actons
+* users
+	* 
+* groups
+	* 
+* comments
+	*
+
+## Models (attributes/data types)
+* user
+	* name: string
+	* username: string
+	* bio: text
+
+* group
+	* group_name: string
+	* book_name: string
+	* author: string
+	* description: text
+	* private: boolian
+
+* comment
+	* author: string
+	* content: text
+	* date: date_time
+	* group_id: integer (see: associations)
+
 ## To Do
 * Map out potential routes (controller#action)
 * Determine model columns (data types, etc.)

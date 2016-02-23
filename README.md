@@ -1,16 +1,23 @@
 # Bookbuddies
 _Bookbuddies rails app_
 
-## Design
+## To Do
+* Map out potential routes (controller#action)
+* Determine model columns (data types, etc.)
+* Determine which content will be repeated, and can be made as partials
+* Sketch up rough wire-frames for each page with content placement
+* Purchase domain (bookbuddi.es)
+
+### Design
 * Leverage material design principals
 * Use Basecamp as inspiration
 * Use google books API, or Goodreads
 * Google books can provide images, if desired.
 
-## Functionality
+### Functionality
 * Models: User, Group (club), Book (maybe)
 
-## Userflow
+### Userflow
 * User gets to the site (bookbuddi.es)
 * Main page has copy about the app
 * Log in with email, Twitter or Goodreads
@@ -20,12 +27,12 @@ _Bookbuddies rails app_
 * Book details (book cover, title, author, description), avatars of group members, meeting details (dates/days of the week, times, place), option to make private, maybe google maps, forum to add comments and chat (max number of messages and option to load more, edit/delete your own comments), add to Goodreads shelf link, links to buy the book, links to other books by the same author
 * Explore page with pinterest/masonry style listing of public groups
 
-## Pages
+### Pages
 * Edit profile page
 * Terms of use agreement
 * About
 
-## Controller#actons
+### Controller#actons
 * users
 	* 
 * groups
@@ -33,10 +40,13 @@ _Bookbuddies rails app_
 * comments
 	*
 
-## Models (attributes/data types)
+### Models (attributes/data types)
+_holding off on building models until we get these figured out more_
+
 * user
 	* name: string
 	* username: string
+	* avatar: binary
 	* bio: text
 
 * group
@@ -51,10 +61,3 @@ _Bookbuddies rails app_
 	* content: text
 	* date: date_time
 	* group_id: integer (see: associations)
-
-## To Do
-* Map out potential routes (controller#action)
-* Determine model columns (data types, etc.)
-* Determine which content will be repeated, and can be made as partials
-* Sketch up rough wire-frames for each page with content placement
-* Purchase domain (bookbuddi.es)

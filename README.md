@@ -41,7 +41,7 @@ _Bookbuddies rails app_
 	*
 
 ### Models (attributes/data_types)
-_holding off on building models until we get these figured out more. Some models will need what Trudy called 'associations', whereby models are linked to other models. For example: the *comment* model will be linked to the *groups* model, so that comments can exist within groups_
+_Holding off on building models until we get these figured out more. Some models will need what Trudy called 'associations', whereby models are linked to other models. For example: the *comment* model will be linked to the *groups* model, so that comments can exist within groups, and be linked bath to the author_
 
 * user
 	* name: string

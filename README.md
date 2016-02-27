@@ -36,9 +36,10 @@ _Bookbuddies rails app_
 _Holding off on building models until we get these figured out more. Some models will need what Trudy called 'associations', whereby models are linked to other models. For example: the *comment* model will be linked to the *groups* model, so that comments can exist within groups, and be linked bath to the author_
 
 * user
-	* name: string
+	* first_name: string
+	* last_name: string
 	* username: string (unique)
-	* avatar: binary (image)
+	* avatar: binary (image) - pulled from Twitter/Goodreads when signed in.
 	* bio: text
 
 

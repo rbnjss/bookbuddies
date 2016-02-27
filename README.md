@@ -36,26 +36,30 @@ _Bookbuddies rails app_
 _Holding off on building models until we get these figured out more. Some models will need what Trudy called 'associations', whereby models are linked to other models. For example: the *comment* model will be linked to the *groups* model, so that comments can exist within groups, and be linked bath to the author_
 
 * user
-	* name: string
-	* username: string (unique)
-	* avatar: binary (image)
+	* first_name: string
+	* last_name: string
+	* user_name: string (unique)
+	* avatar: binary (image) - pulled from Twitter/Goodreads when signed in.
 	* bio: text
+	* city: string
 
 
 * group
 	* group_name: string
 	* book_name: string
-	* book_cover: binary (image)
+	* cover_image: binary (image)
 	* author: string
 	* description: text
-	* private: boolean
 	* location: string
-	* owner: string
-	*	inceptionDate: date_time
-	* user_id[s]: (group members: will this be an association to another model?)
+	*	inceptDate: datetime
+	--
+	* owner: string (see: associations) **To be added later**
+	* user_id[s]: (group members: will this be an association to another model?) **To be added later**
+	* private: boolean **To be added later**
 
 * comment
-	* user_id: integer (see: associations)
-	* group_id: integer (see: associations)
 	* content: text
 	* date: date_time
+	--
+	* user_id: integer (see: associations) **To be added later**
+	* group_id: integer (see: associations) **To be added later**

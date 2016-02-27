@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
 	end
 
 	def show
-		
+		@group = Group.find(params[:id])
 	end
 
 	def new
@@ -13,19 +13,31 @@ class GroupsController < ApplicationController
 	end
 
 	def edit
-		
+		@group = Group.find(params[:id])
 	end
 
 	def create
-		@group = Group.new(user_params)
+		@group = Group.new(group_params)
+		if @group.save
+			redirect_to root_path
+		else
+			render :new
+		end
 	end
 
 	def update
-		
+		@group = Group.find(params[:id])
+		if @group.update(group_params)
+			redirect_to root_path
+		else
+			render :edit
+		end
 	end
 
 	def destroy
+		@group = Group.find(params[:id])
 		@group.destroy
+		redirect_to root_path
 	end
 
 	private
@@ -34,8 +46,8 @@ class GroupsController < ApplicationController
 		@group = Group.find(params[:id])
 	end
 
-	def user_params
-		params.require(:group).permit(:first_name, :last_name, :user_name, :avatar, :bio, :city)
+	def group_params
+		group_params = params.require(:group).permit(:first_name, :last_name, :user_name, :avatar, :bio, :city)
 	end
 
 end

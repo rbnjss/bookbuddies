@@ -11,9 +11,9 @@
  * file per style scope.
  *
  */
-@include 'global/sanitize'
-@include 'global/concise'
-@include 'global/base'
-@include 'snippets/comments'
-@include 'snippets/groups'
-@include 'snippets/users'
+@import 'global/sanitize';
+@import 'global/concise';
+@import 'global/base';
+@import 'snippets/comments';
+@import 'snippets/groups';
+@import 'snippets/users';

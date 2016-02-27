@@ -40,14 +40,12 @@ class GroupsController < ApplicationController
 		redirect_to root_path
 	end
 
-	private
-
 	def set_group
 		@group = Group.find(params[:id])
 	end
 
 	def group_params
-		group_params = params.require(:group).permit(:first_name, :last_name, :user_name, :avatar, :bio, :city)
+		group_params = params.require(:group).permit(:group_name, :book_name, :author, :avatar, :bio, :city)
 	end
 
 end

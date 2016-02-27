@@ -38,7 +38,7 @@ _Holding off on building models until we get these figured out more. Some models
 * user
 	* first_name: string
 	* last_name: string
-	* username: string (unique)
+	* user_name: string (unique)
 	* avatar: binary (image) - pulled from Twitter/Goodreads when signed in.
 	* bio: text
 	* city: string
@@ -51,7 +51,8 @@ _Holding off on building models until we get these figured out more. Some models
 	* author: string
 	* description: text
 	* location: string
-	*	inceptionDate: date_time
+	*	inceptDate: datetime
+	--
 	* owner: string (see: associations) **To be added later**
 	* user_id[s]: (group members: will this be an association to another model?) **To be added later**
 	* private: boolean **To be added later**
@@ -59,5 +60,6 @@ _Holding off on building models until we get these figured out more. Some models
 * comment
 	* content: text
 	* date: date_time
+	--
 	* user_id: integer (see: associations) **To be added later**
 	* group_id: integer (see: associations) **To be added later**

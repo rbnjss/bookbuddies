@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group_name: MyString
+  book_name: MyString
+  cover_image: 
+  author: MyString
+  description: MyText
+  location: MyString
+  inceptDate: 2016-02-27 14:58:25
+
+two:
+  group_name: MyString
+  book_name: MyString
+  cover_image: 
+  author: MyString
+  description: MyText
+  location: MyString
+  inceptDate: 2016-02-27 14:58:25

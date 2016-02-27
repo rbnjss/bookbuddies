@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 
 	def index
-		
+		@groups = Group.all
 	end
 
 	def show
@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
 	end
 
 	def new
-		
+		@group = Group.new
 	end
 
 	def edit
@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-		
+		@group = Group.new(user_params)
 	end
 
 	def update
@@ -25,7 +25,17 @@ class GroupsController < ApplicationController
 	end
 
 	def destroy
-		
+		@group.destroy
+	end
+
+	private
+
+	def set_group
+		@group = Group.find(params[:id])
+	end
+
+	def user_params
+		params.require(:group).permit(:first_name, :last_name, :user_name, :avatar, :bio, :city)
 	end
 
 end

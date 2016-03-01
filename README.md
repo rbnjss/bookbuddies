@@ -43,16 +43,16 @@ _Holding off on building models until we get these figured out more. Some models
 	* bio: text
 	* city: string
 
+* book
+	* book_name: string
+	* cover_image: binary (image)
+	* description: text
+	* author: string
 
 * group _created_
 	* group_name: string
-	* book_name: string
-	* cover_image: binary (image)
-	* author: string
 	* description: text
 	* location: string
-	*	inceptDate: datetime
-	* owner: string (see: associations) **To be added later**
 	* user_id[s]: (group members: will this be an association to another model?) **To be added later**
 	* private: boolean **To be added later**
 
@@ -61,3 +61,22 @@ _Holding off on building models until we get these figured out more. Some models
 	* created: datetime **Rails takes care of this automatically**
 	* user_id: integer (see: associations) **To be added later**
 	* group_id: integer (see: associations) **To be added later**
+
+### Model Associations
+
+* Comment
+ * belongs_to :user
+ * belongs_to :book
+
+* Group
+ * Has_many :users
+ * Has_many :books
+
+* User
+ * has_many :comments
+ * has_many :groups
+
+* Book
+ * has_many :groups
+ * belongs_to :group
+ * has_many: comments

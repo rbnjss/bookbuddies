@@ -11,12 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227205520) do
+ActiveRecord::Schema.define(version: 20160301013757) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "group_id"
   end
 
   create_table "groups", force: :cascade do |t|

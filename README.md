@@ -47,7 +47,7 @@ _Holding off on building models until we get these figured out more. Some models
 	* bio: text
 	* city: string
 
-* Book
+* Book _generated_
 	* book_name: string
 	* cover_image: binary (image) **To be added later**
 	* description: text
@@ -60,10 +60,10 @@ _Holding off on building models until we get these figured out more. Some models
 	* user_id[s]: (group members: will this be an association to another model?) **To be added later**
 	* private: boolean **To be added later**
 
-* Comment
+* Comment _generated_
 	* content: text
-	* profile_id: integer (see: associations) **To be added later**
-	* group_id: integer (see: associations) **To be added later**
+	* profile_id: integer (see: associations)
+	* book_id: integer (see: associations)
 
 * GroupResigration _generated_
 	* The bouncer model 💪
@@ -71,7 +71,7 @@ _Holding off on building models until we get these figured out more. Some models
 ### Model Associations
 
 * Comment
- * belongs_to :user
+ * belongs_to :profile
  * belongs_to :book
 
 * Group

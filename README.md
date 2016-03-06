@@ -40,7 +40,7 @@ _Holding off on building models until we get these figured out more. Some models
 	* user_email
 	* password
 
-* Profile
+* Profile _generated_
 	* first_name: string
 	* last_name: string
 	* avatar: binary (image) - pulled from Twitter/Goodreads when signed in.
@@ -49,7 +49,7 @@ _Holding off on building models until we get these figured out more. Some models
 
 * Book
 	* book_name: string
-	* cover_image: binary (image)
+	* cover_image: binary (image) **To be added later**
 	* description: text
 	* author: string
 
@@ -62,8 +62,11 @@ _Holding off on building models until we get these figured out more. Some models
 
 * Comment
 	* content: text
-	* user_id: integer (see: associations) **To be added later**
+	* profile_id: integer (see: associations) **To be added later**
 	* group_id: integer (see: associations) **To be added later**
+
+* GroupResigration _generated_
+	* The bouncer model 💪
 
 ### Model Associations
 
@@ -81,7 +84,7 @@ _Holding off on building models until we get these figured out more. Some models
  * has_many :group registrations
 
 * User
-	* _check out_ belongs_to relationship
+	* _check out_ belongs_to relationships
 	
 * GroupRegistraion
 	* belongs_to :profile

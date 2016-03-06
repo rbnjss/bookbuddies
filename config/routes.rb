@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get 'profiles/index'
   get 'group/index'
 
   get 'group/new'

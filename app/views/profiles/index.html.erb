@@ -1,12 +1,11 @@
 <h1>Profiles#index</h1>
 <p>Find me in app/views/profiles/index.html.erb</p>
 
-<ul>
 <% @profiles.each do |profile| %>
-	<h4>Member profile:</h4>
-	<li>Name: <%= profile.first_name %> <%= profile.last_name %> </li>
-	<li>City: <%= profile.city %> </li>
-	<li>Bio: <%= profile.bio %> </li>
-	<br />
+	<div class="profile_container">
+		<h4>Member profile:</h4>
+		<p>Name: <%= profile.first_name %> <%= profile.last_name %> </p>
+		<p>City: <%= profile.city %> </p>
+		<p>Bio: <%= profile.bio %> </p>
+	</div>
 <% end %>
-</ul>

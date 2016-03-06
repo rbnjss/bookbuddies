@@ -84,6 +84,7 @@ _Bookbuddies rails app_
 
 * User
 	* _check out_ belongs_to relationships
+	* The bouncer model 💪
 	
 * GroupRegistraion
 	* belongs_to :profile

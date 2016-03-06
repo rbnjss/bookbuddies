@@ -10,10 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree .
+ *= require_self
  */
-@import 'global/sanitize';
-@import 'global/concise';
-@import 'global/base';
-@import 'snippets/comments';
-@import 'snippets/groups';
-@import 'snippets/users';

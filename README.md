@@ -65,6 +65,9 @@ _Holding off on building models until we get these figured out more. Some models
 	* user_id: integer (see: associations) **To be added later**
 	* group_id: integer (see: associations) **To be added later**
 
+* GroupResigration _generated_
+	* The bouncer model 💪
+
 ### Model Associations
 
 * Comment
@@ -81,7 +84,7 @@ _Holding off on building models until we get these figured out more. Some models
  * has_many :group registrations
 
 * User
-	* _check out_ belongs_to relationship
+	* _check out_ belongs_to relationships
 	
 * GroupRegistraion
 	* belongs_to :profile

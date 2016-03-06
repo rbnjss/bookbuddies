@@ -74,12 +74,18 @@ _Holding off on building models until we get these figured out more. Some models
 * Group
  * Has_many :users
  * Has_many :books
+ * has_many :group registrations
+
+* Profile
+ * has_many :comments
+ * has_many :group registrations
 
 * User
- * has_many :comments
- * has_many :groups
-
- * Profile
+	* _check out_ belongs_to relationship
+	
+* GroupRegistraion
+	* belongs_to :profile
+	* belongs_to :group
 
 * Book
  * has_many :groups

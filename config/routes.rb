@@ -1,16 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'profiles/index'
-  get 'group/index'
-
-  get 'group/new'
-
-  get 'group/show'
-
-  get 'group/edit'
+  resources :profiles
+  resources :groups
 
   devise_for :users
-  root to: "home#index"
+  root to: "groups#index"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

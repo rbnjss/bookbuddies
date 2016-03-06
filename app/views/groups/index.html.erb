@@ -1,2 +1,9 @@
 <h1>Group#index</h1>
 <p>Find me in app/views/group/index.html.erb</p>
+<% @groups.each do |group| %>
+	<div class="post panel row">
+		<h4><%= group.group_name %></h4>
+		<p><%= group.location %></p>
+		<p><%= group.description %></p>
+	</div>
+<% end %>

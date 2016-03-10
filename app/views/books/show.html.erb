@@ -1,0 +1,7 @@
+<h2>Show a book</h2>
+
+<h4>Title: <%= @book.book_name %></h4>
+<p>Author: <%= @book.author %></p>
+<p>Description: <%= @book.description %></p>
+<%= link_to "Edit", edit_book_path %>
+<%= link_to "Delete book", book_path(@book), method: :delete, data: { confirm: "Are you sure?"} %>

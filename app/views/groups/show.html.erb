@@ -1,2 +1,10 @@
 <h1>Group#show</h1>
 <p>Find me in app/views/group/show.html.erb</p>
+
+	<div class="post panel row">
+		<h4><%= @group.group_name %></h4>
+		<p><%= @group.description %></p>
+		<small><%= @group.location %></small>
+		<%= link_to "Edit", edit_group_path(@group) %>
+	</div>
+	<%= link_to "Add a book to your group", new_book_path %>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :profiles
   resources :groups
+  resources :books
 
   devise_for :users
   root to: "groups#index"

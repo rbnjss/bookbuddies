@@ -4,7 +4,8 @@
 <%= link_to "Make a Group", new_group_path %>
 <% @groups.each do |group| %>
 	<div class="post panel row">
-		<h4><%= group.group_name %></h4>
+		
+		<h4><%= link_to group.group_name, group  %></h4>
 		<p><%= group.description %></p>
 		<small><%= group.location %></small>
 		<%= link_to "Edit", edit_group_path(group) %>

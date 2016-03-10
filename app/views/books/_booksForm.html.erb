@@ -1,0 +1,19 @@
+<%= form_for @book do |f| %>
+	<% if @book.errors.any? %>
+		 <ul>
+		 	<% @book.errors.full_messages.each do |error| %>
+		 		<li> <%= error %> </li>
+		 	<% end %>
+		 </ul>
+	<% end %>
+
+
+	<%= f.label :book_name %>
+	<%= f.text_field :book_name %>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+	<%= f.label :author %>
+	<%= f.text_field :author %>
+	<%= f.submit %>
+
+<% end %>

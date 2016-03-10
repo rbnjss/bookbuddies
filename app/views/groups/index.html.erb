@@ -1,9 +1,12 @@
 <h1>Group#index</h1>
 <p>Find me in app/views/group/index.html.erb</p>
+<h2>Book Groups</h2>
+<%= link_to "Make a Group", new_group_path %>
 <% @groups.each do |group| %>
 	<div class="post panel row">
 		<h4><%= group.group_name %></h4>
-		<p><%= group.location %></p>
 		<p><%= group.description %></p>
+		<small><%= group.location %></small>
+		<%= link_to "Edit", edit_group_path(group) %>
 	</div>
 <% end %>

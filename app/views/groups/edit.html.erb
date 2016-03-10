@@ -1,2 +1,8 @@
 <h1>Group#edit</h1>
 <p>Find me in app/views/group/edit.html.erb</p>
+
+<h2>Edit a Group</h2>
+<div class="form_container">
+	<%= render 'groupsForm' %>
+</div>
+<%= link_to "Delete Group", group_path(@group), method: :delete, data: { confirm: "Are you sure?"} %>

@@ -3,7 +3,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
 
 
 	def index
-		@book = Book.all
+		@books = Book.all
 	end
 
 	def new
@@ -22,6 +22,14 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
 	def update
 		@book.update(book_params)
 		redirect_to book_path
+	end
+
+	def destroy
+	  @book.destroy
+	  respond_to do |format|
+	    format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+	    format.json { head :no_content }
+	  end
 	end
 
 private

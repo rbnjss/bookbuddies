@@ -7,4 +7,5 @@
 		<small><%= @group.location %></small>
 		<%= link_to "Edit", edit_group_path(@group) %>
 	</div>
-	<%= link_to "Add a book to your group", new_book_path %>
+
+<%= link_to "Add a book", new_group_book_path(@group) %>

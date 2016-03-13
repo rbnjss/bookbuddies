@@ -8,16 +8,16 @@ before_action :set_group
 	end
 
 	def new
-		@book = Book.new
+    @book = Book.new
 	end
 
 	def create
-    # @book = Book.new(book_params)
     @book = @group.books.build(book_params)
     if @book.save
-      redirect_to books_path
+      redirect_to @group
     else
       render :new
+      # flash.now[:danger] = "error"
     end
   end
 
@@ -41,11 +41,11 @@ private
 	end
 
 	def set_group
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:group_id])
   end
 
 	def book_params
-	  book_params = params.require(:book).permit(:book_name, :description, :author, :group_id, :user_id)
+	  params.require(:book).permit(:book_name, :description, :author, :group_id)
 	end
 
 	def group_params

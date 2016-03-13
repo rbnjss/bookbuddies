@@ -1,11 +1,11 @@
 <h2>All the books</h2>
 
-<%= link_to "Create new Book", new_book_path %>
+<%= link_to "Create new Book", new_group_book_path %>
 <% @books.each do |book| %>
 	<div class="book_container">
-		<h3><%= link_to book.book_name, book %></h3>
+		<h3><%= book.book_name %></h3>
 		<p>Author: <%= book.author %></p>
 		<p>Description: <%= book.description %></p>
-		<%= link_to "Edit", edit_book_path(book) %>
+		
 	</div>
 <% end %>

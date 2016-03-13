@@ -1,7 +1,7 @@
-<%= form_for @profile do |f| %>
-	<% if @profile.errors.any? %>
+<%= form_for @profiles do |f| %>
+	<% if @profiles.errors.any? %>
 		 <ul>
-		 	<% @profile.errors.full_messages.each do |error| %>
+		 	<% @profiles.errors.full_messages.each do |error| %>
 		 		<li> <%= error %> </li>
 		 	<% end %>
 		 </ul>

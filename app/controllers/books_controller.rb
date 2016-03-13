@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
+before_action :set_group
 
 
 	def index
@@ -11,7 +12,8 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
 	end
 
 	def create
-    @book = Book.new(book_params)
+    # @book = Book.new(book_params)
+    @book = @group.books.build(book_params)
     if @book.save
       redirect_to books_path
     else
@@ -38,8 +40,16 @@ private
 	  @book = Book.find(params[:id])
 	end
 
+	def set_group
+    @group = Group.find(params[:id])
+  end
+
 	def book_params
-	  book_params = params.require(:book).permit(:book_name, :description, :author)
+	  book_params = params.require(:book).permit(:book_name, :description, :author, :group_id, :user_id)
 	end
+
+	def group_params
+    params.require(:group).permit(:id, :group_id, :group)
+  end
 
 end

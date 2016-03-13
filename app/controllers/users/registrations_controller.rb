@@ -8,9 +8,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    redirect_to new_profile_path(:user_id => @user)
+  end
 
   # GET /resource/edit
   # def edit

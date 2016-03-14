@@ -7,45 +7,60 @@ before_action :set_group
 		@books = Book.all
 	end
 
+	def show
+		
+	end
+
 	def new
-		@book = Book.new
+    @book = Book.new
 	end
 
 	def create
-    # @book = Book.new(book_params)
     @book = @group.books.build(book_params)
     if @book.save
-      redirect_to books_path
+      redirect_to group_books_path(@book)
     else
       render :new
+      # flash.now[:danger] = "error"
     end
   end
 
+  def edit
+
+  end
+
 	def update
-		@book.update(book_params)
-		redirect_to book_path
-	end
+    respond_to do |format|
+      if @book.update(book_params)
+        format.html { redirect_to group_book_path, notice: 'Book was successfully updated.' }
+        format.json { render :show, status: :ok, location: @book }
+      else
+        format.html { render :edit }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
 	def destroy
 	  @book.destroy
 	  respond_to do |format|
-	    format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+	    format.html { redirect_to group_books_url, notice: 'Book was successfully destroyed.' }
 	    format.json { head :no_content }
 	  end
 	end
 
 private
 
+	def set_group
+    @group = Group.find(params[:group_id])
+  end
+
 	def set_book
 	  @book = Book.find(params[:id])
 	end
 
-	def set_group
-    @group = Group.find(params[:id])
-  end
-
 	def book_params
-	  book_params = params.require(:book).permit(:book_name, :description, :author, :group_id, :user_id)
+	  params.require(:book).permit(:book_name, :description, :author, :group_id)
 	end
 
 	def group_params

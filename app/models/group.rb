@@ -5,4 +5,6 @@ class Group < ActiveRecord::Base
 
 	validates :group_name, presence: true,
 												uniqueness: true
+
+	accepts_nested_attributes_for :books, :allow_destroy => true
 end

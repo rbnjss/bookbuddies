@@ -3,9 +3,9 @@
 <%= link_to "Create new Book", new_group_book_path %>
 <% @books.each do |book| %>
 	<div class="book_container">
-		<h3><%= book.book_name %></h3>
+		<h3><%= link_to book.book_name, group_book_url(@group, book) %></h3>
 		<p>Author: <%= book.author %></p>
 		<p>Description: <%= book.description %></p>
-		
+
 	</div>
 <% end %>

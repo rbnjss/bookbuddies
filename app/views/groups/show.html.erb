@@ -8,4 +8,4 @@
 		<%= link_to "Edit", edit_group_path(@group) %>
 	</div>
 
-<%= link_to "Add a book", new_group_book_path(@group) %>
+<%= link_to "Add a book", new_book_path(group_id: @group.id) %>

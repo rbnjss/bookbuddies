@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
   resources :profiles
-  resources :groups do
-    resources :books
-  end
+  resources :groups
+  resources :books
 
   devise_for :users, :controllers => { registrations: 'users/registrations', 
                                         omniauth_callbacks: "users/omniauth_callbacks" }

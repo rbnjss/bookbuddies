@@ -18,7 +18,7 @@ before_action :set_group
 	def create
     @book = @group.books.build(book_params)
     if @book.save
-      redirect_to group_book_path(:id)
+      redirect_to group_books_path(@book)
     else
       render :new
       # flash.now[:danger] = "error"
@@ -44,7 +44,7 @@ before_action :set_group
 	def destroy
 	  @book.destroy
 	  respond_to do |format|
-	    format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+	    format.html { redirect_to group_books_url, notice: 'Book was successfully destroyed.' }
 	    format.json { head :no_content }
 	  end
 	end

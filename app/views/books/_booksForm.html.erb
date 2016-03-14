@@ -1,4 +1,4 @@
-<%= form_for [ @group, @book ] do |f| %>
+<%= form_for @book do |f| %>
 	<% if @book.errors.any? %>
 		 <ul>
 		 	<% @book.errors.full_messages.each do |error| %>
@@ -14,6 +14,7 @@
 	<%= f.text_area :description %>
 	<%= f.label :author %>
 	<%= f.text_field :author %>
+	<%= f.hidden_field :group_id, :value => @group.id %>
 	<%= f.submit %>
 
 <% end %>

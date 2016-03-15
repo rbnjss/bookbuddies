@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :profiles
+  resource :profile
   resources :groups
   resources :books
 

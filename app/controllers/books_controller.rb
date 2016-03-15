@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
-before_action :set_group, only: [:edit, :new, :update, :destroy]
+before_action :set_group, only: [:edit, :new, :update]
 
 
 	def index
@@ -45,7 +45,7 @@ before_action :set_group, only: [:edit, :new, :update, :destroy]
 	def destroy
 	  @book.destroy
 	  respond_to do |format|
-	    format.html { redirect_to group_books_url, notice: 'Book was successfully destroyed.' }
+	    format.html { redirect_to books_path, notice: 'Book was successfully destroyed.' }
 	    format.json { head :no_content }
 	  end
 	end

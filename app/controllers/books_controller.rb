@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
-before_action :set_group
+before_action :set_group, only: [:edit, :new, :update, :destroy]
 
 
 	def index
@@ -16,9 +16,10 @@ before_action :set_group
 	end
 
 	def create
-    @book = @group.books.build(book_params)
+    # @book = @group.books.build(book_params)
+    @book = Book.create(book_params)
     if @book.save
-      redirect_to group_books_path(@book)
+      redirect_to books_path(@book)
     else
       render :new
       # flash.now[:danger] = "error"

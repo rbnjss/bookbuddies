@@ -4,6 +4,7 @@
 	<h3><%= @book.book_name %></h3>
 	<p>Author: <%= @book.author %></p>
 	<p>Description: <%= @book.description %></p>
-	<%= link_to "Edit", edit_group_book_path %>
-	<%= link_to "Delete book", group_book_path(@book, @group), method: :delete, data: { confirm: "Are you sure?"} %>
+	<p><%= @book.group_id %></p>
+	<%= link_to "Edit", edit_book_path %>
+	<%= link_to "Delete book", book_path(@book, @group), method: :delete, data: { confirm: "Are you sure?"} %>
 </div>

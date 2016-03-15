@@ -1,8 +1,8 @@
 <h1>Profile#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
+<p>Find me in app/views/profile/edit.html.erb</p>
 
 <h2>Edit your Profile</h2>
 <div class="form_container">
-	<%= render 'profilesForm' %>
+	<%= render 'profileForm' %>
 </div>
 <%= link_to "Delete Profile", profile_path(@profile), method: :delete, data: { confirm: "Are you sure?"} %>

@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
-before_action :set_group, only: [:edit, :new, :update, :destroy]
+before_action :set_group, only: [:edit, :new]
 
 
 	def index
@@ -22,7 +22,6 @@ before_action :set_group, only: [:edit, :new, :update, :destroy]
       redirect_to books_path(@book)
     else
       render :new
-      # flash.now[:danger] = "error"
     end
   end
 
@@ -33,7 +32,7 @@ before_action :set_group, only: [:edit, :new, :update, :destroy]
 	def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to group_book_path, notice: 'Book was successfully updated.' }
+        format.html { redirect_to book_path, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -45,7 +44,7 @@ before_action :set_group, only: [:edit, :new, :update, :destroy]
 	def destroy
 	  @book.destroy
 	  respond_to do |format|
-	    format.html { redirect_to group_books_url, notice: 'Book was successfully destroyed.' }
+	    format.html { redirect_to books_path, notice: 'Book was successfully destroyed.' }
 	    format.json { head :no_content }
 	  end
 	end

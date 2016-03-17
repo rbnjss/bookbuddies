@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
-before_action :set_group, only: [:edit, :new, :update]
+before_action :set_group, only: [:edit, :new]
 
 
 	def index

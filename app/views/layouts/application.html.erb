@@ -18,8 +18,10 @@
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 	<%= yield %>
-	<footer>
-		
+	<footer style="margin-top: 20px;">
+		<% if user_signed_in? %>
+			<%= link_to "View Profile", '/profile' %>
+		<% end %>
 	</footer>
 </body>
 </html>

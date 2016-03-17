@@ -5,10 +5,6 @@ class ProfilesController < ApplicationController
 	  	
 	  end
 
-	  def new
-	    @profile = Profile.new
-	  end
-
 	  def edit
 	  	set_profile
 	  end
@@ -25,14 +21,13 @@ class ProfilesController < ApplicationController
 	  end
 
 	  def update
-	    @profile = Profile.new(profile_params)
-	    @profile.user_id = current_user.id
+	    @profile.update(profile_params)
 
-	      if @profile.save
-	        redirect_to @profile
-	      else
-	        render :new
-	      end
+	    if @profile.save
+	      redirect_to @profile
+	    else
+	      render :edit
+	    end
 	  end
 
 	  def destroy

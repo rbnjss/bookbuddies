@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
 	    @profile.user_id = current_user.id
 
 	    if @profile.save
-	      redirect_to @profile
+	      redirect_to profile_path
 	    else
 	      render :new
 	    end
@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
 	    @profile.update(profile_params)
 
 	    if @profile.save
-	      redirect_to @profile
+	      redirect_to profile_path
 	    else
 	      render :edit
 	    end

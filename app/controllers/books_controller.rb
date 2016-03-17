@@ -22,7 +22,6 @@ before_action :set_group, only: [:edit, :new, :update]
       redirect_to books_path(@book)
     else
       render :new
-      # flash.now[:danger] = "error"
     end
   end
 
@@ -33,7 +32,7 @@ before_action :set_group, only: [:edit, :new, :update]
 	def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to group_book_path, notice: 'Book was successfully updated.' }
+        format.html { redirect_to book_path, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }

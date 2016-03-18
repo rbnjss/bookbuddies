@@ -1,7 +1,7 @@
 class Group < ActiveRecord::Base
-	has_many :users
-	has_many :books
 	has_many :group_registrations
+	has_many :profiles, through: :group_registrations
+	has_many :books
 
 	validates :group_name, presence: true,
 												uniqueness: true

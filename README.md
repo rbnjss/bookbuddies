@@ -34,37 +34,37 @@ _Bookbuddies rails app_
 
 ### Models (attributes/data_types)
 
-* User _generated_
+* User _- generated_
 	* user_name: string (unique)
 	* user_email
 	* password
 
-* Profile _generated_
+* Profile _- generated_
 	* first_name: string
 	* last_name: string
 	* avatar: binary (image) - pulled from Twitter/Goodreads when signed in.
 	* bio: text
 	* city: string
 
-* Book _generated_
+* Book _- generated_
 	* book_name: string
 	* cover_image: binary (image) **To be added later**
 	* description: text
 	* author: string
 
-* Group _generated_
+* Group _- generated_
 	* group_name: string
 	* description: text
 	* location: string
 	* user_id[s]: (group members: will this be an association to another model?) **To be added later**
 	* private: boolean **To be added later**
 
-* Comment _generated_
+* Comment _- generated_
 	* content: text
 	* profile_id: integer (see: associations)
 	* book_id: integer (see: associations)
 
-* GroupResigration _generated_
+* GroupResigration _- generated_
 	* The bouncer model 💪
 
 ### Model Associations

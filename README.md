@@ -76,14 +76,15 @@ _Bookbuddies rails app_
 * Group
  * has_many :users
  * has_many :books
- * has_many :group registrations
+ * has_many :profiles, through: :group registrations
 
 * Profile
  * has_many :comments
- * has_many :group registrations
+ * has_many :groups, Through: :group registrations
 
 * User
-	* _check out_ belongs_to relationships
+	* has_one :profile
+  * accepts_nested_attributes_for :profile
 	* The bouncer model 💪
 	
 * GroupRegistraion

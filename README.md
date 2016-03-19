@@ -69,29 +69,29 @@ _Bookbuddies rails app_
 
 ### Model Associations
 
-* Comment
+* comment
  * belongs_to :profile
  * belongs_to :book
 
-* Group
+* group
  * has_many :users
  * has_many :books
  * has_many :profiles, through: :group registrations
 
-* Profile
+* profile
  * has_many :comments
  * has_many :groups, Through: :group registrations
 
-* User
+* user
 	* has_one :profile
   * accepts_nested_attributes_for :profile
 	* The bouncer model 💪
 	
-* GroupRegistration
+* group_registration
 	* belongs_to :profile
 	* belongs_to :group
 
-* Book
+* book
  * has_many :groups
  * belongs_to :group
  * has_many: comments

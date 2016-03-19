@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+  # before_action :set_profile, only: [:edit, :new]
   
   
   def index
@@ -37,8 +38,13 @@ class GroupsController < ApplicationController
   end
 
   private
+
     def set_group
       @group = Group.find(params[:id])
+    end
+
+    def set_profile
+      @profile = Profile.find(params[:profile_id])
     end
     
     def group_params

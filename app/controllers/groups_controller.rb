@@ -1,6 +1,5 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
-  # before_action :set_profile, only: [:edit, :new]
   
   
   def index
@@ -25,6 +24,8 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
+      # @gr = @group.group_registrations.build(profile_id: current_user.profile.id)
+      # @gr.save
       redirect_to root_path
     else
       render :new
@@ -41,10 +42,6 @@ class GroupsController < ApplicationController
 
     def set_group
       @group = Group.find(params[:id])
-    end
-
-    def set_profile
-      @profile = Profile.find(params[:profile_id])
     end
     
     def group_params

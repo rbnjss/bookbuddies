@@ -4,7 +4,7 @@
 	<div class="post panel row">
 		<h4><%= @group.group_name %></h4>
 		<p><%= @group.description %></p>
-		<small><%= @group.location %></small>
+		<small>Location: <%= @group.location %></small> <br />
 		<%= link_to "Edit", edit_group_path(@group) %>
 	</div>
 

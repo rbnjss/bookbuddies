@@ -16,7 +16,6 @@ before_action :set_group, only: [:edit, :new]
 	end
 
 	def create
-    # @book = @group.books.build(book_params)
     @book = Book.create(book_params)
     if @book.save
       redirect_to books_path(@book)
@@ -51,13 +50,13 @@ before_action :set_group, only: [:edit, :new]
 
 private
 
-	def set_group
-    @group = Group.find(params[:group_id])
-  end
-
 	def set_book
 	  @book = Book.find(params[:id])
 	end
+
+	def set_group
+    @group = Group.find(params[:group_id])
+  end
 
 	def book_params
 	  params.require(:book).permit(:book_name, :description, :author, :group_id)

@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
@@ -24,6 +25,8 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
+      @gr = @group.group_registrations.build(profile_id: current_user.profile.id)
+      @gr.save
       redirect_to root_path
     else
       render :new
@@ -37,6 +40,7 @@ class GroupsController < ApplicationController
   end
 
   private
+
     def set_group
       @group = Group.find(params[:id])
     end

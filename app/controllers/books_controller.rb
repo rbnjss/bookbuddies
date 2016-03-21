@@ -1,10 +1,12 @@
 class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
-before_action :set_group, only: [:edit, :new]
+before_action :set_group, only: [:index, :edit, :new]
+before_action :authenticate_user!
 
 
 	def index
-		@books = Book.all
+		# @books = Book.all
+		@books = Book.where(group_id: current_user.profile.id)
 	end
 
 	def show
@@ -18,7 +20,7 @@ before_action :set_group, only: [:edit, :new]
 	def create
     @book = Book.create(book_params)
     if @book.save
-      redirect_to books_path(@book)
+      redirect_to book_path(@book)
     else
       render :new
     end
@@ -56,6 +58,7 @@ private
 
 	def set_group
     @group = Group.find(params[:group_id])
+    # @group = Group.find(params[:id])
   end
 
 	def book_params

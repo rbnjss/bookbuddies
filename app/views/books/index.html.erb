@@ -1,6 +1,7 @@
 <h2>All the books</h2>
 
-<%= link_to "Create new Book", new_book_path %>
+<%= link_to "Create new Book", new_book_path(group_id: @group.id) %>
+
 <% @books.each do |book| %>
 	<div class="book_container">
 		<h3><%= link_to book.book_name, book_url(book) %></h3>

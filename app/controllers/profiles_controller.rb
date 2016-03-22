@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-	  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+	  before_action :set_profile, only: [:show, :edit, :update, :destroy, :finish_signup]
 
 	  def show
 	  	
@@ -45,6 +45,6 @@ class ProfilesController < ApplicationController
 	  end
 
 	  def profile_params
-	    params.require(:profile).permit(:first_name, :last_name, :city, :bio)
+	    params.require(:profile).permit(:first_name, :last_name, :city, :bio, :avatar)
 	  end
 end

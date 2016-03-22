@@ -13,10 +13,8 @@ gem 'omniauth-twitter'
 gem 'dotenv-rails'
 # Better-errors
 gem 'better_errors'
-# Paperclip
-gem 'paperclip'
 # AWS SDK
-gem 'aws-sdk'
+gem 'aws-sdk-v1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

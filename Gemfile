@@ -11,8 +11,10 @@ gem 'devise'
 gem 'omniauth-twitter'
 # Dotenv
 gem 'dotenv-rails'
-#better-errors
+# Better-errors
 gem 'better_errors'
+# AWS SDK
+gem 'aws-sdk-v1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

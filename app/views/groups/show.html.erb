@@ -4,8 +4,11 @@
 	<div class="post panel row">
 		<h4><%= @group.group_name %></h4>
 		<p><%= @group.description %></p>
+		<p>Group ID: <%= @group.id %></p>
 		<small>Location: <%= @group.location %></small> <br />
 		<%= link_to "Edit", edit_group_path(@group) %>
 	</div>
 
 <%= link_to "Add a book", new_book_path(group_id: @group.id) %>
+<br>
+<%= link_to "Show group books", books_path(group_id: @group.id) %>

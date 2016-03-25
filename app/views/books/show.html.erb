@@ -21,8 +21,9 @@
 
 <% @comments.each do |comment| %>
 	<div class="comment_container">
-		<p>I'm a comment</p>
+		<%= image_tag comment.profile.avatar.url(:thumb)  %>
 		<p><%= comment.content %></p>
+		<small>Posted by: <%= comment.profile.first_name %> <%= comment.profile.first_name %></small>
 		<%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure?"} %>
 	</div>
 <% end %>

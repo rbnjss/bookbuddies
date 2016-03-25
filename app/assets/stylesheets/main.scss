@@ -1,4 +1,8 @@
+// Global Styles
+@import "variables.scss";
 @import "global.scss";
+
+// Page Specific
 @import "profile.scss";
 @import "group.scss";
 @import "book.scss";

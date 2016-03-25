@@ -15,7 +15,7 @@
 	<%= f.text_field :content %>
 	<%= f.hidden_field :profile_id, :value => current_user.profile.id %>
 	<%= f.hidden_field :book_id, :value => @book.id %>
-	<%= f.submit %>
+	<%= f.submit "Add comment" %>
 <% end %>
 </div>
 <br>

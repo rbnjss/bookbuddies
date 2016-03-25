@@ -7,8 +7,11 @@
 		<p>Group ID: <%= @group.id %></p>
 		<small>Location: <%= @group.location %></small> <br />
 		<%= link_to "Edit", edit_group_path(@group) %>
+		<%= link_to "All my groups", groups_path  %>
 	</div>
 
-<%= link_to "Add a book", new_book_path(group_id: @group.id) %>
-<br>
-<%= link_to "Show group books", books_path(group_id: @group.id) %>
+<div>
+	<%= link_to "Add a book", new_book_path(group_id: @group.id) %>
+	<br>
+	<%= link_to "Show group books", books_path(group_id: @group.id) %>
+</div>

@@ -12,13 +12,13 @@
 <div class="form-container">
 <%= form_for(@comment.new) do |f| %>
 	<p>Add a comment</p>
-	<%= f.text_area :content %>
+	<%= f.text_field :content %>
 	<%= f.hidden_field :profile_id, :value => current_user.profile.id %>
 	<%= f.hidden_field :book_id, :value => @book.id %>
 	<%= f.submit %>
 <% end %>
 </div>
-
+<br>
 <% @comments.each do |comment| %>
 	<div class="comment_container">
 		<%= image_tag comment.profile.avatar.url(:thumb)  %>

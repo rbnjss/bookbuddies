@@ -11,7 +11,7 @@ before_action :authenticate_user!
 	def show
 		@group = @book.group
 		@comment = Comment.where(book_id: @book.id)
-		@comments = @book.comments.all
+		@comments = @book.comments.all.order(created_at: :desc)
 	end
 
 	def new

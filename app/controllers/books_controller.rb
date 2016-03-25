@@ -10,7 +10,7 @@ before_action :authenticate_user!
 
 	def show
 		@group = @book.group
-		@comment = @book.comments.find(params[:id])
+		@comment = Comment.where(book_id: @book.id)
 		@comments = @book.comments.all
 	end
 

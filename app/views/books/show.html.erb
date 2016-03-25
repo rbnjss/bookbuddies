@@ -9,18 +9,21 @@
 	<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
 	<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
 
-<% form_for @comment do |f| %>
-	<%= f.label :content %>
+<div class="form-container">
+<%= form_for(@comment.new) do |f| %>
+	<p>Add a comment</p>
 	<%= f.text_area :content %>
 	<%= f.hidden_field :profile_id, :value => current_user.profile.id %>
 	<%= f.hidden_field :book_id, :value => @book.id %>
 	<%= f.submit %>
 <% end %>
+</div>
 
 <% @comments.each do |comment| %>
 	<div class="comment_container">
 		<p>I'm a comment</p>
 		<p><%= comment.content %></p>
+		<%= link_to "Delete comment", comment_path(@comment, book_id: @book.id), method: :delete, data: { confirm: "Are you sure?"} %>
 	</div>
 <% end %>
 

@@ -27,7 +27,7 @@
 	<div class="comment_container">
 		<%= image_tag comment.profile.avatar.url(:thumb)  %>
 		<p><%= comment.content %></p>
-		<small>Posted by: <%= comment.profile.first_name %> <%= comment.profile.first_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
+		<small>Posted by: <%= comment.profile.first_name %> <%= comment.profile.last_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
 		<% if current_user.id == comment.profile.id %>
 			<%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %>
 		<% end %>

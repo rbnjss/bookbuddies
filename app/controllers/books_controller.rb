@@ -5,13 +5,13 @@ before_action :authenticate_user!
 
 
 	def index
-		# @books = Book.all
 		@books = Book.where(group_id: @group.id)
 	end
 
 	def show
 		@group = @book.group
-		
+		@comment = @book.comments.find(params[:id])
+		@comments = @book.comments.all
 	end
 
 	def new

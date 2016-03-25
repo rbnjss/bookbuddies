@@ -8,4 +8,20 @@
 	<p><%= @book.group_id %></p>
 	<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
 	<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
+
+<% form_for @comment do |f| %>
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+	<%= f.hidden_field :profile_id, :value => current_user.profile.id %>
+	<%= f.hidden_field :book_id, :value => @book.id %>
+	<%= f.submit %>
+<% end %>
+
+<% @comments.each do |comment| %>
+	<div class="comment_container">
+		<p>I'm a comment</p>
+		<p><%= comment.content %></p>
+	</div>
+<% end %>
+
 </div>

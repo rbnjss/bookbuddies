@@ -17,7 +17,11 @@
 	</nav>
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
-	<%= yield %>
+	
+	<div class="wrapper">
+		<%= yield %>
+	</div>
+	
 	<footer style="margin-top: 20px;">
 		<% if user_signed_in? %>
 			<%= link_to "View Profile", '/profile' %>

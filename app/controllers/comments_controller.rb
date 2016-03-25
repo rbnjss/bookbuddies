@@ -6,9 +6,7 @@ class CommentsController < ApplicationController
 		if @comment.save
 	      redirect_to :back
 	    else
-	      # flash.now[:danger] = "error"
-	      render text: "Comment cannot be blank" 
-	      # Make a better error than this ^^
+	      redirect_to :back, notice: "Comment cannot be blank"
 	    end
 	end
 

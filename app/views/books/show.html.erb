@@ -23,7 +23,7 @@
 	<div class="comment_container">
 		<p>I'm a comment</p>
 		<p><%= comment.content %></p>
-		<%= link_to "Delete comment", comment_path(@comment, book_id: @book.id), method: :delete, data: { confirm: "Are you sure?"} %>
+		<%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure?"} %>
 	</div>
 <% end %>
 

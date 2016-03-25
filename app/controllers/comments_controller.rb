@@ -4,10 +4,12 @@ class CommentsController < ApplicationController
 		# @book = Book.find(params[:id])
 		@comment = Comment.create(comment_params)
 		if @comment.save
-		      redirect_to :back
-		    else
-		      flash.now[:danger] = "error"
-		    end
+	      redirect_to :back
+	    else
+	      # flash.now[:danger] = "error"
+	      render text: "Comment cannot be blank" 
+	      # Make a better error than this ^^
+	    end
 	end
 
 	def destroy

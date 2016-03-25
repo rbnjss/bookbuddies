@@ -1,7 +1,7 @@
 <h2>Show a book</h2>
 
 <div class="book_container">
-	<%= image_tag @book.cover.url %>
+	<%= image_tag @book.cover.url(:medium) %>
 	<h3><%= @book.book_name %></h3>
 	<p>Description: <%= @book.description %></p>
 	<p>Author: <%= @book.author %></p>

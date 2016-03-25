@@ -1,4 +1,8 @@
 ---
+:Book:
+  :cover:
+  - :medium
+  - :thumb
 :Profile:
   :avatar:
   - :medium

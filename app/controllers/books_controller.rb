@@ -5,7 +5,7 @@ before_action :authenticate_user!
 
 
 	def index
-		@books = Book.where(group_id: @group.id)
+		@books = Book.where(group_id: @group.id).order(created_at: :desc)
 	end
 
 	def show

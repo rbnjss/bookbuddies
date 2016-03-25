@@ -8,27 +8,33 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # If they don't, create them
     @user = User.where(uid: uid, provider: provider).first_or_initialize
 
+    if @user.email.present?
+      sign_in @user
+      redirect_to root_path
+    end
+
     # @user.profile.create(
     #   name: request.env["omniauth.auth"]["info"]["name"]
     # )
+  end
 
-    def twitter_submit
-      provider = params[:user][:provider]
-      uid = params[:user][:uid]
+  def twitter_submit
+    provider = params[:user][:provider]
+    uid = params[:user][:uid]
 
-      @user = User.where(uid: uid, provider: provider).first_or_initialize
-      @user.password = SecureRandom.uuid
+    @user = User.where(uid: uid, provider: provider).first_or_initialize
+    @user.password = SecureRandom.uuid
 
-      if @user.update(user_params)
-        sign_in_and_redirect @user
-      else    
-        render :twitter   
-      end
+    if @user.update(user_params)
+      sign_in @user
+      redirect_to new_profile_path
+    else    
+      render :twitter
     end
+  end
 
-    def user_params
-      params.require(:user).permit(:email)
-    end
+  def user_params
+    params.require(:user).permit(:email)
   end
   
   # You should configure your model like this:

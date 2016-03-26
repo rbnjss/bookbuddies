@@ -7,6 +7,7 @@
 		<p>Group ID: <%= @group.id %></p>
 		<small>Location: <%= @group.location %></small> <br />
 		<%= link_to "Edit", edit_group_path(@group) %>
+		<!-- <%= link_to "Delete group", group_path(@group), method: :delete, data: { confirm: "Are you sure? This will delete all associated books and comments. This action cannot be undone."} %> -->
 		<!-- <%= link_to "All my groups", groups_path  %> -->
 	</div>
 

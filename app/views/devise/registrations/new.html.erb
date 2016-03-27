@@ -7,7 +7,7 @@
     <%= f.email_field :email %>
   </div>
 
-  <div class="field">
+  <div class="field">z
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -19,10 +19,6 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
-  <% if @token != nil %>
-    <%= hidden_field_tag :invite_token, @token %>
-  <% end %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

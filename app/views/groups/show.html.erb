@@ -10,8 +10,8 @@
 		<div style="border:1px solid black">
 			Group members:
 			<% @members.each do |member| %>
-				<%= image_tag member.profile.avatar.url(:thumb) %>
-				<%= member.profile.first_name %>
+				<%= image_tag member.user.profile.avatar.url(:thumb) %>
+				<%= member.user.profile.first_name %>
 				<br />
 			<% end %>
 		</div>
@@ -30,5 +30,4 @@
 </div>
 
 <!-- INVITE A USER TO JOIN GROUP FORM -->
-<p>Enter the email of the User you would live to invite to this group</p>
-<%= render 'userInviteForm' %>
+<!-- <p>Enter the email of the User you would live to invite to this group</p> -->

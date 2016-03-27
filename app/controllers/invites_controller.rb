@@ -1,5 +1,9 @@
 class InvitesController < ApplicationController
 
+  def new
+    @invite - Invite.new
+  end
+
   def create
     @invite = Invite.new(invite_params)
     @invite.sender_id = current_user.id
@@ -12,7 +16,7 @@ class InvitesController < ApplicationController
          InviteMailer.existing_user_invite(@invite).deliver 
   
          #Add the user to the organization
-         @invite.recipient.organizations.push(@invite.organization)
+         @invite.recipient.groups.push(@invite.group)
       else
          InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
       end
@@ -22,7 +26,7 @@ class InvitesController < ApplicationController
   end
 
   def invite_params
-  	params.require(:invite).permit(:organization_id, :email)
+  	params.require(:invite).permit(:group_id, :email)
   end
 
 end

@@ -27,7 +27,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.update(user_params)
       sign_in @user
-      redirect_to new_profile_path
+      redirect_to edit_profile_path
     else    
       render :twitter
     end

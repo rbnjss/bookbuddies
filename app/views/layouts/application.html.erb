@@ -15,6 +15,7 @@
 				<% if user_signed_in? %>
 					<%= link_to "Sign out", "/users/sign_out", method: 'delete' %>
 					<%= link_to "My Groups", groups_path %>
+					<%= link_to "View Profile", '/profile' %>
 					<p>Welcome <%= current_user.profile.first_name %></p>
 				<% else %>
 					<%= link_to "Sign in", "/users/sign_in" %>
@@ -38,11 +39,7 @@
 	</main>
 	
 	<footer>
-		<div class="wrapper">
-			<% if user_signed_in? %>
-				<%= link_to "View Profile", '/profile' %>
-			<% end %>
-		</div>
+		
 	</footer>
 
 </body>

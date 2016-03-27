@@ -1,7 +1,9 @@
-<h1>Group#new</h1>
-<p>Find me in app/views/group/new.html.erb</p>
-
-<h2>Make a new Group</h2>
-<div class="form_container">
-	<%= render 'groupsForm' %>
-</div>
+<section class="group__new">
+	<h2>Make a new Group</h2>
+	<div class="form__container">
+		<%= render 'groupsForm' %>
+	</div>
+	<div class="group__new--links">
+		<%= link_to "Cancel", groups_path  %>
+	</div>
+</section>

@@ -13,8 +13,8 @@
 	<div class="post panel row">
 		<h4><%= link_to gr.group.group_name, group_path(gr) %></h4>
 
-		<p>Members: <%= gr.profile.first_name %> <%= gr.profile.last_name %></p>
-		<small>Profile ID: <%= gr.profile_id %></small>
+		<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
+		<small>Profile ID: <%= gr.user_id %></small>
 		<br />
 		<small>Group ID: <%= gr.group_id %></small>
 		<br />

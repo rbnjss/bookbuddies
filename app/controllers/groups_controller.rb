@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   
   def index
     @groups = Group.all
-    @grs = GroupRegistration.where(profile_id: current_user.profile.id)
+    @grs = GroupRegistration.where(user_id: current_user.id)
   end
 
   def show
@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      @gr = @group.group_registrations.build(profile_id: current_user.profile.id)
+      @gr = @group.group_registrations.build(user_id: current_user.id)
       @gr.save
       redirect_to root_path
     else

@@ -1,8 +1,53 @@
-.wrapper {
-	max-width: 1000px;
-	margin: 0 auto;
+body {
+	font-family: $copyFont;
+	color: $text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $displayFont;
+}
+
+a {
+	color: $accent;
 }
 
 p.notice {
-	color: red;
+	color: $red;
+}
+
+.wrapper {
+	max-width: $row;
+	margin: 0 auto;
+}
+
+.button {
+	background: $primary;
+	padding: 5px 10px;
+}
+
+// Forms
+
+input[type="text"],
+textarea {
+	border: none;
+	background: $gray;
+	width: 100%;
+	padding: 10px;
+}
+
+input[type="submit"] {
+	border: none;
+}
+
+label {
+	display: block;
+}
+
+.field {
+	margin: $gutter 0;
 }

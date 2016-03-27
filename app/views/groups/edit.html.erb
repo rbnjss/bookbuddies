@@ -4,5 +4,5 @@
 <h2>Edit a Group</h2>
 <div class="form_container">
 	<%= render 'groupsForm' %>
+	<%= link_to "Cancel", group_path  %>
 </div>
-<%= link_to "Delete Group", group_path(@group), method: :delete, data: { confirm: "Are you sure?"} %>

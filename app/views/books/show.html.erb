@@ -26,7 +26,7 @@
 <%= form_for(@comment.new) do |f| %>
 	<p>Add a comment</p>
 	<%= f.text_field :content %>
-	<%= f.hidden_field :profile_id, :value => current_user.profile.id %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
 	<%= f.hidden_field :book_id, :value => @book.id %>
 	<%= f.submit "Add comment" %>
 <% end %>
@@ -36,10 +36,10 @@
 <!-- LIST COMMENTS -->
 <% @comments.each do |comment| %>
 	<div class="comment_container">
-		<%= image_tag comment.profile.avatar.url(:thumb)  %>
+		<%= image_tag comment.user.profile.avatar.url(:thumb)  %>
 		<p><%= comment.content %></p>
-		<small>Posted by: <%= comment.profile.first_name %> <%= comment.profile.last_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
-		<% if current_user.id == comment.profile.id %>
+		<small>Posted by: <%= comment.user.profile.first_name %> <%= comment.user.profile.last_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
+		<% if current_user.id == comment.user.profile.id %>
 			<%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %>
 		<% end %>
 	</div>

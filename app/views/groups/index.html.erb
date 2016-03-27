@@ -1,26 +1,20 @@
-<div class="row">
-	<h1>Group#index</h1>
-	<p>Find me in app/views/group/index.html.erb</p>
-</div>
+<section class="group__index">
+	<h2>My Groups</h2>
+	<div class="group__list">
+		<% @grs.each do |gr| %>
+			<div class="group__list--group">
+				<h3><%= link_to gr.group.group_name, group_path(gr) %></h3>
 
-
-
-<h2>Book Groups</h2>
-
-
-<%= link_to "Create a new group", new_group_path %>
-
-
-<h3>My groups</h3>
-<% @grs.each do |gr| %>
-	<div>
-		<h4><%= link_to gr.group.group_name, group_path(gr) %></h4>
-
-		<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
-		<small>Profile ID: <%= gr.user_id %></small>
-		<br />
-		<small>Group ID: <%= gr.group_id %></small>
-		<br />
-		<%= link_to "Edit Group", edit_group_path(gr) %>
+				<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
+				<small>Profile ID: <%= gr.user_id %></small>
+				<br />
+				<small>Group ID: <%= gr.group_id %></small>
+				<br />
+				<%= link_to "Edit Group", edit_group_path(gr) %>
+			</div>
+		<% end %>
 	</div>
-<% end %>
+	<div class="group__links">
+		<span class="groups__links--link"><%= link_to "Create a new group", new_group_path %></span>
+	</div>
+</section>

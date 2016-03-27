@@ -1,33 +1,32 @@
-<h1>Group#show</h1>
-<p>Find me in app/views/group/show.html.erb</p>
-
-	<div class="post panel row">
-		<h4><%= @group.group_name %></h4>
+<section class="group__show">
+	<div class="group__info">
+		<h2><%= @group.group_name %></h2>
 		<p><%= @group.description %></p>
-		<p>Group ID: <%= @group.id %></p>
-		<br />
-
-		<div style="border:1px solid black">
-			Group members:
-			<% @members.each do |member| %>
-				<%= image_tag member.user.profile.avatar.url(:thumb) %>
-				<%= member.user.profile.first_name %>
-				<br />
-			<% end %>
-		</div>
-		
-		<br />
-		<small>Location: <%= @group.location %></small> <br />
-		<%= link_to "Edit", edit_group_path(@group) %>
-		<!-- <%= link_to "Delete group", group_path(@group), method: :delete, data: { confirm: "Are you sure? This will delete all associated books and comments. This action cannot be undone."} %> -->
-		<!-- <%= link_to "All my groups", groups_path  %> -->
 	</div>
 
-<div>
-	<%= link_to "Add a book", new_book_path(group_id: @group.id) %>
-	<br>
-	<%= link_to "Show group books", books_path(group_id: @group.id) %>
-</div>
+	<div class="group__members">
+		<h3>Group members:</h3>
+		<% @members.each do |member| %>
+			<%= image_tag member.user.profile.avatar.url(:thumb) %><br>
+			<%= member.user.profile.first_name %>
+			<br />
+		<% end %>
+	</div>
+	
+	<div class="group__location">
+		Location: <%= @group.location %>
+	</div>
+	
+	<div class="group__links">
+		<span class="group__links--link"><%= link_to "Edit", edit_group_path(@group) %></span>
+		<span class="group__links--link"><%= link_to "Add a book", new_book_path(group_id: @group.id) %></span>
+		<!-- <%= link_to "Delete group", group_path(@group), method: :delete, data: { confirm: "Are you sure? This will delete all associated books and comments. This action cannot be undone."} %> -->
+		<!-- <%= link_to "All my groups", groups_path  %> -->
 
-<!-- INVITE A USER TO JOIN GROUP FORM -->
-<!-- <p>Enter the email of the User you would live to invite to this group</p> -->
+		<span class="group__links--link"><%= link_to "Show group books", books_path(group_id: @group.id) %></span>
+		<!-- INVITE A USER TO JOIN GROUP FORM -->
+		<!-- <p>Enter the email of the User you would live to invite to this group</p> -->
+	</div>
+</section>
+
+

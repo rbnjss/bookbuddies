@@ -1,13 +1,20 @@
-<h2>All the books</h2>
-
-<%= link_to "Create new Book", new_book_path(group_id: @group.id) %>
-
-<% @books.each do |book| %>
-	<div class="book_container">
-		<h3><%= link_to book.book_name, book_url(book) %></h3>
-		<%= image_tag book.cover.url(:thumb) %>
-		<p>Author: <%= book.author %></p>
-		<p>Description: <%= book.description %></p>
-
+<section class="book__index">
+	<h2>My Group's Books</h2>
+	<div class="books__list">
+		<% @books.each do |book| %>
+			<div class="books_list--book">
+				<h3><%= link_to book.book_name, book_url(book) %></h3>
+				<%= image_tag book.cover.url(:thumb) %>
+				<p>Author: <%= book.author %></p>
+				<p>Description: <%= book.description %></p>
+			</div>
+		<% end %>
 	</div>
-<% end %>
+	<div class="books__links">
+		<span class="books__links--link"><%= link_to "Add a New Book", new_book_path(group_id: @group.id) %></span>
+	</div>
+</section>
+
+
+
+

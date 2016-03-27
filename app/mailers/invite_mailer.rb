@@ -1,0 +1,5 @@
+class InviteMailer < ApplicationMailer
+
+
+
+end

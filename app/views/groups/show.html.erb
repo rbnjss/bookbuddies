@@ -28,3 +28,7 @@
 	<br>
 	<%= link_to "Show group books", books_path(group_id: @group.id) %>
 </div>
+
+<!-- INVITE A USER TO JOIN GROUP FORM -->
+<p>Enter the email of the User you would live to invite to this group</p>
+<%= render 'userInviteForm' %>

@@ -20,6 +20,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <% if @token != nil %>
+    <%= hidden_field_tag :invite_token, @token %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

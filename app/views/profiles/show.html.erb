@@ -1,11 +1,10 @@
-<h1>Profile#show</h1>
-<p>Find me in app/views/profile/show.html.erb</p>
-
-<div class="post panel row">
-	<h4><%= @profile.first_name %> <%= @profile.last_name %></h4>
+<section class="profile__show">
+	<h2><%= @profile.first_name %> <%= @profile.last_name %></h2>
 	<p><%= @profile.city %></p>
 	<p><%= @profile.bio %></p>
 	<%= image_tag @profile.avatar.url(:medium) %>
-	<p><%= link_to "Edit", edit_profile_path %></p>
-</div>
-<%= link_to "Add a Group", new_group_path %>
+	<p><%= link_to "Edit Profile", edit_profile_path %></p>
+	<div class="profile__links">
+		<span class="profile__links--link"><%= link_to "Add a Group", new_group_path %></span>
+	</div>
+</section>

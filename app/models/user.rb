@@ -6,5 +6,9 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:twitter]
 
   has_one :profile
+  has_many :comments
+  has_many :group_registrations
+  has_many :groups, through: :group_registrations
+
   accepts_nested_attributes_for :profile
 end

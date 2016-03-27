@@ -5,6 +5,7 @@
 <% @books.each do |book| %>
 	<div class="book_container">
 		<h3><%= link_to book.book_name, book_url(book) %></h3>
+		<%= image_tag book.cover.url(:thumb) %>
 		<p>Author: <%= book.author %></p>
 		<p>Description: <%= book.description %></p>
 

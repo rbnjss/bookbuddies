@@ -1,0 +1,10 @@
+---
+:Book:
+  :cover:
+  - :medium
+  - :thumb
+:Profile:
+  :avatar:
+  - :medium
+  - :thumb
+  - :thumb_square

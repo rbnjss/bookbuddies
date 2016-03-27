@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    
+    @members = @group.group_registrations.all
   end
 
   def edit

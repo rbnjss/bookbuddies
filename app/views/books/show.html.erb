@@ -1,11 +1,48 @@
 <h2>Show a book</h2>
 
+<!-- SHOW BOOK -->
 <div class="book_container">
-	<%= image_tag @book.cover.url %>
+	<%= image_tag @book.cover.url(:medium) %>
 	<h3><%= @book.book_name %></h3>
 	<p>Description: <%= @book.description %></p>
 	<p>Author: <%= @book.author %></p>
 	<p><%= @book.group_id %></p>
+	
+	<div style="border:1px solid black">
+		Group members:
+		<% @members.each do |member| %>
+			<%= image_tag member.profile.avatar.url(:thumb) %>
+			<%= member.profile.first_name %>
+			<br />
+		<% end %>
+	</div>
+	<br />
 	<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
 	<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
+
+
+<!-- CREATE COMMENTS -->
+<div class="form-container">
+<%= form_for(@comment.new) do |f| %>
+	<p>Add a comment</p>
+	<%= f.text_field :content %>
+	<%= f.hidden_field :profile_id, :value => current_user.profile.id %>
+	<%= f.hidden_field :book_id, :value => @book.id %>
+	<%= f.submit "Add comment" %>
+<% end %>
+</div>
+<br>
+
+<!-- LIST COMMENTS -->
+<% @comments.each do |comment| %>
+	<div class="comment_container">
+		<%= image_tag comment.profile.avatar.url(:thumb)  %>
+		<p><%= comment.content %></p>
+		<small>Posted by: <%= comment.profile.first_name %> <%= comment.profile.last_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
+		<% if current_user.id == comment.profile.id %>
+			<%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %>
+		<% end %>
+	</div>
+<% end %>
+
 </div>

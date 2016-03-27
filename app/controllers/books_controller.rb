@@ -5,13 +5,14 @@ before_action :authenticate_user!
 
 
 	def index
-		# @books = Book.all
-		@books = Book.where(group_id: @group.id)
+		@books = Book.where(group_id: @group.id).order(created_at: :desc)
 	end
 
 	def show
 		@group = @book.group
-		
+		@comment = Comment.where(book_id: @book.id)
+		@comments = @book.comments.all.order(created_at: :desc)
+		@members = @book.group.group_registrations.all
 	end
 
 	def new

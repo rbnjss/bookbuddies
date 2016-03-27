@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 /.env
-/public/systems/books/covers/*
+/public/system/*

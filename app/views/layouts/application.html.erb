@@ -6,22 +6,30 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 	<h1><%= link_to "Book Buddies", root_path %></h1>
 	<nav>	
 		<% if user_signed_in? %>
 			<%= link_to "Sign out", "/users/sign_out", method: 'delete' %>
+			<%= link_to "My Groups", groups_path %>
+			<p>Welcome <%= current_user.profile.first_name %></p>
 		<% else %>
 			<%= link_to "Sign in", "/users/sign_in" %>
 		<% end %>
 	</nav>
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
-	<%= yield %>
+	
+	<div class="wrapper">
+		<%= yield %>
+	</div>
+	
 	<footer style="margin-top: 20px;">
 		<% if user_signed_in? %>
 			<%= link_to "View Profile", '/profile' %>
 		<% end %>
 	</footer>
+
 </body>
 </html>

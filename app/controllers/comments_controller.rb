@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
 private
 
 	def comment_params
-    params.require(:comment).permit(:id, :content, :profile_id, :book_id)
+    params.require(:comment).permit(:id, :content, :user_id, :book_id)
   end
 
 end

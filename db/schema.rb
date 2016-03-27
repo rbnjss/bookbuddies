@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 20160327175449) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "invites", force: :cascade do |t|
+    t.string   "email"
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"

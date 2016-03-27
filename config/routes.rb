@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :groups
   resources :books
   resources :comments
+  resources :invites
 
   devise_for :users, :controllers => { registrations: 'users/registrations', 
                                         omniauth_callbacks: "users/omniauth_callbacks" }

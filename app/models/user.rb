@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :group_registrations
   has_many :groups, through: :group_registrations
+  has_many :invitations, :class_name => "Invite", :foreign_key => 'recipient_id'
+  has_many :sent_invites, :class_name => "Invite", :foreign_key => 'sender_id'
 
   accepts_nested_attributes_for :profile
 end

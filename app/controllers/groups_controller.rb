@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
 
   def show
     @members = @group.group_registrations.all
+    @invite = Invite.create
   end
 
   def edit

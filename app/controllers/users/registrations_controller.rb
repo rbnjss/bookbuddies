@@ -6,12 +6,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
+  def new
+     @token = params[:invite_token] #<-- pulls the value from the url query string
+  end
 
   # POST /resource
   # def create
   #   redirect_to new_profile_path(:user_id => @user)
   # end
-
+  def create
+    @newUser = build_user(user_params)
+    @newUser.save
+    @token = params[:invite_token]
+    if @token != nil
+       org =  Invite.find_by_token(@token).user_group #find the user group attached to the invite
+       @newUser.user_groups.push(org) #add this user to the new user group as a member
+    else
+      # do normal registration things #
+    end
+  end
+  
   # GET /resource/edit
   # def edit
   #   super

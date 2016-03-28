@@ -12,10 +12,10 @@ class Invite < ActiveRecord::Base
   end
 
   def check_user_existence
-   recipient = User.find_by_email(email)
-     if recipient
-        self.recipient_id = recipient.id
-     end
+    recipient = User.find_by_email(email)
+    if recipient
+      self.recipient_id = recipient.id
+    end
   end
 
 end

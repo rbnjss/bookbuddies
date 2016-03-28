@@ -20,12 +20,12 @@
 	<div class="group__links">
 		<span class="group__links--link"><%= link_to "Edit", edit_group_path(@group) %></span>
 		<span class="group__links--link"><%= link_to "Add a book", new_book_path(group_id: @group.id) %></span>
-		<!-- <%= link_to "Delete group", group_path(@group), method: :delete, data: { confirm: "Are you sure? This will delete all associated books and comments. This action cannot be undone."} %> -->
-		<!-- <%= link_to "All my groups", groups_path  %> -->
 
 		<span class="group__links--link"><%= link_to "Show group books", books_path(group_id: @group.id) %></span>
 		<!-- INVITE A USER TO JOIN GROUP FORM -->
-		<!-- <p>Enter the email of the User you would live to invite to this group</p> -->
+		<p>Enter the email of the User you would live to invite to this group</p>
+		<!-- Render form here -->
+		<%= render 'userInviteForm' %> 
 	</div>
 </section>
 

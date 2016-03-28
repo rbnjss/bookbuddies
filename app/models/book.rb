@@ -5,6 +5,6 @@ class Book < ActiveRecord::Base
 	belongs_to :group
 	has_many :comments, :dependent => :destroy
 
-	has_attached_file :cover, styles: { medium: "300x300>", thumb: "100x100>" }
+	has_attached_file :cover, :default_url => 'book.jpg', styles: { medium: "300x300>", thumb: "150x150>" }
 	validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
 end

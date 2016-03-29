@@ -19,6 +19,7 @@ class InvitesController < ApplicationController
          @invite.recipient.user_groups.push(@invite.user_group)
       else
          InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
+         # Fix redirect
       end
     else
        # oh no, creating an new invitation failed

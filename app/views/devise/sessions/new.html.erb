@@ -1,15 +1,18 @@
 <div class="row">
-  <h2>Log in</h2>
+  <h2>Welcome to Bookbuddies!</h2>
+  <p>Login to create book clubs, invite your buddies, and get the conversation started.</p>
 </div>
-<div class="row">
+<div class="form__container row">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
+      <i class="fa fa-envelope"></i>
       <%= f.email_field :email, autofocus: true %>
     </div>
 
     <div class="field">
       <%= f.label :password %><br />
+      <i class="fa fa-unlock-alt"></i>
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
@@ -21,7 +24,7 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in", class: "button" %>
     </div>
   <% end %>
 </div>

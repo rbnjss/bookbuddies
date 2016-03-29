@@ -1,35 +1,41 @@
 <section class="group group__show">
 	<div class="group__banner" style="background: url(../assets/<%= @group.group_image.url %>); background-size: cover; background-position: center; height: 200px;"></div>
-	<div class="group__header row">
-		<h2><%= @group.group_name %></h2>
-		<p><%= @group.description %></p>
-	</div>
-
-	<div class="group__members row">
-		<div class="group__members--header">
-			<h3>Group members:</h3>
+	<div class="template--pad">
+		<div class="group__header row">
+			<h2><%= @group.group_name %></h2>
+			<p><%= @group.description %></p>
+			<p>Location: <%= @group.location %></p>
 		</div>
-		<div class="group__members--member">
-			<% @members.each do |member| %>
-				<%= image_tag member.user.profile.avatar.url(:thumb) %><br>
-				<%= member.user.profile.first_name %>
-			<% end %>
-		</div>
-	</div>
-	
-	<div class="group__location row">
-		Location: <%= @group.location %>
-	</div>
-	
-	<div class="group__links row">
-		<span class="group__links--link"><%= link_to "Edit", edit_group_path(@group) %></span>
-		<span class="group__links--link"><%= link_to "Add a book", new_book_path(group_id: @group.id) %></span>
 
-		<span class="group__links--link"><%= link_to "Show group books", books_path(group_id: @group.id) %></span>
-		<!-- INVITE A USER TO JOIN GROUP FORM -->
-		<p>Enter the email of the User you would live to invite to this group</p>
-		<!-- Render form here -->
-		<%= render 'userInviteForm' %> 
+		<div class="group__members row">
+			<div class="group__members--header">
+				<h4>Group members:</h4>
+			</div>
+			<div class="group__members pad">
+				<% @members.each do |member| %>
+					<div class="group__members--member">
+						<%= image_tag member.user.profile.avatar.url(:thumb), class: "avatar--small" %><br>
+						<%= member.user.profile.first_name %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		
+		<div class="group__location row">
+			
+		</div>
+		
+		<div class="group__links row">
+			<span class="group__links--link"><%= link_to "Add a book", new_book_path(group_id: @group.id) %></span>
+			<span class="group__links--link"><%= link_to "Show group books", books_path(group_id: @group.id) %></span>
+			<span class="group__links--link"><%= link_to "Edit", edit_group_path(@group) %></span>
+		</div>
+		<div class="group__invite row">
+			<!-- INVITE A USER TO JOIN GROUP FORM -->
+			<p>Enter the email of the buddy you would live to invite to this group</p>
+			<!-- Render form here -->
+			<%= render 'userInviteForm' %> 
+		</div>
 	</div>
 </section>
 

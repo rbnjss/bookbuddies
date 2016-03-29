@@ -8,10 +8,6 @@
 		background-color: $primary;
 	}
 
-	.group__banner {
-		margin-bottom: 40px;
-	}
-
 	.group__list--group,
 	.group__list--image {
 		height: 275px;
@@ -23,10 +19,19 @@
 
 	.group__list--group {
 		background: $white;
-		margin: 20px auto;
+		margin-top: 20px;
 	}
 
 	.group__list--info {
 		padding: 40px;
+	}
+
+	.group__links {
+		@include linkBar;
+	}
+
+	.group__members--member {
+		text-align: center;
+		display: inline-block;
 	}
 }

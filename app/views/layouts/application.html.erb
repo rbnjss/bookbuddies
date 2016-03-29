@@ -16,11 +16,9 @@
 			<div class="header__nav column small-8 text--right">
 				<nav>	
 					<% if user_signed_in? %>
+						<%= link_to "My Groups", groups_path %> //
+						<%= link_to "View Profile", '/profile' %> //
 						<%= link_to "Sign out", "/users/sign_out", method: 'delete' %>
-						<%= link_to "My Groups", groups_path %>
-						<%= link_to "View Profile", '/profile' %>
-					<% else %>
-						<%= link_to "Sign in", "/users/sign_in" %>
 					<% end %>
 				</nav>
 			</div>
@@ -35,8 +33,12 @@
 	</main>
 	
 	<footer>
-		
+		<div class="footer row footer--row">
+			<div class="column small-6">
+				<h4>Book Buddies</h4>
+				<p>By Robin and Jess</p>
+			</div>
+		</div>
 	</footer>
-
 </body>
 </html>

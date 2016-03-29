@@ -1,10 +1,16 @@
 <section class="profile profile__show">
-	<h2><%= @profile.first_name %> <%= @profile.last_name %></h2>
-	<p><%= @profile.city %></p>
-	<p><%= @profile.bio %></p>
-	<%= image_tag @profile.avatar.url(:medium) %>
-	<p><%= link_to "Edit Profile", edit_profile_path %></p>
-	<div class="profile__links">
+	<div class="profile__header row">
+		<h2><%= @profile.first_name %> <%= @profile.last_name %></h2>
+	</div>
+	<div class="row">
+		<p><%= @profile.city %></p>
+		<p><%= @profile.bio %></p>
+		<%= image_tag @profile.avatar.url(:medium) %>
+	</div>
+	<div class="row">
+		<p><%= link_to "Edit Profile", edit_profile_path %></p>
+	</div>
+	<div class="profile__links row">
 		<span class="profile__links--link"><%= link_to "Add a Group", new_group_path %></span>
 	</div>
 </section>

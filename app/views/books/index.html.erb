@@ -1,19 +1,24 @@
-<section class="book book__index">
+<section class="book book__index template--pad">
 	<div class="book__header row">
-		<h2>My Group's Books</h2>
+		<h2><%= @group.group_name %>'s Books</h2>
 	</div>
-	<div class="books__list row">
+	<div class="book__list row template--pad">
 		<% @books.each do |book| %>
-			<div class="books_list--book column small-12 medium-4">
-				<h3><%= link_to book.book_name, book_url(book) %></h3>
-				<%= image_tag book.cover.url(:thumb) %>
-				<p>Author: <%= book.author %></p>
-				<p>Description: <%= book.description %></p>
+			<div class="book_list--book column small-12 medium-4">
+				<div class="book__info row">
+					<%= image_tag book.cover.url(:thumb) %>
+					<h3><%= link_to book.book_name, book_url(book) %></h3>
+					<p><span class="book__author">Author:</span> <%= book.author %></p>
+					<p><span class="book__description">Description:</span> <%= book.description %></p>
+				</div>
+				<div class="book__link row">
+					<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent" %>
+				</div>
 			</div>
 		<% end %>
 	</div>
-	<div class="books__links row">
-		<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'a--reset button' %>
+	<div class="row">
+		<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'button' %>
 	</div>
 </section>
 

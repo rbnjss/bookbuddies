@@ -1,4 +1,4 @@
-<section class="book book__show">
+<section class="book book__show template--pad">
 	<!-- SHOW BOOK -->
 	<div class="book__container row">
 		<%= image_tag @book.cover.url(:medium) %>
@@ -6,18 +6,11 @@
 		<p>Description: <%= @book.description %></p>
 		<p>Author: <%= @book.author %></p>
 		<p><%= @book.group_id %></p>
-		
-		<div>
-			Group members:
-			<% @members.each do |member| %>
-				<%= image_tag member.user.profile.avatar.url(:thumb) %>
-				<%= member.user.profile.first_name %>
-				<br />
-			<% end %>
+		<div class="book__links row">
+			<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
+			<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
 		</div>
-		<br />
-		<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
-		<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
+		
 	</div>
 	<div class="book__comments row">
 		<!-- CREATE COMMENTS -->

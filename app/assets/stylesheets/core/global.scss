@@ -10,21 +10,20 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $displayFont;
 	margin: 0;
 }
 
 a {
 	color: $accent;
+	text-decoration: none;
 }
 
 p.notice {
 	color: $red;
 }
 
-.wrapper {
-	max-width: $row-width;
-	margin: 0 auto;
+.template--pad {
+	padding: 40px 0;
 }
 
 // Forms

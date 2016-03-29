@@ -1,30 +1,35 @@
-<div class="row">
-  <h2>Log in</h2>
-</div>
-<div class="row">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
+<section class="login template--pad">
+  <div class="row">
+    <h2>Welcome to Bookbuddies!</h2>
+    <p>Login to create book clubs, invite your buddies, and get the conversation started.</p>
+  </div>
+  <div class="form__container row">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :email %><br />
+        <i class="fa fa-envelope"></i>
+        <%= f.email_field :email, autofocus: true %>
       </div>
-    <% end -%>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
-  <% end %>
-</div>
-<div class="row">
-  <%= render "devise/shared/links" %>
-</div>
+      <div class="field">
+        <%= f.label :password %><br />
+        <i class="fa fa-unlock-alt"></i>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Log in", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= render "devise/shared/links" %>
+  </div>
+</section>

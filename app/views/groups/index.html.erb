@@ -1,27 +1,34 @@
-<section class="group group__index">
-	<div class="group__header row">
-		<h2>My Groups</h2>
-	</div>
-	<div class="group__list">
-		<% @grs.each do |gr| %>
-			<div class="group__list--group row collapse">
-				<div class="column small-8">
-					<div class="group__list--info">
-						<h3><%= link_to gr.group.group_name, group_path(gr), class: 'a--reset' %></h3>
-						<p><%= gr.group.description %></p>
-						<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
-						<div class="group__list--links">
-							<%= link_to "Edit Group", edit_group_path(gr) %>
+<div class="row template--pad">
+	<section class="column small-4 profile">
+		<%= render 'layouts/profile' %> 
+	</section>
+	<section class="column small-8 group group__index">
+		<div class="group__header row">
+			<h2>My Groups</h2>
+		</div>
+		<div class="group__list">
+			<% @grs.each do |gr| %>
+				<div class="group__list--group row collapse">
+					<div class="column small-8">
+						<div class="group__list--info">
+							<h3><%= link_to gr.group.group_name, group_path(gr) %></h3>
+							<p><%= gr.group.description %></p>
+							<p><%= gr.group.location %></p>
+							<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
 						</div>
 					</div>
+					<div class="column small-4">
+						<div class="group__list--image" style="background: url(<%= gr.group.group_image.url %>); background-size: cover; background-position: center;"></div>
+					</div>
 				</div>
-				<div class="column small-4">
-					<div class="group__list--image" style="background: url(assets/<%= gr.group.group_image.url %>); background-size: cover; background-position: center;"></div>
+				<div class="group__links row">
+					<%= link_to "View Group", group_path(gr) %>
+					<%= link_to "Edit Group", edit_group_path(gr) %>
 				</div>
-			</div>
-		<% end %>
-	</div>
-	<div class="group__links row pad">
-		<%= link_to "Create a new group", new_group_path, class: 'groups__links--link a--reset button' %>
-	</div>
-</section>
+			<% end %>
+		</div>
+		<div class="row pad">
+			<%= link_to "Create a new group", new_group_path, class: 'groups__links--link button' %>
+		</div>
+	</section>
+</div>

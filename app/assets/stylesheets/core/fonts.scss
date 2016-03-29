@@ -4,9 +4,52 @@
 $open:		'Open Sans', sans-serif;
 $oswald:	'Oswald', sans-serif;
 
+$bodyFontSize: 16;
 $copyFont:		$open;
 $displayFont:	$oswald;
 
+@mixin font-size($size) {
+	font-size: #{$size}px;
+	font-size: #{$size / $bodyFontSize}rem;
+}
+
+html,
+body {
+	font-size: #{$bodyFontSize}px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $displayFont;
+}
+
 h1 {
-	font-size: 1em;
+	@include font-size(48);
+}
+
+h2 {
+	@include font-size(36);
+}
+
+h3 {
+	@include font-size(24);
+}
+
+h4 {
+	@include font-size(18);
+	text-transform: uppercase;
+}
+
+@mixin p {
+	@include font-size(16);
+	font-weight: 400;
+	letter-spacing: .028em;
+}
+
+p {
+	@include p;
 }

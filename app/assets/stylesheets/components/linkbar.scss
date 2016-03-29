@@ -1,0 +1,13 @@
+@mixin linkBar {
+	background-color: $accentLight;
+	padding: 10px 40px;
+	margin-bottom: 20px;
+	text-align: right;
+
+	a {
+		color: $white;
+		font-family: $oswald;
+		text-transform: uppercase;
+		margin-right: 10px;
+	}
+}

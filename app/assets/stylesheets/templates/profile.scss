@@ -3,5 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .profile {
-	
+	.profile__info {
+		background-color: $white;
+		padding: 40px;
+	}
+
+	.profile__links {
+		@include linkBar;
+	}
 }

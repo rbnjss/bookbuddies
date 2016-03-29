@@ -20,22 +20,37 @@
 				<% end %>
 			</div>
 		</div>
-		
-		<div class="group__location row">
-			
-		</div>
-		
-		<div class="group__links row">
-			<span class="group__links--link"><%= link_to "Add a book", new_book_path(group_id: @group.id) %></span>
-			<span class="group__links--link"><%= link_to "Show group books", books_path(group_id: @group.id) %></span>
-			<span class="group__links--link"><%= link_to "Edit", edit_group_path(@group) %></span>
-		</div>
 		<div class="group__invite row">
+			<div class="group__invite--header">
+				<h4>Invite more members:</h4>
+			</div>
 			<!-- INVITE A USER TO JOIN GROUP FORM -->
-			<p>Enter the email of the buddy you would like to invite to this group</p>
-			<!-- Render form here -->
 			<%= render 'userInviteForm' %> 
 		</div>
+	</div>
+</section>
+
+<section class="book book__index template--pad">
+	<div class="book__header row pad">
+		<h2><%= @group.group_name %>'s Books</h2>
+	</div>
+	<div class="book__list row">
+		<% @group.books.each do |book| %>
+			<div class="book_list--book column small-12 medium-4">
+				<div class="book__info row">
+					<%= image_tag book.cover.url(:thumb) %>
+					<h3><%= link_to book.book_name, book_url(book) %></h3>
+					<p><span class="book__author">Author:</span> <%= book.author %></p>
+					<p><span class="book__description">Description:</span> <%= book.description %></p>
+				</div>
+				<div class="book__link row">
+					<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div class="row text--center">
+		<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'button' %>
 	</div>
 </section>
 

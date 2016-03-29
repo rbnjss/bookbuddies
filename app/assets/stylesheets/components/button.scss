@@ -87,6 +87,15 @@
 			background: darken($red, 5);
 		}
 	}
+	
+	// For use when floating next to form inputs
+	&.button--float {
+		float: left;
+		width: auto;
+		margin: 0;
+		width: 20%;
+		height: 50px;
+	}
 
 	&.button--full-mobile {
 		@media #{$mobile-only} {

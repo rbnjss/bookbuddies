@@ -29,6 +29,8 @@ p.notice {
 // Forms
 
 input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea {
 	border: none;
 	background: $gray;

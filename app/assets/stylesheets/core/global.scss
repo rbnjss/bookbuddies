@@ -1,6 +1,7 @@
 body {
 	font-family: $copyFont;
 	color: $text;
+	background: $bg;
 }
 
 h1,
@@ -10,6 +11,7 @@ h4,
 h5,
 h6 {
 	font-family: $displayFont;
+	margin: 0;
 }
 
 a {
@@ -23,11 +25,6 @@ p.notice {
 .wrapper {
 	max-width: $row-width;
 	margin: 0 auto;
-}
-
-.button {
-	background: $primary;
-	padding: 5px 10px;
 }
 
 // Forms

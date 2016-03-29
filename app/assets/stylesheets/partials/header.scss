@@ -1,0 +1,12 @@
+header {
+	background-color: $white;
+	border-bottom: 1px solid $gray;
+
+	.header--row {
+		max-width: 1200px;
+	}
+
+	.header__nav {
+		padding-top: 2.5em;
+	}
+}

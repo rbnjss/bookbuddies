@@ -13,6 +13,8 @@ gem 'omniauth-twitter'
 gem 'dotenv-rails'
 # Better-errors
 gem 'better_errors'
+# Mailgun
+gem 'mailgun-ruby'
 # AWS SDK
 gem 'aws-sdk-v1'
 # Use SCSS for stylesheets

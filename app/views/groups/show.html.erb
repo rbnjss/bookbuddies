@@ -1,23 +1,26 @@
-<section class="group__show">
-	<div class="group__info">
+<section class="group group__show">
+	<div class="group__header row">
 		<h2><%= @group.group_name %></h2>
 		<p><%= @group.description %></p>
 	</div>
 
-	<div class="group__members">
-		<h3>Group members:</h3>
-		<% @members.each do |member| %>
-			<%= image_tag member.user.profile.avatar.url(:thumb) %><br>
-			<%= member.user.profile.first_name %>
-			<br />
-		<% end %>
+	<div class="group__members row">
+		<div class="group__members--header">
+			<h3>Group members:</h3>
+		</div>
+		<div class="group__members--member">
+			<% @members.each do |member| %>
+				<%= image_tag member.user.profile.avatar.url(:thumb) %><br>
+				<%= member.user.profile.first_name %>
+			<% end %>
+		</div>
 	</div>
 	
-	<div class="group__location">
+	<div class="group__location row">
 		Location: <%= @group.location %>
 	</div>
 	
-	<div class="group__links">
+	<div class="group__links row">
 		<span class="group__links--link"><%= link_to "Edit", edit_group_path(@group) %></span>
 		<span class="group__links--link"><%= link_to "Add a book", new_book_path(group_id: @group.id) %></span>
 

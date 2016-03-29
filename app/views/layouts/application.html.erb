@@ -9,18 +9,22 @@
 
 <body>
 	<header>
-		<div class="header__wrapper">
-			<h1><%= link_to image_tag("bookbuddies_logo.png"), root_path %></h1>
-			<nav>	
-				<% if user_signed_in? %>
-					<%= link_to "Sign out", "/users/sign_out", method: 'delete' %>
-					<%= link_to "My Groups", groups_path %>
-					<%= link_to "View Profile", '/profile' %>
-					<p>Welcome <%= current_user.profile.first_name %></p>
-				<% else %>
-					<%= link_to "Sign in", "/users/sign_in" %>
-				<% end %>
-			</nav>
+		<div class="header row header--row">
+			<div class="header__logo column small-4">
+				<h1><%= link_to image_tag("bookbuddies_logo.png"), root_path %></h1>
+			</div>
+			<div class="header__nav column small-8 text--right">
+				<nav>	
+					<% if user_signed_in? %>
+						<%= link_to "Sign out", "/users/sign_out", method: 'delete' %>
+						<%= link_to "My Groups", groups_path %>
+						<%= link_to "View Profile", '/profile' %>
+					<% else %>
+						<%= link_to "Sign in", "/users/sign_in" %>
+					<% end %>
+				</nav>
+			</div>
+			
 		</div>
 	</header>
 

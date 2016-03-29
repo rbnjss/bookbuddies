@@ -1,7 +1,11 @@
-<div class="group__edit">
-	<h2>Edit Group</h2>
-	<div class="form__container">
+<div class="group group__edit">
+	<div class="group__header row">
+		<h2>Edit Group</h2>
+	</div>
+	<div class="form__container row">
 		<%= render 'groupsForm' %>
+	</div>
+	<div class="group__links row">
 		<%= link_to "Cancel", group_path  %>
 	</div>
 </div>

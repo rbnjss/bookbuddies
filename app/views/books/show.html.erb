@@ -1,6 +1,6 @@
-<section class="book__show">
+<section class="book book__show">
 	<!-- SHOW BOOK -->
-	<div class="book__container">
+	<div class="book__container row">
 		<%= image_tag @book.cover.url(:medium) %>
 		<h3><%= @book.book_name %></h3>
 		<p>Description: <%= @book.description %></p>
@@ -19,15 +19,15 @@
 		<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
 		<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
 	</div>
-	<div class="book__comments">
+	<div class="book__comments row">
 		<!-- CREATE COMMENTS -->
 		<div class="book__comments--create">
 			<%= form_for(@comment.new) do |f| %>
 				<p>Add a comment</p>
-				<%= f.text_field :content %>
+				<%= f.text_field :content, class: 'field--comment' %>
 				<%= f.hidden_field :user_id, :value => current_user.id %>
 				<%= f.hidden_field :book_id, :value => @book.id %>
-				<%= f.submit "Add comment" %>
+				<%= f.submit "Add comment", class: 'button button--medium' %>
 			<% end %>
 		</div>
 		<!-- LIST COMMENTS -->

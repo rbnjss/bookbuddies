@@ -1,6 +1,8 @@
-<section class="group__index">
-	<h2>My Groups</h2>
-	<div class="group__list">
+<section class="group group__index">
+	<div class="group__header row">
+		<h2>My Groups</h2>
+	</div>
+	<div class="group__list row">
 		<% @grs.each do |gr| %>
 			<div class="group__list--group">
 				<h3><%= link_to gr.group.group_name, group_path(gr) %></h3>
@@ -14,7 +16,7 @@
 			</div>
 		<% end %>
 	</div>
-	<div class="group__links">
+	<div class="group__links row pad">
 		<span class="groups__links--link"><%= link_to "Create a new group", new_group_path %></span>
 	</div>
 </section>

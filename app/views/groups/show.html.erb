@@ -1,6 +1,6 @@
 <section class="group group__show">
+	<div class="group__banner" style="background: url(../assets/<%= @group.group_image.url %>); background-size: cover; background-position: center; height: 200px;"></div>
 	<div class="group__header row">
-		<%= image_tag @group.group_image.url(:thumb) %>
 		<h2><%= @group.group_name %></h2>
 		<p><%= @group.description %></p>
 	</div>

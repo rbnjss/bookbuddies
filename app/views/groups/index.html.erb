@@ -2,21 +2,26 @@
 	<div class="group__header row">
 		<h2>My Groups</h2>
 	</div>
-	<div class="group__list row">
+	<div class="group__list">
 		<% @grs.each do |gr| %>
-			<div class="group__list--group">
-				<h3><%= link_to gr.group.group_name, group_path(gr) %></h3>
-				<%= image_tag gr.group.group_image.url(:thumb) %>
-				<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
-				<small>Profile ID: <%= gr.user_id %></small>
-				<br />
-				<small>Group ID: <%= gr.group_id %></small>
-				<br />
-				<%= link_to "Edit Group", edit_group_path(gr) %>
+			<div class="group__list--group row collapse">
+				<div class="column small-8">
+					<div class="group__list--info">
+						<h3><%= link_to gr.group.group_name, group_path(gr), class: 'a--reset' %></h3>
+						<p><%= gr.group.description %></p>
+						<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
+						<div class="group__list--links">
+							<%= link_to "Edit Group", edit_group_path(gr) %>
+						</div>
+					</div>
+				</div>
+				<div class="column small-4">
+					<div class="group__list--image" style="background: url(assets/<%= gr.group.group_image.url %>); background-size: cover; background-position: center;"></div>
+				</div>
 			</div>
 		<% end %>
 	</div>
 	<div class="group__links row pad">
-		<span class="groups__links--link"><%= link_to "Create a new group", new_group_path %></span>
+		<%= link_to "Create a new group", new_group_path, class: 'groups__links--link a--reset button' %>
 	</div>
 </section>

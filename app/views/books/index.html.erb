@@ -1,5 +1,7 @@
-<section class="book__index">
-	<h2>My Group's Books</h2>
+<section class="book book__index">
+	<div class="book__header row">
+		<h2>My Group's Books</h2>
+	</div>
 	<div class="books__list row">
 		<% @books.each do |book| %>
 			<div class="books_list--book column small-12 medium-4">
@@ -10,8 +12,8 @@
 			</div>
 		<% end %>
 	</div>
-	<div class="books__links">
-		<span class="books__links--link"><%= link_to "Add a New Book", new_book_path(group_id: @group.id) %></span>
+	<div class="books__links row">
+		<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'a--reset button' %>
 	</div>
 </section>
 

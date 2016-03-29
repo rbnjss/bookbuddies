@@ -1,18 +1,24 @@
 // Global Styles
-@import "setup.scss";
-@import "colors.scss";
-@import "fonts.scss";
-@import "media.scss";
-@import "foundation.scss";
-@import "grid.scss";
-@import "global.scss";
+@import "core/setup.scss";
+@import "core/colors.scss";
+@import "core/fonts.scss";
+@import "core/media.scss";
+@import "core/foundation.scss";
+@import "core/grid.scss";
+@import "core/global.scss";
+@import "core/utility.scss";
+
+// Components
+@import "components/button.scss";
 
 // Partials
-@import "header.scss";
-@import "footer.scss";
+@import "partials/header.scss";
+@import "partials/footer.scss";
+@import "partials/comments.scss";
+@import "partials/invites.scss";
 
-// Page Specific
-@import "profile.scss";
-@import "group.scss";
-@import "book.scss";
-@import "comments.scss";
+// Templates
+@import "templates/profile.scss";
+@import "templates/group.scss";
+@import "templates/book.scss";
+

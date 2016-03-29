@@ -1,6 +1,11 @@
-<section class="book__new">
-	<h2>Add a book to your group</h2>
-	<div class="form__container">
+<section class="book book__new">
+	<div class="book__header row">
+		<h2>Add a book to your group</h2>
+	</div>
+	<div class="form__container row">
 		<%= render 'booksForm' %>
+	</div>
+	<div class="book__links row">
+		<%= link_to "Cancel", groups_path  %>
 	</div>
 </section>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327205114) do
+ActiveRecord::Schema.define(version: 20160329010842) do
 
   create_table "books", force: :cascade do |t|
     t.string   "book_name"
@@ -51,8 +51,12 @@ ActiveRecord::Schema.define(version: 20160327205114) do
     t.string   "group_name"
     t.text     "description"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "group_image_file_name"
+    t.string   "group_image_content_type"
+    t.integer  "group_image_file_size"
+    t.datetime "group_image_updated_at"
   end
 
   create_table "invites", force: :cascade do |t|

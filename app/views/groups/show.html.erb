@@ -1,5 +1,6 @@
 <section class="group group__show">
 	<div class="group__header row">
+		<%= image_tag @group.group_image.url(:thumb) %>
 		<h2><%= @group.group_name %></h2>
 		<p><%= @group.description %></p>
 	</div>

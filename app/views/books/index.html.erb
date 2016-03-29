@@ -1,8 +1,8 @@
 <section class="book__index">
 	<h2>My Group's Books</h2>
-	<div class="books__list">
+	<div class="books__list row">
 		<% @books.each do |book| %>
-			<div class="books_list--book">
+			<div class="books_list--book column small-12 medium-4">
 				<h3><%= link_to book.book_name, book_url(book) %></h3>
 				<%= image_tag book.cover.url(:thumb) %>
 				<p>Author: <%= book.author %></p>

@@ -1,6 +1,5 @@
 @mixin linkBar {
 	background-color: $accentLight;
-	padding: 10px 40px;
 	margin-bottom: 20px;
 	text-align: right;
 
@@ -8,6 +7,13 @@
 		color: $white;
 		font-family: $oswald;
 		text-transform: uppercase;
-		margin-right: 10px;
+		padding: 10px 15px;
+		display: inline-block;
+		background-color: transparent;
+		transition: all 0.2s ease;
+		&:hover,
+		&:focus {
+			background-color: $accent;
+		}
 	}
 }

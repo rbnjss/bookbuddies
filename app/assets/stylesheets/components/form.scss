@@ -1,6 +1,9 @@
 .form__container {
 	padding: 40px 0;
-	.field {
-
+	
+	.field--float {
+		float: left;
+		width: 80%;
+		height: 50px;
 	}
 }

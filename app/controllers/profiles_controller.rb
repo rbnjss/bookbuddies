@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
 	    @profile.user_id = current_user.id
 
 	    if @profile.save
-	      redirect_to profile_path
+	      redirect_to root_path
 	    else
 	      render :new
 	    end

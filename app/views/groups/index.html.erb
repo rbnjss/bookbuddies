@@ -6,7 +6,7 @@
 		<% @grs.each do |gr| %>
 			<div class="group__list--group">
 				<h3><%= link_to gr.group.group_name, group_path(gr) %></h3>
-
+				<%= image_tag gr.group.group_image.url(:thumb) %>
 				<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
 				<small>Profile ID: <%= gr.user_id %></small>
 				<br />

@@ -8,7 +8,7 @@ class InviteMailer < ApplicationMailer
 					subject: "Book buddies group invitation"
 	end
 
-	def existing_user_invite
+	def existing_user_invite(invite)
 		mail  to: :email,
 					subject: "Book buddies group invitation"
 	end

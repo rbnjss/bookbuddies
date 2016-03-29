@@ -9,7 +9,7 @@
 
 <body>
 	<header>
-		<div class="wrapper">
+		<div class="header__wrapper">
 			<h1><%= link_to image_tag("bookbuddies_logo.png"), root_path %></h1>
 			<nav>	
 				<% if user_signed_in? %>
@@ -33,7 +33,7 @@
 	
 	
 	<main>
-		<div class="wrapper">
+		<div class="main__wrapper">
 			<%= yield %>
 		</div>
 	</main>

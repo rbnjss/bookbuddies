@@ -1,7 +1,13 @@
 // Global Styles
 @import "setup.scss";
-@import "variables.scss";
+@import "colors.scss";
+@import "fonts.scss";
+@import "media.scss";
+@import "foundation.scss";
+@import "grid.scss";
 @import "global.scss";
+
+// Partials
 @import "header.scss";
 @import "footer.scss";
 

@@ -21,7 +21,7 @@ p.notice {
 }
 
 .wrapper {
-	max-width: $row;
+	max-width: $row-width;
 	margin: 0 auto;
 }
 
@@ -49,5 +49,6 @@ label {
 }
 
 .field {
-	margin: $gutter 0;
+	// margin: $gutter 0;
 }
+

@@ -25,7 +25,7 @@
 				<h4>Invite more members:</h4>
 			</div>
 			<!-- INVITE A USER TO JOIN GROUP FORM -->
-			<%= render 'userInviteForm' %> 
+			<%= render partial: 'userInviteForm', locals: {group_id: @group.id }%> 
 		</div>
 	</div>
 </section>

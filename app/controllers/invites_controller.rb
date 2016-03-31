@@ -8,7 +8,6 @@ class InvitesController < ApplicationController
     @invite = Invite.new(invite_params)
     @invite.sender_id = current_user.id
     if @invite.save
-
       #if the user already exists
       if @invite.recipient != nil 
 

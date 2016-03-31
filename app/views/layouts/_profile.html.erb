@@ -3,4 +3,5 @@
 	<%= image_tag current_user.profile.avatar.url(:medium) %>
 	<p><%= current_user.profile.city %></p>
 	<p><%= current_user.profile.bio %></p>
+	<i class="fa fa-cog"></i> <%= link_to "Edit Profile", edit_profile_path %>
 </div>

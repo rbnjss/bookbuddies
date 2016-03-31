@@ -12,16 +12,17 @@ class InvitesController < ApplicationController
       if @invite.recipient != nil 
 
          #send a notification email
-         InviteMailer.existing_user_invite(@invite).deliver 
+         InviteMailer.existing_user_invite(@invite).deliver_later
 
          #Add the user to the user group
          @invite.recipient.groups.push(@invite.group)
       else
-         InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
+         InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver_later
+          redirect_to :back
          # Fix redirect
       end
     else
-       # oh no, creating an new invitation failed
+       render text: "Uh oh! An error!"
     end
   end
 

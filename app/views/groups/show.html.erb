@@ -28,8 +28,7 @@
 		</div>
 		<div class="group__invite row">
 			<!-- INVITE A USER TO JOIN GROUP FORM -->
-			<!-- Render form here -->
-			<%= render 'userInviteForm' %> 
+			<%= render partial: 'userInviteForm', locals: {group_id: @group.id }%> 
 		</div>
 	</div>
 </section>

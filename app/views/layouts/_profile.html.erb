@@ -1,7 +1,8 @@
-<div class="profile__modal">
-	<h3><%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h3>
-	<%= image_tag current_user.profile.avatar.url(:medium) %>
-	<p><%= current_user.profile.city %></p>
-	<p><%= current_user.profile.bio %></p>
-	<i class="fa fa-cog"></i> <%= link_to "Edit Profile", edit_profile_path %>
-</div>
+<% if current_user.present? %>
+	<div class="profile__modal">
+		<h3><%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h3>
+		<%= image_tag current_user.profile.avatar.url(:medium) %>
+		<p><%= current_user.profile.city %></p>
+		<p><%= current_user.profile.bio %></p>
+	</div>
+<% end %>

@@ -7,7 +7,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
   def new
-     @token = params[:invite_token] #<-- pulls the value from the url query string
+    super
+     @token = params[:invite_token]
   end
 
   # POST /resource
@@ -15,15 +16,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   redirect_to new_profile_path(:user_id => @user)
   # end
   def create
-    @newUser = build_user(user_params)
-    @newUser.save
-    @token = params[:invite_token]
-    if @token != nil
-       org =  Invite.find_by_token(@token).user_group #find the user group attached to the invite
-       @newUser.user_groups.push(org) #add this user to the new user group as a member
-    else
-      # do normal registration things #
+    super do |resource|
+    # @newUser = User.create(user_params)
+    if resource.save
+      @token = params[:invite_token]
+      if @token != nil
+         org =  Invite.find_by_token(@token).user_group #find the user group attached to the invite
+         resource.user_groups.push(org) #add this user to the new user group as a member
+      else
+        # do normal registration things #
+      end
     end
+  end
   end
   
   # GET /resource/edit
@@ -78,6 +82,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
 
+  def user_params
+    params.require(:user).permit(:email, :encrypted_password, :reset_password_token, :provider, :uid)
+  end
     # def sign_up_params
     #   params.require(:user).permit(:email, :password, :password_confirmation)
     # end

@@ -8,7 +8,6 @@ class InvitesController < ApplicationController
     @invite = Invite.new(invite_params)
     @invite.sender_id = current_user.id
     if @invite.save
-
       #if the user already exists
       if @invite.recipient != nil 
 
@@ -16,7 +15,7 @@ class InvitesController < ApplicationController
          InviteMailer.existing_user_invite(@invite).deliver 
 
          #Add the user to the user group
-         @invite.recipient.user_groups.push(@invite.user_group)
+         @invite.recipient.groups.push(@invite.group)
       else
          InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
          # Fix redirect

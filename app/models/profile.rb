@@ -1,4 +1,7 @@
 class Profile < ActiveRecord::Base
+	validates :first_name, presence: true
+	validates :last_name, presence: true
+
 	belongs_to :user
 
 	has_attached_file :avatar, :default_url => 'user.jpg', styles: { medium: "300x300>", thumb: "150x150>" }

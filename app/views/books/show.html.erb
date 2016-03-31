@@ -13,9 +13,11 @@
 	</div>
 	<div class="book__comments">
 		<!-- CREATE COMMENTS -->
+		<div class="comments__header row">
+			<h4>Comments</h4>
+		</div>
 		<div class="book__comments--create form__container row">
 			<%= form_for(@comment.new) do |f| %>
-				<p>Add a comment</p>
 				<%= f.text_field :content, class: 'field--float' %>
 				<%= f.hidden_field :user_id, :value => current_user.id %>
 				<%= f.hidden_field :book_id, :value => @book.id %>

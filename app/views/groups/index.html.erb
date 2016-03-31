@@ -5,6 +5,7 @@
 	<section class="column small-8 group group__index">
 		<div class="group__header row">
 			<h2>My Groups</h2>
+			<%= link_to "Create a new group", new_group_path, class: 'groups__links--link button' %>
 		</div>
 		<div class="group__list">
 			<% @grs.each do |gr| %>
@@ -26,9 +27,6 @@
 					<%= link_to "Edit Group", edit_group_path(gr) %>
 				</div>
 			<% end %>
-		</div>
-		<div class="row pad">
-			<%= link_to "Create a new group", new_group_path, class: 'groups__links--link button' %>
 		</div>
 	</section>
 </div>

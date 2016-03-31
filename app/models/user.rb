@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, 
          :omniauthable, :omniauth_providers => [:twitter]
 
-  has_one :profile
+  has_one :profile, :dependent => :destroy
   has_many :comments
   has_many :group_registrations
   has_many :groups, through: :group_registrations

@@ -40,7 +40,11 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Group was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+    # redirect_to root_path
   end
 
   private

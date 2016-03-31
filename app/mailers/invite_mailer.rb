@@ -5,14 +5,14 @@ class InviteMailer < ApplicationMailer
 
 	def new_user_invite(invite, inviteURL)
 		@invite = invite
-		@rootURL = "http://localhost:3000/"
+		@rootURL = "http://localhost:3000"
 		mail  to: @invite.email,
 					subject: "Bookbuddies Group Invitation"
 	end
 
 	def existing_user_invite(invite)
 		@invite = invite
-		@rootURL = "http://localhost:3000/"
+		@rootURL = "http://localhost:3000"
 		mail  to: @invite.email,
 					subject: "Bookbuddies Group Invitation"
 	end

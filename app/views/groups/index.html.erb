@@ -5,6 +5,9 @@
 	<section class="column small-8 group group__index">
 		<div class="group__header row">
 			<h2>My Groups</h2>
+			<% unless @grs.present? %>
+				<p>Looks like you don't have any groups!</p>
+			<% end %>
 			<%= link_to "Create a new group", new_group_path, class: 'groups__links--link button' %>
 		</div>
 		<div class="group__list">

@@ -16,21 +16,22 @@ before_action :authenticate_user!
 	end
 
 	def new
-    @book = Book.new
+    	@book = Book.new
 	end
 
 	def create
-    @book = Book.create(book_params)
-    if @book.save
-      redirect_to book_path(@book)
-    else
-      render :new
-    end
-  end
+    	@book = Book.create(book_params)
+	    if @book.save
+		  @group = @book.group
+	      redirect_to group_path(@group)
+	    else
+	      render :new
+	    end
+  	end
 
-  def edit
+  	def edit
 
-  end
+ 	end
 
 	def update
     respond_to do |format|

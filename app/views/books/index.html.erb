@@ -1,6 +1,12 @@
 <section class="book book__index template--pad">
 	<div class="book__header row">
 		<h2><%= @group.group_name %>'s Books</h2>
+		<% unless @books.present? %>
+			<p>Looks like you don't have any books!</p>
+		<% end %>
+	</div>
+	<div class="row">
+		<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'button' %>
 	</div>
 	<div class="book__list row template--pad">
 		<% @books.each do |book| %>
@@ -16,9 +22,6 @@
 				</div>
 			</div>
 		<% end %>
-	</div>
-	<div class="row">
-		<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'button' %>
 	</div>
 </section>
 

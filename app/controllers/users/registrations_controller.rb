@@ -33,13 +33,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def create
   #   @newUser = User.create(user_params)
   #   @newUser.save
-
   #   @token = params[:invite_token]
   #   if @token != nil
-  #      org =  Invite.find_by_token(@token).user_group #find the user group attached to the invite
-  #      @newUser.user_groups.push(org) #add this user to the new user group as a member
+  #      org =  Invite.find_by_token(@token).group #find the user group attached to the invite
+  #      @newUser.groups.push(org) #add this user to the new user group as a member
   #   else
-  #     # do normal registration things #
+  #     render :new
   #   end
   # end
   

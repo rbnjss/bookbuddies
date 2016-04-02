@@ -11,13 +11,14 @@ class InvitesController < ApplicationController
       #if the user already exists
       if @invite.recipient != nil 
 
-         #send a notification email
-         InviteMailer.existing_user_invite(@invite).deliver_later
+        #send a notification email
+        InviteMailer.existing_user_invite(@invite).deliver
 
-         #Add the user to the user group
-         @invite.recipient.groups.push(@invite.group)
+        #Add the user to the user group
+        @invite.recipient.groups.push(@invite.group)
+        redirect_to :back
       else
-         InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver_later
+         InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
           redirect_to :back
          # Fix redirect
       end

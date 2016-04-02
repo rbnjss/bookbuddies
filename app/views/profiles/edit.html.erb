@@ -1,6 +1,9 @@
 <section class="profile profile__edit template--pad">
 	<div class="profile__header row">
 		<h2>Edit your Profile</h2>
+		<% if current_user.profile.id == nil %>
+			<p>Looks like you're new here!  Get started by setting up your profile..</p>
+		<% end %>
 	</div>
 	<div class="form__container row">
 		<%= render 'profileForm' %>

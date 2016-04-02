@@ -3,8 +3,11 @@
   :cover:
   - :medium
   - :thumb
+:Group:
+  :group_image:
+  - :medium
+  - :thumb
 :Profile:
   :avatar:
   - :medium
   - :thumb
-  - :thumb_square

@@ -1,9 +1,17 @@
 <% if current_user.present? %>
 	<div class="profile__modal">
-		<h3><%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h3>
-		<%= image_tag current_user.profile.avatar.url(:medium) %>
-		<p><%= current_user.profile.city %></p>
-		<p><%= current_user.profile.bio %></p>
-		<i class="fa fa-cog"></i><%= link_to "Edit Profile", edit_profile_path %>
+		<div class="profile__modal--inner-wrapper">
+			<div class="profile__modal--header">
+				<h3><%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h3>
+			</div>
+			<div class="profile__modal--img">
+				<%= image_tag current_user.profile.avatar.url(:medium) %>
+			</div>
+			<div class="profile__modal--content">
+				<p><%= current_user.profile.city %></p>
+				<p><%= current_user.profile.bio %></p>
+				<small><i class="fa fa-cog"></i><%= link_to "Edit Profile", edit_profile_path %></small>
+			</div>
+		</div>
 	</div>
 <% end %>

@@ -47,8 +47,9 @@ before_action :authenticate_user!
 
 	def destroy
 	  @book.destroy
+	  @group = @book.group
 	  respond_to do |format|
-	    format.html { redirect_to books_path(group_id: params[:group_id]), notice: 'Book was successfully destroyed.' }
+	    format.html { redirect_to group_path(@group), notice: 'Book was successfully destroyed.' }
 	    format.json { head :no_content }
 	  end
 	end

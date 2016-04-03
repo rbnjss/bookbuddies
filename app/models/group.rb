@@ -1,6 +1,6 @@
 class Group < ActiveRecord::Base
 	
-	has_many :group_registrations
+	has_many :group_registrations, :dependent => :destroy
 	has_many :users, through: :group_registrations
 	has_many :books, :dependent => :destroy
 	has_many :invites, :dependent => :destroy

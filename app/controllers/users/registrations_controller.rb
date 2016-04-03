@@ -6,33 +6,33 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
-  def new
-    super
-     @token = params[:invite_token]
-  end
+
+  # def new
+  #   super
+  #    @token = params[:invite_token]
+  # end
 
   # POST /resource
   # def create
   #   redirect_to new_profile_path(:user_id => @user)
   # end
   
-  def create
-    super do |resource|
-      if resource.save
-        @token = params[:invite_token]
-        if @token != nil
-           org =  Invite.find_by_token(@token).user_group #find the user group attached to the invite
-           resource.user_group.push(org) #add this user to the new user group as a member
-        else
-          # do normal registration things #
-        end
-      end
-    end
-  end
+  # def create
+  #   super do |resource|
+  #     if resource.save
+  #       @token = params[:invite_token]
+  #       if @token != nil
+  #          org =  Invite.find_by_token(@token).user_group #find the user group attached to the invite
+  #          resource.user_group.push(org) #add this user to the new user group as a member
+  #       else
+  #         # do normal registration things #
+  #       end
+  #     end
+  #   end
+  # end
   
   # def create
   #   @newUser = User.create(user_params)
-  #   @newUser.save
   #   @token = params[:invite_token]
   #   if @token != nil
   #      org =  Invite.find_by_token(@token).group #find the user group attached to the invite
@@ -95,7 +95,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.require(:user).permit(:email, :encrypted_password, :reset_password_token, :provider, :uid)
+    params.require(:user).permit(:email, :encrypted_password, :reset_password_token, :provider, :uid, :invite_token)
   end
     # def sign_up_params
     #   params.require(:user).permit(:email, :password, :password_confirmation)

@@ -1,6 +1,4 @@
-<h2>This is an example of an invite email</h2>
-<p>Functionality isn't quite there, but how cool is it that you can get an email??</p>
-
-<%= @rootURL %><%= new_user_registration_path(:invite_token => @invite.token) %>
+<h2>Hey Bookbuddie! You've been added to the group "<%= @invite.group.group_name %>"</h2>
+<p>Best part is, you don't have to do anything. In theory you'll be added to this group automatically. Don't want to be a part of this group? Too bad. We haven't figure out how to remove a user from a group yet.</p>
 
 <p>The Bookbuddies team!</p>

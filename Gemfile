@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'devise'
 # Omniauth gem
 gem 'omniauth-twitter'
+# Twitter gem
+gem 'twitter'
 # Dotenv
 gem 'dotenv-rails'
 # Better-errors

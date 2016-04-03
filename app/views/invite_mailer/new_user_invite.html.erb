@@ -1,6 +1,6 @@
 <h1>Book buddies Group Invitation</h1>
 
-<%= @rootURL %><%= new_user_registration_path(:invite_token => @invite.token) %>
+<%= @rootURL %><%= joins_path(:invite_token => @invite.token) %>
 
 <p>Hey! You've been invited to join a book group on <%= link_to "Book buddies", root_path %></p>
 <p>Please accept by clicking the link below. If you are already a user, you will be automatically added to the group. If you are new to Book buddies, you will be asked to create a user profile. If you have been invited in error, please ignore.</p>

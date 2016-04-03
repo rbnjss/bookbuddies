@@ -11,6 +11,7 @@ class InviteMailer < ApplicationMailer
 	end
 
 	def existing_user_invite(invite)
+		@invite = invite
 		mail  to: @invite.email,
 					subject: "Bookbuddies Group Invitation"
 	end

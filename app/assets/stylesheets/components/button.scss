@@ -23,6 +23,10 @@
 	&:focus {
 		outline: 1;
 	}
+
+	.fa {
+		margin-right: 10px;
+	}
 }
 
 @mixin buttonSize($size) {
@@ -85,6 +89,14 @@
 		&:hover,
 		&:focus {
 			background: darken($red, 5);
+		}
+	}
+
+	&.button--twitter {
+		background: #3261CF;
+		&:hover,
+		&:focus {
+			background: darken(#3261CF, 5);
 		}
 	}
 	

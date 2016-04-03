@@ -24,7 +24,13 @@
 		<%= f.text_area :bio %>
 	</div>
 	<div class="field">
-		<%= f.file_field :avatar %>
+		<%= f.label :avatar %>
+		<div>
+			<%= image_tag @current_user.profile.avatar.url(:thumb) %>
+		</div>
+		<div>
+			<%= f.file_field :avatar %>		
+		</div>
 	</div>
 	<div class="field">
 		<%= f.submit class: 'button' %>

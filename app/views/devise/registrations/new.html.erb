@@ -26,10 +26,6 @@
           <i class="fa fa-unlock-alt"></i>
           <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password" %>
         </div>
-        
-        <% if @token != nil %>
-            <%= hidden_field_tag :invite_token, @token %>
-        <% end %>
 
         <div class="actions">
           <%= f.submit "Sign up", class: 'button' %>

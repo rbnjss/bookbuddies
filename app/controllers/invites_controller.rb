@@ -18,7 +18,7 @@ class InvitesController < ApplicationController
         @invite.recipient.groups.push(@invite.group)
         redirect_to :back
       else
-         InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
+         InviteMailer.new_user_invite(@invite, joins_path(:invite_token => @invite.token)).deliver
           redirect_to :back
          # Fix redirect
       end

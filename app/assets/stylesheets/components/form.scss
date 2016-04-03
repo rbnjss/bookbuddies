@@ -1,6 +1,9 @@
 .form__container {	
 	.field {
 		margin: 10px 0;
+		img {
+			width: 20%;
+		}
 	}
 
 	.field--float {
@@ -8,4 +11,6 @@
 		width: 80%;
 		height: 50px;
 	}
+
+
 }

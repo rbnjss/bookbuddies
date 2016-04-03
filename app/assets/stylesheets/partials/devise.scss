@@ -1,0 +1,32 @@
+.login {
+	.login__wrapper {
+		@include grid-column(6, $center:true);
+		background-color: $white;
+		padding: 40px;
+	}
+	.field {
+		margin-bottom: 20px;
+
+		input[type="email"],
+		input[type="password"] {
+			padding: 15px 15px 15px 40px;
+		}
+
+		input[type="checkbox"] {
+			margin-right: 10px;
+			margin-top: 4px;
+		}
+
+		.fa {
+			color: $accentLight;
+			font-size: 18px;
+			position: absolute;
+			left: 10px;
+			top: calc(50% - 9px);
+		}
+	}
+
+	.button {
+		
+	}
+}

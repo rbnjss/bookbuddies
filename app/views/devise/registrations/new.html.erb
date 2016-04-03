@@ -1,37 +1,43 @@
-<div class="row">
-  <h2>Sign up</h2>
-</div>
-<div class="row">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email %>
+<section class="login template--pad">
+  <div class="login__wrapper box-shadow">
+    <div class="row text--center">
+      <h2>Sign up</h2>
+      <p>Create an account to get started on Bookbuddies!</p>
     </div>
+    <div class="form__container row">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
+        <div class="field rel">
+          <%= f.label :email, class: "visually-hidden" %>
+          <i class="fa fa-envelope"></i>
+          <%= f.email_field :email, placeholder: "Email Address" %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-    
-    <% if @token != nil %>
-        <%= hidden_field_tag :invite_token, @token %>
-    <% end %>
+        <div class="field rel">
+          <%= f.label :password, class: "visually-hidden" %>
+          <i class="fa fa-unlock-alt"></i>
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+          
+        </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class: 'button' %>
+        <div class="field rel">
+          <%= f.label :password_confirmation, class: "visually-hidden" %>
+          <i class="fa fa-unlock-alt"></i>
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password" %>
+        </div>
+        
+        <% if @token != nil %>
+            <%= hidden_field_tag :invite_token, @token %>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: 'button' %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
-<div class="row">
-  <%= render "devise/shared/links" %>
-</div>
+   <!--  <div class="row">
+      <%= render "devise/shared/links" %>
+    </div> -->
+  </div>
+</section>

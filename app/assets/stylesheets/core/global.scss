@@ -18,8 +18,12 @@ a {
 	text-decoration: none;
 }
 
-p.notice {
+p.alert {
 	color: $red;
+}
+
+p.notice {
+	color: $primary;
 }
 
 .template--pad {

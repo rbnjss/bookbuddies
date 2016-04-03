@@ -3,12 +3,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.where(uid: auth.uid, provider: auth.provider).first_or_initialize
 
     if @user.persisted?
-      @user.update(token: auth.credentials.token, secret: auth.credentials.secret)
+      @user.update(token: auth.credentials.token, secret: auth.credentials.secret, avatar_url: auth.info.image)
       sign_in @user
       redirect_to root_path
     else
       @user.token = auth.credentials.token
       @user.secret = auth.credentials.secret
+      @user.avatar_url = auth.info.image
     end
   end
 
@@ -17,6 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     uid = params[:user][:uid]
     token = params[:user][:token]
     secret = params[:user][:secret]
+    avatar_url = params[:user][:avatar_url]
 
     @user = User.where(uid: uid, provider: provider).first_or_initialize(token: token, secret: secret)
     @user.password = SecureRandom.uuid

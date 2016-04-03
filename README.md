@@ -2,17 +2,25 @@
 _Bookbuddies rails app_
 
 ## To Do
-* Map out potential routes (controller#action)
-* Determine model columns (data types, etc.)
-* Determine which content will be repeated, and can be made as partials
-* Sketch up rough wire-frames for each page with content placement
+* Style login pages
+* Make book cover image sizes uniform
+* Pull in Twitter avatar on Twitter signup
+* Work on layout of group page
+* Create subtle pattern for footer
+* Finish header and footer styling + content
+* Redo logo
+* About Page
+* Style invites page
+* Fix bugs in invites system
 * Purchase domain (bookbuddi.es)
+
+## Nice to have's
+* Have "new" views for groups and books show up on the same page (slide down)
+* Add a "meeting place" column to groups and pull in a Google Map
+* Add parallax background to group banner image
 
 ### Design
 * Leverage material design principals
-* Use Basecamp as inspiration
-* Use google books API, or Goodreads
-* Google books can provide images, if desired.
 
 ### Functionality
 * Models: User, Group (club), Book (maybe)

@@ -19,7 +19,12 @@
 							<h3><%= link_to gr.group.group_name, group_path(gr.group) %></h3>
 							<p><%= gr.group.description %></p>
 							<p><%= gr.group.location %></p>
-							<p>Members: <%= gr.user.profile.first_name %> <%= gr.user.profile.last_name %></p>
+							<p>Members:</p>
+							<ul>
+								<% gr.group.users.each do |member| %>
+									<li><%= member.profile.first_name %> <%= member.profile.last_name %></li>
+								<% end %>
+							</ul>
 						</div>
 					</div>
 

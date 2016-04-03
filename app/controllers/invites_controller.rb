@@ -18,9 +18,9 @@ class InvitesController < ApplicationController
         @invite.recipient.groups.push(@invite.group)
         redirect_to :back
       else
-         InviteMailer.new_user_invite(@invite, joins_path(:invite_token => @invite.token)).deliver
-          redirect_to :back
-         # Fix redirect
+        InviteMailer.new_user_invite(@invite, joins_path(:invite_token => @invite.token)).deliver
+        flash[:notice] = "Email sent!"
+        redirect_to :back
       end
     else
        render text: "Uh oh! An error!"

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :books
   resources :comments
   resources :invites
+  get "/joins" => "joins#join"
 
   devise_for :users, :controllers => { registrations: 'users/registrations', 
                                         omniauth_callbacks: "users/omniauth_callbacks" }

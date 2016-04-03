@@ -1,28 +1,24 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def twitter
-    # Find a user with a provider and UID matching request.env["omniauth.auth"]
-    provider = request.env["omniauth.auth"]["provider"]
-    uid = request.env["omniauth.auth"]["uid"]
+    @user = User.where(uid: auth.uid, provider: auth.provider).first_or_initialize
 
-    # If that user exists, sign them in
-    # If they don't, create them
-    @user = User.where(uid: uid, provider: provider).first_or_initialize
-
-    if @user.email.present?
+    if @user.persisted?
+      @user.update(token: auth.credentials.token, secret: auth.credentials.secret)
       sign_in @user
       redirect_to root_path
+    else
+      @user.token = auth.credentials.token
+      @user.secret = auth.credentials.secret
     end
-
-    # @user.profile.create(
-    #   name: request.env["omniauth.auth"]["info"]["name"]
-    # )
   end
 
   def twitter_submit
     provider = params[:user][:provider]
     uid = params[:user][:uid]
+    token = params[:user][:token]
+    secret = params[:user][:secret]
 
-    @user = User.where(uid: uid, provider: provider).first_or_initialize
+    @user = User.where(uid: uid, provider: provider).first_or_initialize(token: token, secret: secret)
     @user.password = SecureRandom.uuid
 
     if @user.update(user_params)
@@ -36,31 +32,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def user_params
     params.require(:user).permit(:email)
   end
-  
-  # You should configure your model like this:
-  # devise :omniauthable, omniauth_providers: [:twitter]
 
-  # You should also create an action method in this controller like this:
-  # def twitter
-  # end
-
-  # More info at:
-  # https://github.com/plataformatec/devise#omniauth
-
-  # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
-
-  # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
-
-  # protected
-
-  # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
+  def auth
+    request.env["omniauth.auth"]
+  end
 end

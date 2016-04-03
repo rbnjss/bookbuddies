@@ -1,18 +1,23 @@
-<div class="template--pad">
-	<div class="row">
-		<h2>Please provide your email</h2>
-	</div>
-	<div class="row">
-		<%= @user.errors.full_messages.join(", ") %>
+<section class="login template--pad">
+  <div class="login__wrapper box-shadow">
+	  <div class="row">
+	  	<h2>Please provide your email</h2>
+	  </div>
+	  <div class="form__container row">
+	  	<%= @user.errors.full_messages.join(", ") %>
 
-		<%= form_for @user, url: '/twitter_signup' do |f| %>
-			<%= f.label :email %>
-			<%= f.text_field :email %>
+	  	<%= form_for @user, url: '/twitter_signup' do |f| %>
+		  	<div class="field rel">
+		  		<%= f.label :email, class: "visually-hidden" %>
+		  		<i class="fa fa-envelope"></i>
+		  		<%= f.email_field :email, placeholder: "Email Address" %>
+		  	</div>
+	  	
+	  		<%= f.submit "Join", class: "button" %>
 
-			<%= f.submit "Join" %>
-
-			<%= f.hidden_field :provider %>
-			<%= f.hidden_field :uid %>
-		<% end %>
-	</div>
-</div>
+	  		<%= f.hidden_field :provider %>
+	  		<%= f.hidden_field :uid %>
+	  	<% end %>
+	  </div>
+  </div>
+</section>

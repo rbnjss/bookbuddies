@@ -9,19 +9,6 @@ class GroupsController < ApplicationController
     @grs = GroupRegistration.where(user_id: current_user.id)
   end
 
-  def show
-    @members = @group.group_registrations.all
-    @invite = Invite.create
-  end
-
-  def edit
-  end
-
-  def update
-    @group.update(group_params)
-    redirect_to root_path
-  end
-
   def new
     @group = Group.new
   end
@@ -35,6 +22,19 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @members = @group.group_registrations.all
+    @invite = Invite.create
+  end
+
+  def edit
+  end
+
+  def update
+    @group.update(group_params)
+    redirect_to root_path
   end
 
   def destroy

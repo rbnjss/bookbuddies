@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         @token = params[:invite_token]
         if @token != nil
            org =  Invite.find_by_token(@token).user_group #find the user group attached to the invite
-           resource.user_groups.push(org) #add this user to the new user group as a member
+           resource.user_group.push(org) #add this user to the new user group as a member
         else
           # do normal registration things #
         end

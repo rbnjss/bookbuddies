@@ -13,6 +13,9 @@ _Bookbuddies rails app_
 * Style invites page
 * Fix bugs in invites system
 * Purchase domain (bookbuddi.es)
+* Setup Amazon S3 account for image storage
+* Add Postgress db in production (Heroku compatible)
+* Fix destroy group (currently crashing)
 
 ## Nice to have's
 * Have "new" views for groups and books show up on the same page (slide down)

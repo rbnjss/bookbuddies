@@ -24,9 +24,6 @@ _Bookbuddies rails app_
 ### Design
 * Leverage material design principals
 
-### Functionality
-* Models: User, Group (club), Book (maybe)
-
 ### Userflow
 * User gets to the site (bookbuddi.es)
 * Main page has copy about the app

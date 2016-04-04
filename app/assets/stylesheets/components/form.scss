@@ -10,7 +10,12 @@
 		float: left;
 		width: 80%;
 		height: 50px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
 	}
 
-
+	.button--float {
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
 }

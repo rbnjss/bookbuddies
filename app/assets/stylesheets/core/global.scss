@@ -16,6 +16,9 @@ h6 {
 a {
 	color: $accent;
 	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 p.alert {
@@ -40,6 +43,7 @@ textarea {
 	background: $gray;
 	width: 100%;
 	padding: 10px;
+	border-radius: 5px;
 }
 
 input[type="submit"] {

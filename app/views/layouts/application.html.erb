@@ -16,9 +16,11 @@
 			<div class="header__nav column small-8 text--right">
 				<nav>	
 					<% if user_signed_in? %>
-						<%= link_to "My Groups", groups_path %> //
-						<%= link_to "View Profile", '/profile' %> //
-						<%= link_to "Sign out", "/users/sign_out", method: 'delete' %>
+						<ul class="ul--reset">
+							<li class="header__nav--link"><%= link_to "Groups", groups_path %></li>
+							<li class="header__nav--link"><%= link_to "Profile", '/profile' %></li>
+							<li class="header__nav--link"><%= link_to "Sign out", "/users/sign_out", method: 'delete' %></li>
+						</ul>
 					<% end %>
 				</nav>
 			</div>

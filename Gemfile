@@ -55,6 +55,7 @@ group :development do
 end
 
 group :production do
+	# postgres
 	gem 'pg', '~> 0.18.4'
 end
 

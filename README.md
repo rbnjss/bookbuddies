@@ -11,11 +11,10 @@ _Bookbuddies rails app_
 * Redo logo
 * About Page
 * Style invites page
-* Fix bugs in invites system
 * Purchase domain (bookbuddi.es)
 * Setup Amazon S3 account for image storage
 * Add Postgress db in production (Heroku compatible)
-* Fix destroy group (currently crashing)
+* Switch "Members" in Group_index to something else, like "currently reading". Members spills over, and doesn't work.
 
 ## Nice to have's
 * Have "new" views for groups and books show up on the same page (slide down)
@@ -24,9 +23,6 @@ _Bookbuddies rails app_
 
 ### Design
 * Leverage material design principals
-
-### Functionality
-* Models: User, Group (club), Book (maybe)
 
 ### Userflow
 * User gets to the site (bookbuddi.es)
@@ -46,63 +42,62 @@ _Bookbuddies rails app_
 ### Models (attributes/data_types)
 
 * User _- generated_
-	* user_name: string (unique)
-	* user_email
-	* password
+	* `user_name: string`
+	* `user_email: string` (unique)
+	* `password`
 
 * Profile _- generated_
-	* first_name: string
-	* last_name: string
-	* avatar: binary (image) - pulled from Twitter/Goodreads when signed in.
-	* bio: text
-	* city: string
+	* `first_name: string`
+	* `last_name: string`
+	* `bio: text`
+	* `city: string`
 
 * Book _- generated_
-	* book_name: string
-	* cover_image: binary (image) **To be added later**
-	* description: text
-	* author: string
+	* `book_name: string`
+	* `description: text`
+	* `author: string`
 
 * Group _- generated_
-	* group_name: string
-	* description: text
-	* location: string
-	* user_id[s]: (group members: will this be an association to another model?) **To be added later**
+	* `group_name: string`
+	* `description: text`
+	* `location: string`
 	* private: boolean **To be added later**
 
 * Comment _- generated_
-	* content: text
-	* profile_id: integer (see: associations)
-	* book_id: integer (see: associations)
+	* `content: text`
+	* `profile_id: integer` (see: associations)
+	* `book_id: integer` (see: associations)
 
 * GroupResigration _- generated_
 	* The bouncer model 💪
+	* `user_id: integer`
+	* `group_id: integer`
 
 ### Model Associations
 
 * comment
- * belongs_to :profile
- * belongs_to :book
+ * `belongs_to :profile`
+ * `belongs_to :book`
 
 * group
- * has_many :users
- * has_many :books
- * has_many :profiles, through: :group registrations
+ * `has_many :users`
+ * `has_many :books`
+ * `has_many :profiles, through: :group` registrations
 
 * profile
- * has_many :comments
- * has_many :groups, Through: :group registrations
+ * `has_many :comments`
+ * `has_many :groups, Through: :group registrations`
 
 * user
-	* has_one :profile
-  * accepts_nested_attributes_for :profile
-	* The bouncer model 💪
+	* `has_one :profile`
+  * `accepts_nested_attributes_for :profile`
+	* `The bouncer model` 💪
 	
 * group_registration
-	* belongs_to :profile
-	* belongs_to :group
+	* `belongs_to :profile`
+	* `belongs_to :group`
 
 * book
- * has_many :groups
- * belongs_to :group
- * has_many: comments
+ * `has_many :groups`
+ * `belongs_to :group`
+ * `has_many: comments`

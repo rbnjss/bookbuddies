@@ -1,56 +1,65 @@
 <section class="group group__show">
 	<div class="group__banner" style="background: url(<%= @group.group_image.url %>); background-size: cover; background-position: center; height: 200px;"></div>
-	<div class="template--pad">
-		<div class="group__header row">
-			<h2><%= @group.group_name %></h2>
-			<p><%= @group.description %></p>
-			<p>Location: <%= @group.location %></p>
-			<p><i class="fa fa-cog"></i> <%= link_to "Edit Group", edit_group_path(@group) %></p>
-		</div>
-
-		<div class="group__members row">
-			<div class="group__members--header">
-				<h4>Group members:</h4>
+	<div class="template--pad row">
+		<div class="column small-12 medium-4">
+			<div class="group__header">
+				<div class="group__header--wrapper box-shadow">
+					<h2><%= @group.group_name %></h2>
+					<p><%= @group.description %></p>
+					<p>Location: <%= @group.location %></p>
+					<p><i class="fa fa-cog"></i> <%= link_to "Edit Group", edit_group_path(@group) %></p>
+				</div>
 			</div>
-			<div class="group__members pad">
-				<% @members.each do |member| %>
-					<div class="group__members--member">
-						<%= image_tag member.user.profile.avatar.url(:thumb), class: "avatar--small" %><br>
-						<%= member.user.profile.first_name %>
+			<div class="group__members">
+				<div class="group__members--wrapper box-shadow">
+					<div class="group__members--header">
+						<h4>Group members:</h4>
 					</div>
-				<% end %>
+					<div class="pad clearfix">
+						<% @members.each do |member| %>
+							<div class="group__members--member">
+								<%= image_tag member.user.profile.avatar.url(:thumb), class: "avatar--small" %>
+								<br>
+								<%= member.user.profile.first_name %>
+							</div>
+						<% end %>
+					</div>
+					<div class="group__invite">
+						<!-- INVITE A USER TO JOIN GROUP FORM -->
+						<%= render partial: 'userInviteForm', locals: {group_id: @group.id } %> 
+						<%= notice %> 
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="group__invite row">
-			<!-- INVITE A USER TO JOIN GROUP FORM -->
-			<%= render partial: 'userInviteForm', locals: {group_id: @group.id } %> 
-			<%= notice %> 
+		<div class="column small-12 medium-8">
+			<div class="book book__index">
+				<div class="book__header row">
+					<h2><%= @group.group_name %>'s Books</h2>
+					<% unless @group.books.present? %>
+						<p>Looks like you don't have any books!</p>
+					<% end %>
+				</div>
+				<div class="row">
+					<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'button' %>
+				</div>
+				<div class="book__list row template--pad">
+					<% @group.books.each do |book| %>
+						<div class="book_list--book column small-12 medium-4">
+							<div class="book__info row">
+								<%= image_tag book.cover.url(:thumb) %>
+								<h3><%= link_to book.book_name, book_url(book) %></h3>
+								<p><span class="book__author">Author:</span> <%= book.author %></p>
+								<p><span class="book__description">Description:</span> <%= book.description %></p>
+							</div>
+							<div class="book__link row">
+								<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent" %>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
-<section class="book book__index template--pad">
-	<div class="book__header row">
-		<h2><%= @group.group_name %>'s Books</h2>
-		<% unless @group.books.present? %>
-			<p>Looks like you don't have any books!</p>
-		<% end %>
-	</div>
-	<div class="row">
-		<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'button' %>
-	</div>
-	<div class="book__list row template--pad">
-		<% @group.books.each do |book| %>
-			<div class="book_list--book column small-12 medium-4">
-				<div class="book__info row">
-					<%= image_tag book.cover.url(:thumb) %>
-					<h3><%= link_to book.book_name, book_url(book) %></h3>
-					<p><span class="book__author">Author:</span> <%= book.author %></p>
-					<p><span class="book__description">Description:</span> <%= book.description %></p>
-				</div>
-				<div class="book__link row">
-					<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent" %>
-				</div>
-			</div>
-		<% end %>
-	</div>
-</section>
+

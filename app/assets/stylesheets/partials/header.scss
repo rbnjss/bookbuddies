@@ -1,12 +1,18 @@
 header {
 	background-color: $white;
 	border-bottom: 1px solid $gray;
-
-	.header--row {
-		max-width: 1200px;
+	padding-top: 15px;
+	.header__nav {
+		padding: 28px 0;
 	}
 
-	.header__nav {
-		padding-top: 2.5em;
+	.header__nav--link {
+		display: inline-block;
+		margin: 0 10px;
+		text-transform: uppercase;
+		font-family: $oswald;
+		a:hover {
+			text-decoration: none;
+		}
 	}
 }

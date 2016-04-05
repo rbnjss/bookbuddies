@@ -56,6 +56,6 @@ end
 
 group :production do
 	# postgres
-	gem 'pg', '~> 0.18.4'
+	# gem 'pg'
 end
 

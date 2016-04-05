@@ -142,7 +142,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -247,7 +246,6 @@ DEPENDENCIES
   mailgun-ruby
   omniauth-twitter
   paperclip (~> 4.3)
-  pg (~> 0.18.4)
   rails (= 4.2.5.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

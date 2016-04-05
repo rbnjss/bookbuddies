@@ -33,6 +33,12 @@ p.notice {
 	padding: 40px 0;
 }
 
+.template--wrapper {
+	@include grid-column(6, $center:true);
+	background-color: $white;
+	padding: 40px;
+}
+
 // Forms
 
 input[type="text"],
@@ -52,10 +58,6 @@ input[type="submit"] {
 
 label {
 	display: block;
-}
-
-.field {
-	// margin: $gutter 0;
 }
 
 .box-shadow {

@@ -1,15 +1,17 @@
 <section class="profile profile__edit template--pad">
-	<div class="profile__header row">
-		<h2>Edit your Profile</h2>
-		<% if current_user.profile.id == nil %>
-			<p>Looks like you're new here!  Get started by setting up your profile..</p>
-		<% end %>
-	</div>
-	<div class="form__container row">
-		<%= render 'profileForm' %>
-	</div>
-	<div class="profile__links row">
-		<%= link_to "Change password", edit_user_registration_path %>
-		<%= link_to "Cancel", profile_path  %>
+	<div class="template--wrapper box-shadow">
+		<div class="profile__header row">
+			<h2>Edit your Profile</h2>
+			<% if current_user.profile.id == nil %>
+				<p>Looks like you're new here!  Get started by setting up your profile..</p>
+			<% end %>
+		</div>
+		<div class="form__container row">
+			<%= render 'profileForm' %>
+		</div>
+		<div class="profile__links row">
+			<%= link_to "Change password", edit_user_registration_path %>
+			<%= link_to "Cancel", profile_path  %>
+		</div>
 	</div>
 </section>

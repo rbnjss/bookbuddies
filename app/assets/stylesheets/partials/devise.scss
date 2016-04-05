@@ -1,9 +1,4 @@
 .login {
-	.login__wrapper {
-		@include grid-column(6, $center:true);
-		background-color: $white;
-		padding: 40px;
-	}
 	.field {
 		margin-bottom: 20px;
 
@@ -24,9 +19,5 @@
 			left: 10px;
 			top: calc(50% - 9px);
 		}
-	}
-
-	.button {
-		
 	}
 }

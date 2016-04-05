@@ -1,14 +1,18 @@
 <section class="profile profile__show template--pad">
-	<div class="profile__header row">
-		<h2>My Profile</h2>
-	</div>
-	<div class="profile__info row">
-		<h3><%= @profile.first_name %> <%= @profile.last_name %></h3>
-		<%= image_tag @profile.avatar.url(:medium) %>
-		<p>Location: <%= @profile.city %></p>
-		<p><%= @profile.bio %></p>
-	</div>
-	<div class="profile__links row">
-		<%= link_to "Edit Profile", edit_profile_path %>
+	<div class="template--wrapper box-shadow">
+		<div class="profile__header text--center row">
+			<h2>My Profile</h2>
+		</div>
+		<div class="profile__info row">
+			<h3><%= @profile.first_name %> <%= @profile.last_name %></h3>
+			<%= image_tag @profile.avatar.url(:medium) %>
+			<h4>Location</h4>
+			<p><%= @profile.city %></p>
+			<h4>Bio</h4>
+			<p><%= @profile.bio %></p>
+		</div>
+		<div class="profile__links row">
+			<%= link_to "Edit Profile", edit_profile_path %>
+		</div>
 	</div>
 </section>

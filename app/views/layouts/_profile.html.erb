@@ -8,7 +8,9 @@
 				<%= image_tag current_user.profile.avatar.url(:medium) %>
 			</div>
 			<div class="profile__modal--content">
+				<h4>Location</h4>
 				<p><%= current_user.profile.city %></p>
+				<h4>Bio</h4>
 				<p><%= current_user.profile.bio %></p>
 				<small><i class="fa fa-cog"></i><%= link_to "Edit Profile", edit_profile_path %></small>
 			</div>

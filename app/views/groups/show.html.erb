@@ -44,7 +44,7 @@
 				</div>
 				<div class="book__list row template--pad">
 					<% @group.books.each do |book| %>
-						<div class="book_list--book column small-12 medium-4">
+						<div class="book__list--book column small-12 medium-4">
 							<div class="book__info row">
 								<%= image_tag book.cover.url(:thumb) %>
 								<h3><%= link_to book.book_name, book_url(book) %></h3>

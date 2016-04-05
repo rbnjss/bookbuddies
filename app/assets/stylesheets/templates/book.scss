@@ -9,6 +9,18 @@
 		font-family: $oswald;
 	}
 
+	.book__list {
+		display: flex;
+		&--book {
+			padding-bottom: 75px;
+		}
+	}
+
+	.book__link {
+		position: absolute;
+		bottom: 0;
+	}
+
 	.book__links {
 		@include linkBar;
 	}

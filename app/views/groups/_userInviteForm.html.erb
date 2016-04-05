@@ -1,4 +1,4 @@
-<div class="form__container">
+<div class="form__container clearfix">
 	<%= form_for @invite , :url => invites_path do |f| %>
 		<p>Enter the email of the buddy you would like to invite to this group</p>
 		<%= f.hidden_field :group_id, :value => group_id %>

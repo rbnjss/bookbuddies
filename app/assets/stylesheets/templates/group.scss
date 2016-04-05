@@ -3,6 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .group {
+	.group__header,
+	.group__members {
+		padding-right: 60px;
+	}
+
+	.group__members {
+		margin-top: 40px;
+	}
+	
+	.group__header--wrapper,
+	.group__members--wrapper {
+		background-color: $white;
+		padding: 20px;
+	}
 	.group__banner,
 	.group__list--image {
 		background-color: $primary;

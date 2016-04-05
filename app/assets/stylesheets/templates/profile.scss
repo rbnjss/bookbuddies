@@ -3,10 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .profile {
-	.profile__info {
-		background-color: $white;
-		padding: 40px;
-	}
+	
 
 	.profile__links {
 		@include linkBar;
@@ -16,12 +13,20 @@
 .profile__modal {
 	padding-right: 60px;
 
+	p {
+		margin-top: 0;
+	}
+
 	.profile__modal--wrapper {
 		background-color: $white;
 		padding: 20px;
 	}
 
 	.profile__modal--header {
+		margin-bottom: 20px;
+	}
+
+	.profile__modal--img {
 		margin-bottom: 20px;
 	}
 

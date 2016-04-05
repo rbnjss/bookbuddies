@@ -24,4 +24,8 @@
 	.book__links {
 		@include linkBar;
 	}
+	.book__author,
+	.book__description {
+		font-weight: 600;
+	}
 }

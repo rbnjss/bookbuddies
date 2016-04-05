@@ -3,13 +3,10 @@
 	<div class="book__container row">
 		<%= image_tag @book.cover.url(:medium) %>
 		<h3><%= @book.book_name %></h3>
-		<p>Author: <%= @book.author %></p>
-		<p>Description: <%= @book.description %></p>
-		<div class="book__links row">
-			<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
-			<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
-		</div>
-		
+		<h4>Author</h4>
+		<p><%= @book.author %></p>
+		<h4>Description</h4>
+		<p><%= @book.description %></p>
 	</div>
 	<div class="book__comments">
 		<!-- CREATE COMMENTS -->
@@ -46,6 +43,10 @@
 					
 				</div>
 			<% end %>
+		</div>
+		<div class="book__links row">
+			<%= link_to "Edit", edit_book_path(group_id: @book.group_id) %>
+			<%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %>
 		</div>
 	</div>
 </section>

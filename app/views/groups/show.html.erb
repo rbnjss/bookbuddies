@@ -48,11 +48,11 @@
 							<div class="book__info row">
 								<%= image_tag book.cover.url(:thumb) %>
 								<h3><%= link_to book.book_name, book_url(book) %></h3>
-								<p><span class="book__author">Author:</span> <%= book.author %></p>
-								<p><span class="book__description">Description:</span> <%= book.description %></p>
+								<!-- <p><span class="book__author">Author:</span> <%= book.author %></p>
+								<p><span class="book__description">Description:</span><br><%= book.description %></p> -->
 							</div>
-							<div class="book__link row">
-								<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent" %>
+							<div class="book__link">
+								<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent button--medium" %>
 							</div>
 						</div>
 					<% end %>

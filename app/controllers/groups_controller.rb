@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
     @grs = GroupRegistration.where(user_id: current_user.id)
+    @favorites = current_user.favorites.all
   end
 
   def new

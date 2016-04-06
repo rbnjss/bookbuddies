@@ -67,7 +67,7 @@
 			<% if @group.meetup_location.present? %>
 				<div id="map-container" class="map__container"></div>
 			<% end %>
-			<%= link_to edit_group_path(@group), class: "button button--accent" do %>
+			<%= link_to edit_group_path(@group), class: "button" do %>
 				<i class="fa fa-cog"></i>Edit Meetup Address
 			<% end %>
 		</div>

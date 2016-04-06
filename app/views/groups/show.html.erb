@@ -59,15 +59,16 @@
 				</div>
 			</div>
 		</div>
-		<div class="row group__meetup-location pad">
-			<h2>Meetup Location</h2>
-			<p><%= @group.meetup_location %></p>
-			<div id="map-container" style="height: 300px; border: 1px solid #eee;">
-				
-			</div>
-		</div>
+
 	</div>
-	
+	<div class="row group__meetup-location pad">
+		<h2>Meetup Location</h2>
+		<p><%= @group.meetup_location %></p>
+		<div id="map-container" class="map__container"></div>
+		<%= link_to edit_group_path(@group), class: "button button--accent" do %>
+			<i class="fa fa-cog"></i>Edit Meetup Address
+		<% end %>
+	</div>
 </section>
 
 <script type="text/javascript">

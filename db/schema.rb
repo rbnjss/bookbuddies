@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405222745) do
+ActiveRecord::Schema.define(version: 20160406010903) do
 
   create_table "books", force: :cascade do |t|
     t.string   "book_name"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160405222745) do
     t.string   "group_image_content_type"
     t.integer  "group_image_file_size"
     t.datetime "group_image_updated_at"
+    t.string   "meetup_location"
   end
 
   create_table "invites", force: :cascade do |t|

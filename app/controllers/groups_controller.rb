@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
 
   def update
     @group.update(group_params)
-    redirect_to root_path
+    redirect_to group_path
   end
 
   def destroy

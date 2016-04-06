@@ -13,12 +13,15 @@
 				<h4>Bio</h4>
 				<p><%= current_user.profile.bio %></p>
 				<!-- List of favorite books -->
-				<h4>Favorites:</h4>
-				<% @favorites.each do |fav| %>
-					<ul>
-						<li><%= link_to fav.book.book_name, book_path(fav.book_id) %></li>
+				<div class="favorite">
+					<h4>Favorites:</h4>
+					<ul class="favorite__list">
+						<% @favorites.each do |fav| %>
+							<li><i class="fa fa-star"></i><%= link_to fav.book.book_name, book_path(fav.book_id) %></li>
+						<% end %>
 					</ul>
-				<% end %>
+				</div>
+				<!-- Favorites End -->
 				<small><i class="fa fa-cog"></i><%= link_to "Edit Profile", edit_profile_path %></small>
 			</div>
 		</div>

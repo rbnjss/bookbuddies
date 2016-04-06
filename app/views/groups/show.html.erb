@@ -42,7 +42,7 @@
 				<div class="row">
 					<%= link_to "Add a New Book", new_book_path(group_id: @group.id), class: 'button' %>
 				</div>
-				<div class="book__list row template--pad">
+				<div class="book__list row">
 					<% @group.books.each do |book| %>
 						<div class="book__list--book column small-12 medium-4">
 							<div class="book__info row">
@@ -59,17 +59,18 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
-	<div class="row group__meetup-location pad">
-		<h2>Meetup Location</h2>
-		<p><%= @group.meetup_location %></p>
-		<% if @group.meetup_location.present? %>
-			<div id="map-container" class="map__container"></div>
-		<% end %>
-		<%= link_to edit_group_path(@group), class: "button button--accent" do %>
-			<i class="fa fa-cog"></i>Edit Meetup Address
-		<% end %>
+	<div class="group__map row pad">
+		<div class="group__map--wrapper column small-8">
+			<h2>Meetup Location</h2>
+			<p><%= @group.meetup_location %></p>
+			<% if @group.meetup_location.present? %>
+				<div id="map-container" class="map__container"></div>
+			<% end %>
+			<%= link_to edit_group_path(@group), class: "button button--accent" do %>
+				<i class="fa fa-cog"></i>Edit Meetup Address
+			<% end %>
+		</div>
 	</div>
 </section>
 

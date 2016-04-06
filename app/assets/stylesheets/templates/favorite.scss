@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.favorite {
-	
-}
-
 .favorite__list {
 	list-style: none;
 	padding-left: 0;
+	.fa-star {
+		color: $yellow;
+	}
+}
+
+.bookFavorite__star {
+	font-size: 2rem;
+	
+	&--grey {
+		color: $gray;
+	}
+	&--yellow {
+		color: $yellow;
+	}
 }

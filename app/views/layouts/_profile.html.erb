@@ -12,6 +12,13 @@
 				<p><%= current_user.profile.city %></p>
 				<h4>Bio</h4>
 				<p><%= current_user.profile.bio %></p>
+				<!-- List of favorite books -->
+				<h4>Favorites:</h4>
+				<% @favorites.each do |fav| %>
+					<ul>
+						<li><%= link_to fav.book.book_name, book_path(fav.book_id) %></li>
+					</ul>
+				<% end %>
 				<small><i class="fa fa-cog"></i><%= link_to "Edit Profile", edit_profile_path %></small>
 			</div>
 		</div>

@@ -7,7 +7,15 @@
 		<p><%= @book.author %></p>
 		<h4>Description</h4>
 		<p><%= @book.description %></p>
+		
+		<%- unless current_user.favorites.exists?(book_id: @book.id, user_id: current_user.id) -%>
+			<%= link_to 'Add to favorites', favorites_path(book_id: @book.id, user_id: current_user.id), method: :post %>
+		<%- else -%>
+			<%= link_to 'Remove from favorites', favorite_path(book_id: @book.id, user_id: current_user.id), method: :delete %>
+		<%- end -%>
+
 	</div>
+
 	<div class="book__comments">
 		<!-- CREATE COMMENTS -->
 		<div class="comments__header row pad">
@@ -16,6 +24,7 @@
 				<p>There are no comments yet!  Get the conversation started...</p>
 			<% end %>
 		</div>
+
 		<div class="book__comments--create form__container row">
 			<%= form_for(@comment.new) do |f| %>
 				<%= f.text_field :content, class: 'field--float' %>

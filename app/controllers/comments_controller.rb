@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
 	def create
-		# @book = Book.find(params[:id])
 		@comment = Comment.create(comment_params)
 		if @comment.save
 	      redirect_to :back

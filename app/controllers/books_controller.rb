@@ -13,6 +13,7 @@ before_action :authenticate_user!
 		@comment = Comment.where(book_id: @book.id)
 		@comments = @book.comments.all.order(created_at: :desc)
 		@members = @book.group.group_registrations.all
+		@favorite = Comment.where(book_id: @book.id, user_id: current_user.id)
 	end
 
 	def new

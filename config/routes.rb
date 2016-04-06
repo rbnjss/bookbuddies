@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :books
   resources :comments
   resources :invites
-  resources :favorites
+  resources :favorites, only: [:create, :destroy]
   get "/joins" => "joins#join"
 
   devise_for :users, :controllers => { registrations: 'users/registrations', 

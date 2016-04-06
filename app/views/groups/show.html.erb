@@ -61,18 +61,20 @@
 		</div>
 		<div class="row group__meetup-location pad">
 			<h2>Meetup Location</h2>
-			<div id="map-container" style="height: 400px; border: 1px solid #222;">
+			<p><%= @group.meetup_location %></p>
+			<div id="map-container" style="height: 300px; border: 1px solid #eee;">
 				
 			</div>
 		</div>
 	</div>
+	
 </section>
 
 <script type="text/javascript">
     function set_map(location){
       var mapOptions = {
         center: new google.maps.LatLng(43.6532,-79.3832),
-        zoom: 8,
+        zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
 
@@ -94,14 +96,14 @@
             position: result[0].geometry.location
           });
         }else{
-          alert("Geocode was not successful for the following reason: " + status);
+          alert("Meetup location is invalid.");
         }
       });
       return false;
     }
 
     $(document).ready(function(){
-      set_map('<%= @group.location %>');
+      set_map('<%= @group.meetup_location %>');
     })
   </script>
 

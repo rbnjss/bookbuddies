@@ -15,6 +15,8 @@ _Bookbuddies rails app_
 * Setup Amazon S3 account for image storage
 * Add Postgress db in production (Heroku compatible)
 * Switch "Members" in Group_index to something else, like "currently reading". Members spills over, and doesn't work.
+* Standardize book image size in group#show
+* Add favorites for books to user dashboard, for easier navigation
 
 ## Nice to have's
 * Have "new" views for groups and books show up on the same page (slide down)

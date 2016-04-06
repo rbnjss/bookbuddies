@@ -35,7 +35,7 @@
 						<div class="comment__content">
 							<p><%= comment.content %></p>
 						</div>
-						<small>Posted by: <%= comment.user.profile.first_name %> <%= comment.user.profile.last_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
+						<small>Posted by <%= comment.user_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
 						<% if current_user.id == comment.user.profile.id %>
 							<p class="text--right"><%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %></p>
 						<% end %>

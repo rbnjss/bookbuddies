@@ -12,12 +12,17 @@
 		<%= f.text_field :group_name %>
 	</div>
 	<div class="field">
+		<%= f.label :location, "Group Location" %>
+		<%= f.text_field :location %>
+	</div>
+	<div class="field">
 		<%= f.label :description %>
 		<%= f.text_area :description %>
 	</div>
 	<div class="field">
-		<%= f.label :location %>
-		<%= f.text_field :location %>
+		<%= f.label :meetup_location, "Meetup Address" %>
+		<em><small>ex: 123 Main Street, City</small></em>
+		<%= f.text_field :meetup_location %>
 	</div>
 	<div class="field">
 		<%= f.label :group_image %>

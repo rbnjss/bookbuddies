@@ -2,25 +2,20 @@
 _Bookbuddies rails app_
 
 ## To Do
-* Style login pages
 * Make book cover image sizes uniform
 * Pull in Twitter avatar on Twitter signup
 * Work on layout of group page
-* Create subtle pattern for footer
 * Finish header and footer styling + content
-* Redo logo
 * About Page
-* Style invites page
 * Purchase domain (bookbuddi.es)
 * Setup Amazon S3 account for image storage
 * Add Postgress db in production (Heroku compatible)
-* Switch "Members" in Group_index to something else, like "currently reading". Members spills over, and doesn't work.
 * Standardize book image size in group#show
 * Add favorites for books to user dashboard, for easier navigation
+* Book page layout
 
 ## Nice to have's
 * Have "new" views for groups and books show up on the same page (slide down)
-* Add a "meeting place" column to groups and pull in a Google Map
 * Add parallax background to group banner image
 
 ### Design

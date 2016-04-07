@@ -9,6 +9,19 @@
 		font-family: $oswald;
 	}
 
+	.book__container {
+		padding-right: 60px;
+		h3 {
+			margin-bottom: 20px;
+		}
+	}
+
+	.book__container--wrapper {
+		background-color: $white;
+		padding: 20px;
+		border-left: 16px solid $gray;
+	}
+
 	.book__list {
 		display: flex;
 		flex-wrap: wrap;

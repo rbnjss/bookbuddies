@@ -10,8 +10,10 @@
 			<%= render 'profileForm' %>
 		</div>
 	</div>
-	<div class="profile__links row">
-		<%= link_to "Change password", edit_user_registration_path %>
-		<%= link_to "Cancel", profile_path  %>
-	</div>
+	<% if current_user.profile.id.present? %>
+		<div class="profile__links row">
+			<%= link_to "Change password", edit_user_registration_path %>
+			<%= link_to "Cancel", profile_path  %>
+		</div>
+	<% end %>
 </section>

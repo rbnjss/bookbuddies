@@ -10,6 +10,8 @@ _Bookbuddies rails app_
 * Setup Amazon S3 account for image storage
 * Add Postgress db in production (Heroku compatible)
 * Standardize book image size in group#show
+* Responsive styles
+* Write some copy about the application
 
 ## Nice to have's
 * Add parallax background to group banner image

@@ -44,6 +44,9 @@
 
 	.group__links {
 		@include linkBar;
+		@include grid-column(6, $center:true);
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.group__members--member {

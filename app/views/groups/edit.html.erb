@@ -6,10 +6,10 @@
 		<div class="form__container row">
 			<%= render 'groupsForm' %>
 		</div>
-		<div class="group__links row">
+	</div>
+	<div class="group__links row">
 		<%= link_to "Delete group", group_path(@group), method: :delete, data: { confirm: "Are you sure?"} %>
-			<%= link_to "Cancel", group_path %>
-		</div>
+		<%= link_to "Cancel", group_path %>
 	</div>
 </div>
 

@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'group_registrations/destroy'
+
   resource :profile
   resources :groups
   resources :books
   resources :comments
   resources :invites
   resources :favorites, only: [:create, :destroy]
+  resources :group_registrations, only: [:destroy]
   get "/joins" => "joins#join"
+
 
   devise_for :users, :controllers => { registrations: 'users/registrations', 
                                         omniauth_callbacks: "users/omniauth_callbacks" }

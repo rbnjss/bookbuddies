@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
   def show
     @members = @group.group_registrations.all
     @invite = Invite.create
+    # @gr = GroupRegistration.find_by(user_id: current_user.id, group_id: @group.id)
   end
 
   def edit

@@ -17,7 +17,7 @@
 				<br>
 				<small><i class="fa fa-trash"></i> <%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %></small>
 			</div>
-			<%= link_to group_path(group_id: @book.group_id), class: "button button--accent" do %>
+			<%= link_to group_path(@group), class: "button button--accent" do %>
 				<i class="fa fa-caret-left"></i>Back to Group
 			<% end %>
 		</div>

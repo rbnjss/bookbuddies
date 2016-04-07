@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .profile {
-	
-
 	.profile__links {
 		@include linkBar;
+		@include grid-column(6, $center:true);
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
@@ -20,6 +21,7 @@
 	.profile__modal--wrapper {
 		background-color: $white;
 		padding: 20px;
+		border-left: 16px solid $gray;
 	}
 
 	.profile__modal--header {

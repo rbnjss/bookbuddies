@@ -1,5 +1,5 @@
 header {
-	background-color: #24212a;
+	background-color: $white;
 	border-bottom: 1px solid $gray;
 	padding-top: 15px;
 	.header__nav {
@@ -12,12 +12,12 @@ header {
 		text-transform: uppercase;
 		font-family: $oswald;
 		a {
-			color: $primary;
+			color: $accent;
 			transition: color 0.25s ease-out;
 			padding-bottom: 6px;
 			&:hover {
 				text-decoration: none;
-				color: $yellow;
+				color: $accentLight;
 				border-bottom: 4px solid $primary;
 			}
 		}

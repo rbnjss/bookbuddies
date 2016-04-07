@@ -51,10 +51,17 @@
 
 	.group__members--member {
 		text-align: center;
-	}
+	}	
+}
 
-	.map__container {
-		height: 300px;
-		border: 1px solid #eee;
-	}
+.group__map--edit {
+	position: absolute;
+	bottom: 10px;
+	left: 60px;
+	z-index: 1;
+}
+
+.map__container {
+	height: 300px;
+	border: 1px solid #eee;
 }

@@ -60,19 +60,21 @@
 			</div>
 		</div>
 	</div>
-	<div class="group__map row pad">
-		<div class="group__map--wrapper column small-8">
-			<h2>Meetup Location</h2>
-			<p><%= @group.meetup_location %></p>
-			<% if @group.meetup_location.present? %>
-				<div id="map-container" class="map__container"></div>
-			<% end %>
+	
+</section>
+<div class="group__map rel">
+			<!-- <h2>Meetup Location</h2> -->
+			<!-- <p><%= @group.meetup_location %></p> -->
+		<div class="group__map--edit">
 			<%= link_to edit_group_path(@group), class: "button" do %>
 				<i class="fa fa-cog"></i>Edit Meetup Address
 			<% end %>
 		</div>
-	</div>
-</section>
+		<% if @group.meetup_location.present? %>
+			<div id="map-container" class="map__container"></div>
+		<% end %>
+		
+</div>
 
 <script type="text/javascript">
     function set_map(location){

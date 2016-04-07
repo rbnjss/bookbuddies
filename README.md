@@ -12,6 +12,7 @@ _Bookbuddies rails app_
 * Standardize book image size in group#show
 * Responsive styles
 * Write some copy about the application
+* Twitter Card + Facebook OG Meta Data
 
 ## Nice to have's
 * Add parallax background to group banner image

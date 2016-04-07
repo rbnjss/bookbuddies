@@ -13,6 +13,16 @@ h6 {
 	margin: 0;
 }
 
+h1 {
+	a {
+		color: $primary;
+		@include font-size(36);
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
 a {
 	color: $accent;
 	text-decoration: none;
@@ -25,12 +35,8 @@ p.alert {
 	color: $red;
 }
 
-p.notice {
-	color: $primary;
-}
-
 .template--pad {
-	padding: 40px 0;
+	padding: 60px 0;
 }
 
 .template--wrapper {

@@ -1,4 +1,5 @@
 <section class="registration registration__edit template--pad">
+<div class="template--wrapper box-shadow">
   <div class="registration__header row">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
   </div>
@@ -34,13 +35,13 @@
       </div>
     </div>
     <% end %>
-    
-    <div class="registration__links row">
-      <%= link_to "Back", :back %>
-    </div>
     <div class="row">
       <h3>Delete account and all associated content</h3>
       
       <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure? This action can't be undone!" }, method: :delete, class: 'button button--red' %>
     </div>
-  </section>
+  </div>
+  <div class="registration__links row">
+    <%= link_to "Back", :back %>
+  </div>
+</section>

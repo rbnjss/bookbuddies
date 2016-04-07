@@ -1,9 +1,9 @@
 header {
-	background-color: $white;
+	background-color: #24212a;
 	border-bottom: 1px solid $gray;
 	padding-top: 15px;
 	.header__nav {
-		padding: 28px 0;
+		padding-top: 37px;
 	}
 
 	.header__nav--link {
@@ -11,8 +11,15 @@ header {
 		margin: 0 10px;
 		text-transform: uppercase;
 		font-family: $oswald;
-		a:hover {
-			text-decoration: none;
+		a {
+			color: $primary;
+			transition: color 0.25s ease-out;
+			padding-bottom: 6px;
+			&:hover {
+				text-decoration: none;
+				color: $yellow;
+				border-bottom: 4px solid $primary;
+			}
 		}
 	}
 }

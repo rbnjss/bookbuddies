@@ -16,7 +16,9 @@
 	.group__members--wrapper {
 		background-color: $white;
 		padding: 20px;
+		border-left: 16px solid $gray;
 	}
+	
 	.group__banner,
 	.group__list--image {
 		background-color: $primary;

@@ -15,7 +15,7 @@ h6 {
 
 h1 {
 	a {
-		color: $primary;
+		color: $text;
 		@include font-size(36);
 		&:hover {
 			text-decoration: none;

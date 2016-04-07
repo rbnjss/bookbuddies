@@ -11,6 +11,10 @@
 	.group__members {
 		margin-top: 40px;
 	}
+
+	.group__members--member {
+		margin: 10px 0;
+	}
 	
 	.group__header--wrapper,
 	.group__members--wrapper {
@@ -51,10 +55,17 @@
 
 	.group__members--member {
 		text-align: center;
-	}
+	}	
+}
 
-	.map__container {
-		height: 300px;
-		border: 1px solid #eee;
-	}
+.group__map--edit {
+	position: absolute;
+	bottom: 10px;
+	left: 60px;
+	z-index: 1;
+}
+
+.map__container {
+	height: 300px;
+	border: 1px solid #eee;
 }

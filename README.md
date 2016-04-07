@@ -4,18 +4,14 @@ _Bookbuddies rails app_
 ## To Do
 * Make book cover image sizes uniform
 * Pull in Twitter avatar on Twitter signup
-* Work on layout of group page
 * Finish header and footer styling + content
 * About Page
 * Purchase domain (bookbuddi.es)
 * Setup Amazon S3 account for image storage
 * Add Postgress db in production (Heroku compatible)
 * Standardize book image size in group#show
-* Add favorites for books to user dashboard, for easier navigation
-* Book page layout
 
 ## Nice to have's
-* Have "new" views for groups and books show up on the same page (slide down)
 * Add parallax background to group banner image
 
 ### Design

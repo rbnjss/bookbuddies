@@ -98,10 +98,21 @@
         if (status == google.maps.GeocoderStatus.OK){
           map.setCenter(result[0].geometry.location);
 
-          var marker = new google.maps.Marker({
-            map: map,
-            position: result[0].geometry.location
-          });
+          	var addressString = '<%= @group.meetup_location %>';
+
+          	var infowindow = new google.maps.InfoWindow({
+              content: addressString
+            });
+
+			var marker = new google.maps.Marker({
+				map: map,
+				position: result[0].geometry.location
+			});
+
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
+
         }else{
           alert("Meetup location is invalid.");
         }

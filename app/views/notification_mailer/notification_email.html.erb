@@ -1,5 +1,7 @@
-<h1>NotificationMailer#notification_email</h1>
+<h1>Your buddy made a new comment!</h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/notification_mailer/notification_email.html.erb
-</p>
+<h2>Hey Buddy!  A comment has been made on <%= @book_name %></h2>
+<p><%= @comment.content %> by <%= @comment.user_name %></p>
+<%= link_to "Contribute to the discussion", book_url(@book), class: 'button' %>
+
+<p>Thanks from the Bookbuddies team!</p>

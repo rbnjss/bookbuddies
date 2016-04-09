@@ -11,7 +11,7 @@ before_action :authenticate_user!
 	def show
 		@group = @book.group
 		@comment = Comment.where(book_id: @book.id)
-		@comments = @book.comments.all.order(created_at: :desc)
+		@comments = @book.comments.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
 		@members = @book.group.group_registrations.all
 		@favorite = Comment.where(book_id: @book.id, user_id: current_user.id)
 	end

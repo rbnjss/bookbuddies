@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 			@users = User.find(@user_ids)
 			# Send mailer to each user in the group
 			@users.each do |user|
-				if user.id != @comment.user_id
+				if user.id != @comment.user_id and user.profile.notifications != false
 					NotificationMailer.notification_email(user, @comment, @book_name, @book_id).deliver
 				end
 			end

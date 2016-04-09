@@ -20,12 +20,10 @@
 					</div>
 					<div class="pad clearfix row">
 						<% @members.each do |member| %>
-							<% if member.user.present? %>
-								<div class="group__members--member column small-4">
-									<%= image_tag member.user.profile.avatar.url(:thumb), class: "avatar--small" %>
-									<%= member.user.profile.first_name %>
-								</div>
-							<% end %>
+							<div class="group__members--member column small-4">
+								<%= image_tag member.user.profile.avatar.url(:thumb), class: "avatar--small" %>
+								<%= member.user.profile.first_name %>
+							</div>
 						<% end %>
 					</div>
 					<div class="group__invite">

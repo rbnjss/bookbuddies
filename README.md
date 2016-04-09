@@ -2,20 +2,18 @@
 _Bookbuddies rails app_
 
 ## To Do
-* Make book cover image sizes uniform
-* Pull in Twitter avatar on Twitter signup
 * Finish header and footer styling + content
-* About Page
-* Purchase domain (bookbuddi.es)
-* Setup Amazon S3 account for image storage
-* Add Postgress db in production (Heroku compatible)
-* Standardize book image size in group#show
-* Responsive styles
 * Write some copy about the application
+* About Page
+* Responsive styles
 * Twitter Card + Facebook OG Meta Data
+* Add Postgress db in production (Heroku compatible)
+* Deploy to Heroku
+* Setup Amazon S3 account for image storage
+* Purchase domain (bookbuddi.es)
 
 ## Nice to have's
-* Add parallax background to group banner image
+* Pull in Twitter avatar on Twitter signup
 
 ### Design
 * Leverage material design principals

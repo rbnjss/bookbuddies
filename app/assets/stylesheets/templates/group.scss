@@ -3,9 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .group {
+	&.group__index {
+		@media #{$mobile-only}{
+			margin-top: 40px;
+		}
+	}
+
 	.group__header,
 	.group__members {
 		padding-right: 60px;
+		@media #{$mobile-only}{
+			padding: 0;
+		}
 	}
 
 	.group__members {
@@ -51,6 +60,9 @@
 		@include grid-column(6, $center:true);
 		padding-left: 0;
 		padding-right: 0;
+		@media #{$mobile-only}{
+			@include grid-column(10);
+		}
 	}
 
 	.group__members--member {

@@ -1,7 +1,7 @@
 <section class="book book__show template--pad">
 	<!-- SHOW BOOK -->
 	<div class="row">
-		<div class="book__container column small-12 medium-4">
+		<div class="book__container column small-10 small-centered medium-4 medium-uncentered">
 			<div class="book__container--wrapper box-shadow">
 				<%= image_tag @book.cover.url(:medium) %>
 				<h3><%= @book.book_name %></h3>
@@ -22,7 +22,7 @@
 			<% end %>
 		</div>
 
-		<div class="book__comments column small-12 medium-8">
+		<div class="book__comments column small-10 small-centered medium-8 medium-uncentered">
 			<!-- CREATE COMMENTS -->
 			<div class="comments__header row pad">
 				<h4>Discussion</h4>

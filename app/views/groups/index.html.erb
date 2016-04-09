@@ -1,8 +1,8 @@
 <div class="row template--pad">
-	<section class="column small-12 medium-4 profile">
+	<section class="column small-10 small-centered medium-4 medium-uncentered profile">
 		<%= render 'layouts/profile' %> 
 	</section>
-	<section class="column small-12 medium-8 group group__index">
+	<section class="column small-10 small-centered medium-8 medium-uncentered group group__index">
 		<div class="group__header row">
 			<h2>My Groups</h2>
 			<% unless @grs.present? %>
@@ -10,11 +10,10 @@
 			<% end %>
 			<%= link_to "Create a new group", new_group_path, class: 'groups__links--link button' %>
 		</div>
-
 		<div class="group__list">
 			<% @grs.each do |gr| %>
 				<div class="group__list--group box-shadow row collapse">
-					<div class="column small-8">
+					<div class="column small-12 medium-8">
 						<div class="group__list--info">
 							<h3><%= link_to gr.group.group_name, group_path(gr.group) %></h3>
 							<p><%= gr.group.description %></p>
@@ -25,7 +24,7 @@
 						</div>
 					</div>
 
-					<div class="column small-4">
+					<div class="column small-12 medium-4">
 						<div class="group__list--image" style="background: url(<%= gr.group.group_image.url %>); background-size: cover; background-position: center;"></div>
 					</div>
 				</div>

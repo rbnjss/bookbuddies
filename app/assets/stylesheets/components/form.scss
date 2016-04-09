@@ -16,11 +16,24 @@
 		height: 50px;
 		border-top-right-radius: 0px;
 		border-bottom-right-radius: 0px;
+		@media #{$mobile-only}{
+			float: none;
+			border-radius: 0;
+			border-top-right-radius: 5px;
+			border-top-left-radius: 5px;
+			width: 100%;
+		}
 	}
 
 	.button--float {
 		border-top-left-radius: 0px;
 		border-bottom-left-radius: 0px;
+		@media #{$mobile-only}{
+			border-radius: 0;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			width: 100%;
+		}
 	}
 
 	.checkbox {

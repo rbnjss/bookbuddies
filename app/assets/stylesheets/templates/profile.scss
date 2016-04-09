@@ -8,11 +8,17 @@
 		@include grid-column(6, $center:true);
 		padding-left: 0;
 		padding-right: 0;
+		@media #{$mobile-only}{
+			@include grid-column(10);
+		}
 	}
 }
 
 .profile__modal {
 	padding-right: 60px;
+	@media #{$mobile-only}{
+		padding: 0;
+	}
 
 	p {
 		margin-top: 0;

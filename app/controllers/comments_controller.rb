@@ -8,10 +8,11 @@ class CommentsController < ApplicationController
 			# Get a list of all users in this group
 			@user_ids = GroupRegistration.where(group_id: @comment.book.group.id).pluck(:user_id)
 			@users = User.find(@user_ids)
-
 			# Send mailer to each user in the group
 			@users.each do |user|
-				NotificationMailer.notification_email(user, @comment, @book_name, @book_id).deliver
+				if user.id != @comment.user_id
+					NotificationMailer.notification_email(user, @comment, @book_name, @book_id).deliver
+				end
 			end
 	      	redirect_to :back
 	    else

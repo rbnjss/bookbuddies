@@ -1,7 +1,7 @@
 <section class="group group__show">
-	<div class="group__banner" style="background: url(<%= @group.group_image.url %>); background-size: cover; background-position: center; height: 200px;"></div>
+	<div class="group__banner" data-stellar-background-ratio="0.5" style="background: url(<%= @group.group_image.url %>); background-size: cover; background-position: center; height: 300px;background-attachment: fixed;"></div>
 	<div class="template--pad row">
-		<div class="column small-12 medium-4">
+		<div class="column small-10 small-centered medium-4 medium-uncentered">
 			<div class="group__header">
 				<div class="group__header--wrapper box-shadow">
 					<h2><%= @group.group_name %></h2>
@@ -34,7 +34,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="column small-12 medium-8">
+		<div class="column small-10 small-centered medium-8 medium-uncentered">
 			<div class="book book__index">
 				<div class="book__header row">
 					<h2><%= @group.group_name %>'s Books</h2>
@@ -66,18 +66,16 @@
 	
 </section>
 <div class="group__map rel">
-			<!-- <h2>Meetup Location</h2> -->
-			<!-- <p><%= @group.meetup_location %></p> -->
+	<% if @group.meetup_location.present? %>
 		<div class="group__map--edit">
 			<%= link_to edit_group_path(@group), class: "button" do %>
 				<i class="fa fa-cog"></i>Edit Meetup Address
 			<% end %>
 		</div>
-		<% if @group.meetup_location.present? %>
-			<div id="map-container" class="map__container"></div>
-		<% end %>
-		
+		<div id="map-container" class="map__container"></div>
+	<% end %>
 </div>
+
 
 <script type="text/javascript">
     function set_map(location){
@@ -124,7 +122,14 @@
     }
 
     $(document).ready(function(){
-      set_map('<%= @group.meetup_location %>');
-    })
+    	<% if @group.meetup_location.present? %>
+      		set_map('<%= @group.meetup_location %>');
+      	<% end %>
+
+      	$.stellar({
+      		horizontalScrolling: false,
+      		verticalOffset: 250
+      	});
+    });
   </script>
 

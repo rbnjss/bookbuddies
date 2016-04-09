@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_one :profile, :dependent => :destroy
   has_many :comments
-  has_many :group_registrations
+  has_many :group_registrations, :dependent => :destroy
   has_many :groups, through: :group_registrations
   has_many :favorites
   has_many :invitations, :class_name => "Invite", :foreign_key => 'recipient_id'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406010903) do
+ActiveRecord::Schema.define(version: 20160409004640) do
 
   create_table "books", force: :cascade do |t|
     t.string   "book_name"
@@ -77,6 +77,15 @@ ActiveRecord::Schema.define(version: 20160406010903) do
     t.integer  "group_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "subscribe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
+
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -89,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160406010903) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "notifications"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

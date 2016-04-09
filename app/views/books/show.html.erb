@@ -1,8 +1,8 @@
 <section class="book book__show template--pad">
 	<!-- SHOW BOOK -->
 	<div class="row">
-		<div class="book__container column small-12 medium-4">
-			<div class="book__container--wrapper">
+		<div class="book__container column small-10 small-centered medium-4 medium-uncentered">
+			<div class="book__container--wrapper box-shadow">
 				<%= image_tag @book.cover.url(:medium) %>
 				<h3><%= @book.book_name %></h3>
 				<h4>Author</h4>
@@ -22,7 +22,7 @@
 			<% end %>
 		</div>
 
-		<div class="book__comments column small-12 medium-8">
+		<div class="book__comments column small-10 small-centered medium-8 medium-uncentered">
 			<!-- CREATE COMMENTS -->
 			<div class="comments__header row pad">
 				<h4>Discussion</h4>
@@ -52,11 +52,14 @@
 							</div>
 							<small>Posted by <%= comment.user_name %> <%= time_ago_in_words(comment.created_at) %> ago.</small>
 							<% if current_user.id == comment.user.profile.id %>
-								<p class="text--right"><%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %></p>
+								<div class="text--right">
+									<small class="text--right"><i class="fa fa-trash"></i> <%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %></small>
+								</div>
 							<% end %>
 						</div>
 					</div>
 				<% end %>
+				<%= will_paginate @comments, :previous_label => '<i class="fa fa-caret-left"></i>', :next_label => '<i class="fa fa-caret-right"></i>' %>
 			</div>
 		</div>
 	</div>

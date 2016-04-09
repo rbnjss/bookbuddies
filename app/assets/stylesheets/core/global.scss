@@ -43,6 +43,10 @@ p.alert {
 	@include grid-column(6, $center:true);
 	background-color: $white;
 	padding: 40px;
+	@media #{$mobile-only}{
+		@include grid-column(10);
+		padding: 20px;
+	}
 }
 
 // Forms

@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
 	  def create
 	  	@profile = Profile.new(profile_params)
 	    @profile.user_id = current_user.id
+	    @profile.notifications = false
 
 	    if @profile.save
 	    	redirect_to after_sign_in_path_for(@profile.user)
@@ -47,6 +48,6 @@ class ProfilesController < ApplicationController
 	  end
 
 	  def profile_params
-	    params.require(:profile).permit(:first_name, :last_name, :city, :bio, :avatar)
+	    params.require(:profile).permit(:first_name, :last_name, :city, :bio, :avatar, :notifications)
 	  end
 end

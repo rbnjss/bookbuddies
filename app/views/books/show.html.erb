@@ -59,7 +59,7 @@
 						</div>
 					</div>
 				<% end %>
-				<%= will_paginate @comments %>
+				<%= will_paginate @comments, :previous_label => '<i class="fa fa-caret-left"></i>', :next_label => '<i class="fa fa-caret-right"></i>' %>
 			</div>
 		</div>
 	</div>

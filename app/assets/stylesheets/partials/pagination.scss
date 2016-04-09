@@ -1,5 +1,6 @@
 .pagination {
 	text-align: center;
+	@include font-size(18);
 	a {
 		color: $primary;
 	}

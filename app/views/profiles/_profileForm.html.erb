@@ -32,6 +32,9 @@
 			<%= f.file_field :avatar %>		
 		</div>
 	</div>
+	<div class="field field--notifications clearfix">
+		<%= f.check_box :notifications, class: 'left checkbox' %><%= f.label :notifications, 'Sign up to receive comment notifications', class: 'left' %>
+	</div>
 	<div class="field">
 		<%= f.submit class: 'button' %>
 	</div>

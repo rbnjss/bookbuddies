@@ -19,13 +19,14 @@
 							<small><i class="fa fa-map-marker"></i> Based in <%= gr.group.location %></small>
 							<p><%= gr.group.desc_truncate %></p>
 							<% if gr.group.books.present? %>
-								<p>Now reading: <%= gr.group.books.last.book_name %></p>
+								<h4>Now reading:</h4>
+								<%= link_to gr.group.books.last.book_name, book_path(gr.group.books.last), class: 'primary' %>
 							<% end %>
 						</div>
 					</div>
 
 					<div class="column small-12 medium-4">
-						<div class="group__list--image" style="background: url(<%= gr.group.group_image.url %>); background-size: cover; background-position: center;"></div>
+						<div class="group__list--image" style="background: url(<%= image_url(gr.group.group_image.url(:medium)) %>); background-size: cover; background-position: center;"></div>
 					</div>
 				</div>
 				<div class="group__links row collapse">

@@ -1,5 +1,5 @@
 <section class="group group__show">
-	<div class="group__banner" data-stellar-background-ratio="0.5" style="background: url(<%= @group.group_image.url %>); background-size: cover; background-position: center; height: 300px;background-attachment: fixed;"></div>
+	<div class="group__banner" style="background: url(<%= image_url(@group.group_image.url(:large)) %>); background-size: cover; background-position: center; height: 250px;"></div>
 	<div class="template--pad row">
 		<div class="column small-10 small-centered medium-4 medium-uncentered">
 			<div class="group__header">
@@ -124,11 +124,6 @@
     	<% if @group.meetup_location.present? %>
       		set_map('<%= @group.meetup_location %>');
       	<% end %>
-
-      	$.stellar({
-      		horizontalScrolling: false,
-      		verticalOffset: 250
-      	});
     });
   </script>
 

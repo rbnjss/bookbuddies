@@ -8,4 +8,13 @@ class Book < ActiveRecord::Base
 
 	has_attached_file :cover, :default_url => 'book.jpg', styles: { medium: "175x200#", thumb: "150x175#" }
 	validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
+
+	def truncate
+		if self.description.length > 125
+			self.description.first(125).to_s + "..."
+		else
+			self.description
+		end
+	end
+
 end

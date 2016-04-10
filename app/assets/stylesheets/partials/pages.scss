@@ -14,8 +14,21 @@
 	padding: 20px;
 	margin: 20px auto;
 	margin-right: 20px;
+
+	.fa {
+		transition: all 0.25s ease-out;
+		@include font-size(24);
+		&:hover {
+			color: $primary;
+		}
+	}
+
 	@media #{$mobile-only}{
 		@include grid-column(12, $center:true);
 		padding: 20px;
 	}
+}
+
+.about--creator__headshot {
+	width: 60%;
 }

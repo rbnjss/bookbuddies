@@ -6,7 +6,7 @@
 				<div class="group__header--wrapper box-shadow">
 					<h2><%= @group.group_name %></h2>
 					<p><%= @group.description %></p>
-					<p>Location: <%= @group.location %></p>
+					<p><i class="fa fa-map-marker"></i> Based in <%= @group.location %></p>
 					<small><i class="fa fa-cog"></i> <%= link_to "Edit Group", edit_group_path(@group) %></small>
 					<small><i class="fa fa-times"></i> <%= link_to "Leave this group", group_registrations_destroy_path(group_id: @group.id, user_id: current_user.id), method: :delete, data: { confirm: "Are you sure? You cannot rejoin this group without being invited by another user!"} %></small>
 				</div>

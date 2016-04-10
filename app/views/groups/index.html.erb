@@ -16,8 +16,8 @@
 					<div class="column small-12 medium-8">
 						<div class="group__list--info">
 							<h3><%= link_to gr.group.group_name, group_path(gr.group) %></h3>
+							<small><i class="fa fa-map-marker"></i> Based in <%= gr.group.location %></small>
 							<p><%= gr.group.desc_truncate %></p>
-							<p><%= gr.group.location %></p>
 							<% if gr.group.books.present? %>
 								<p>Now reading: <%= gr.group.books.last.book_name %></p>
 							<% end %>

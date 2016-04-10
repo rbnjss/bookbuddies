@@ -15,6 +15,9 @@
 				<!-- List of favorite books -->
 				<div class="favorite">
 					<h4>Favorites:</h4>
+					<% unless @favorites.present? %>
+						<small>(Star books to add to fav list, and access them quicker)</small>
+					<% end %>
 					<ul class="favorite__list">
 						<% @favorites.each do |fav| %>
 							<li><i class="fa fa-star"></i><%= link_to fav.book.book_name, book_path(fav.book_id) %></li>

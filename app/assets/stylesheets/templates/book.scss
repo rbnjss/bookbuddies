@@ -27,6 +27,12 @@
 	}
 
 	.book__container--wrapper {
+		background-color: $white;
+		border-left: 16px solid $gray;
+		padding: 20px;
+	}
+
+	.book__list--wrapper {
 		@include grid-column(4);
 		width: calc(#{gridCalc(4, 12)} - 10px);
 		background-color: $white;

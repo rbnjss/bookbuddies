@@ -29,6 +29,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # Paperclip (File Uploads)
 gem "paperclip", "~> 4.3"
 
+# AWS SDK
+gem 'aws-sdk-v1'
+
 # Font Awesome
 gem 'font-awesome-sass'
 

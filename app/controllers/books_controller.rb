@@ -2,6 +2,14 @@ class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
 before_action :set_group, only: [:index, :edit, :new]
 before_action :authenticate_user!
+before_action :ensure_registration!, only: [:show]
+
+def ensure_registration!
+  if !current_user.groups.include?(@book.group)
+    flash[:error] = "You don't belong to this group"
+    redirect_to root_path
+  end
+end
 
 
 	def index

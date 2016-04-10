@@ -44,7 +44,7 @@
 				</div>
 				<div class="book__list row">
 					<% @group.books.each do |book| %>
-						<div class="book__container--wrapper rel">
+						<div class="book__list--wrapper rel">
 							<div class="book__list--book">
 								<div class="book__info row">
 									<%= image_tag book.cover.url(:thumb) %>

@@ -21,17 +21,15 @@
 	</div>
 	<div class="field">
 		<%= f.label :meetup_location, "Meetup Address" %>
-		<em><small>ex: 123 Main Street, City, State/Province</small></em>
 		<%= f.text_field :meetup_location %>
+		<small><em>ex: 123 Main Street, City, State/Province</em></small>
 	</div>
 	<div class="field">
 		<%= f.label :group_image %>
-		<div>
-			<%= image_tag @group.group_image.url(:thumb) %>
-		</div>
-		<div>
+		<div class="pad">
 			<%= f.file_field :group_image %>		
 		</div>
+		<small><em>Best size is 1440px by 250px</em></small>
 	</div>
 	<div class="field">
 		<%= f.submit class: 'button button--medium' %>

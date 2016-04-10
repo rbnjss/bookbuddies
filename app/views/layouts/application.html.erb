@@ -44,7 +44,8 @@
 				<p>By <%= link_to "Robin", "http://www.robinhamill.ca" %> and <%= link_to "Jess", "http://www.heyjess.ca/" %></p>
 			</div>
 			<div class="column small-6 text--right">
-				<a href="#" class="footer__link">About</a>
+				<%= link_to "About", pages_about_path, class: "footer__link" %><br>
+				<%= link_to "Contact", pages_contact_path, class: "footer__link" %>
 			</div>
 		</div>
 	</footer>

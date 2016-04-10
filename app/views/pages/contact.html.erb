@@ -1,0 +1,27 @@
+<div class="row contact template--pad">
+	<div class="template--wrapper box-shadow">
+		<h2>Contact Us</h2>
+		<p>We'd love to hear from you!  Fill out the form below to get in touch.</p>
+		<%= notice %>
+		<div class="form__container">
+			<%= form_tag(send_mail_path) do |f| %>
+				<div class="field">
+					<%= label_tag 'name', 'Name' %>
+					<%= text_field_tag 'name' %>
+				</div>
+				<div class="field">
+					<%= label_tag 'email', 'Email' %>
+					<%= email_field_tag 'email', nil, placeholder: 'your@email.com' %>
+				</div>
+				<div class="field">
+					<%= label_tag 'comments', 'Comments' %>
+					<%= text_area_tag 'comments', nil, rows: 4 %>
+				</div>
+				<div class="field">
+					<%= submit_tag nil, class: 'button button--medium' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+

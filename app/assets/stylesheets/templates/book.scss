@@ -50,6 +50,10 @@
 		bottom: 0;
 		left: 50%;
 		transform: translateX(-50%);
+		width: 90%;
+		@media #{$mobile-only}{
+			width: 50%;
+		}
 	}
 
 	.book__links {

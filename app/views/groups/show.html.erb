@@ -7,10 +7,8 @@
 					<h2><%= @group.group_name %></h2>
 					<p><%= @group.description %></p>
 					<p>Location: <%= @group.location %></p>
-
-					<p><%= link_to "Leave this group", group_registrations_destroy_path(group_id: @group.id, user_id: current_user.id), method: :delete, data: { confirm: "Are you sure? You cannot rejoin this group without being invited by another user!"} %></p>
-
 					<small><i class="fa fa-cog"></i> <%= link_to "Edit Group", edit_group_path(@group) %></small>
+					<small><i class="fa fa-times"></i> <%= link_to "Leave this group", group_registrations_destroy_path(group_id: @group.id, user_id: current_user.id), method: :delete, data: { confirm: "Are you sure? You cannot rejoin this group without being invited by another user!"} %></small>
 				</div>
 			</div>
 			<div class="group__members">
@@ -29,7 +27,6 @@
 					<div class="group__invite">
 						<!-- INVITE A USER TO JOIN GROUP FORM -->
 						<%= render partial: 'userInviteForm', locals: {group_id: @group.id } %> 
-						<%= notice %> 
 					</div>
 				</div>
 			</div>
@@ -47,12 +44,12 @@
 				</div>
 				<div class="book__list row">
 					<% @group.books.each do |book| %>
-						<div class="book__list--book column small-12 medium-4">
+						<div class="book__list--book column small-12 medium-4 book__container--wrapper">
 							<div class="book__info row">
 								<%= image_tag book.cover.url(:thumb) %>
 								<h3><%= link_to book.book_name, book_url(book) %></h3>
 								<p><span class="book__author">Author:</span> <%= book.author %></p>
-								<p><span class="book__description">Description:</span><br><%= book.description %></p>
+								<p><span class="book__description">Description:</span><br><%= book.desc_truncate %></p>
 							</div>
 							<div class="book__link">
 								<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent button--medium" %>

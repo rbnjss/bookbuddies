@@ -1,7 +1,7 @@
 <div class="bookFavorite">
 	<%- unless current_user.favorites.exists?(book_id: @book.id, user_id: current_user.id) -%>
 		<%= link_to favorites_path(book_id: @book.id, user_id: current_user.id), method: :post do %>
-			<i class="fa fa-star bookFavorite__star bookFavorite__star--grey"></i>
+			<i class="fa fa-star-o bookFavorite__star bookFavorite__star--grey"></i>
 		<% end %>
 	<%- else -%>
 		<%= link_to favorite_path(book_id: @book.id, user_id: current_user.id), method: :delete do %>

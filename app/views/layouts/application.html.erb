@@ -34,6 +34,7 @@
 		<div class="main__wrapper">
 			
 			<%= yield %>
+			
 		</div>
 	</main>
 	
@@ -41,7 +42,7 @@
 		<div class="footer row">
 			<div class="column small-6">
 				<h4>Book Buddies</h4>
-				<p>By <a href="http://www.robinhamill.ca">Robin</a> and <a href="http://www.heyjess.ca/">Jess</a></p>
+				<p>By <%= link_to "Robin", "http://www.robinhamill.ca" %> and <%= link_to "Jess", "http://www.heyjess.ca/" %></p>
 			</div>
 			<div class="column small-6 text--right">
 				<a href="#" class="footer__link">About</a>

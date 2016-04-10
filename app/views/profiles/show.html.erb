@@ -4,12 +4,20 @@
 			<h2>My Profile</h2>
 		</div>
 		<div class="profile__info row">
-			<h3><%= @profile.first_name %> <%= @profile.last_name %></h3>
-			<%= image_tag @profile.avatar.url(:medium) %>
-			<h4>Location</h4>
-			<p><%= @profile.city %></p>
-			<h4>Bio</h4>
-			<p><%= @profile.bio %></p>
+			<div class="column small-12 medium-6">
+				<%= image_tag @profile.avatar.url(:medium) %>
+			</div>
+			<div class="column small-12 medium-6">
+				<h3><%= @profile.first_name %> <%= @profile.last_name %></h3>
+				<h4>Location</h4>
+				<p><%= @profile.city %></p>
+				<h4>Bio</h4>
+				<p><%= @profile.bio %></p>
+				<h4>My Groups</h4>
+				<% current_user.groups.each do |group| %>
+					<%= link_to group.group_name, group_path(group) %><br>
+				<% end %>
+			</div>
 		</div>
 	</div>
 	<div class="profile__links row">

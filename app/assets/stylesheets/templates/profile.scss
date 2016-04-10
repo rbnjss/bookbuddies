@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .profile {
+	.profile__header {
+		margin-bottom: 20px;
+	}
 	.profile__links {
 		@include linkBar;
 		@include grid-column(6, $center:true);
@@ -10,6 +13,14 @@
 		padding-right: 0;
 		@media #{$mobile-only}{
 			@include grid-column(10);
+		}
+	}
+	.profile__info {
+		p {
+			margin-top: 0px;
+		}
+		h3 {
+			margin-bottom: 20px;
 		}
 	}
 }

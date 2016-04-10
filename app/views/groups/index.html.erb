@@ -19,7 +19,8 @@
 							<small><i class="fa fa-map-marker"></i> Based in <%= gr.group.location %></small>
 							<p><%= gr.group.desc_truncate %></p>
 							<% if gr.group.books.present? %>
-								<p>Now reading: <%= link_to gr.group.books.last.book_name, book_path(gr.group.books.last), class: 'primary' %></p>
+								<h4>Now reading:</h4>
+								<%= link_to gr.group.books.last.book_name, book_path(gr.group.books.last), class: 'primary' %>
 							<% end %>
 						</div>
 					</div>

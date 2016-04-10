@@ -44,15 +44,17 @@
 				</div>
 				<div class="book__list row">
 					<% @group.books.each do |book| %>
-						<div class="book__list--book column small-12 medium-4 book__container--wrapper">
-							<div class="book__info row">
-								<%= image_tag book.cover.url(:thumb) %>
-								<h3><%= link_to book.book_name, book_url(book) %></h3>
-								<p><span class="book__author">Author:</span> <%= book.author %></p>
-								<p><span class="book__description">Description:</span><br><%= book.desc_truncate %></p>
-							</div>
-							<div class="book__link">
-								<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent button--full" %>
+						<div class="book__container--wrapper rel">
+							<div class="book__list--book">
+								<div class="book__info row">
+									<%= image_tag book.cover.url(:thumb) %>
+									<h3><%= link_to book.book_name, book_url(book) %></h3>
+									<p><span class="book__author">Author:</span> <%= book.author %></p>
+									<p><span class="book__description">Description:</span><br><%= book.desc_truncate %></p>
+								</div>
+								<div class="book__link">
+									<%= link_to 'View Book', book_path(id: book.id), class: "button button--accent button--full" %>
+								</div>
 							</div>
 						</div>
 					<% end %>

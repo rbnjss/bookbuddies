@@ -27,10 +27,20 @@
 	}
 
 	.book__container--wrapper {
+		@include grid-column(4);
+		width: calc(#{gridCalc(4, 12)} - 10px);
 		background-color: $white;
-		padding: 20px;
 		border-left: 16px solid $gray;
-		margin-right: 20px;
+		margin-right: 10px;
+		margin-top: 20px;
+		@media #{$small-down}{
+			@include grid-column(6);
+			width: calc(#{gridCalc(6, 12)} - 10px);
+		}
+		@media #{$mobile-only}{
+			@include grid-column(10);
+			width: 100%;
+		}
 	}
 
 	.book__list {
@@ -39,6 +49,10 @@
 		&--book {
 			margin-top:20px;
 		}
+	}
+
+	.book__list--book {
+		padding: 0 20px;
 	}
 
 	.book__info {

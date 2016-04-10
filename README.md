@@ -86,7 +86,6 @@ _Bookbuddies rails app_
 * user
 	* `has_one :profile`
   * `accepts_nested_attributes_for :profile`
-	* `The bouncer model` 💪
 	
 * group_registration
 	* `belongs_to :profile`

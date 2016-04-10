@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'pages/about'
+  get 'pages/contact'
+  match '/send_mail', to: 'contact#send_mail', via: 'post'
 
   get 'group_registrations/destroy'
 

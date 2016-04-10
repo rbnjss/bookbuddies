@@ -181,7 +181,6 @@ $total-columns: 12 !default;
             margin-#{$opposite-direction}: 0;
             float: $default-float !important;
         }
-
     }
 
     @media only screen and (min-width: $medium-screen) {
@@ -208,7 +207,6 @@ $total-columns: 12 !default;
             margin-#{$opposite-direction}: 0;
             float: $default-float !important;
         }
-
     }
 
     @media only screen and (min-width: $large-screen) {
@@ -235,7 +233,6 @@ $total-columns: 12 !default;
             margin-#{$opposite-direction}: 0;
             float: $default-float !important;
         }
-
     }
 
 }

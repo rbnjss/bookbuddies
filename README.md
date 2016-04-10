@@ -9,7 +9,7 @@ _Bookbuddies rails app_
 * Twitter Card + Facebook OG Meta Data
 * Add Postgress db in production (Heroku compatible)
 * Deploy to Heroku
-* Create rbnjss accounts for Twitter
+* Create rbnjss/bookbuddies accounts for Twitter
 
 ## Nice to have's
 * Pull in Twitter avatar on Twitter signup

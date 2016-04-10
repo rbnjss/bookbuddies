@@ -71,10 +71,10 @@
 	}
 
 	&.button--accent {
-		background-color: $accent;
+		background-color: $accentLight;
 		&:hover,
 		&:focus {
-			background: darken($accent, 8);
+			background: darken($accentLight, 8);
 		}
 	}
 

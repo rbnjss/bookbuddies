@@ -12,4 +12,13 @@ class Group < ActiveRecord::Base
 												uniqueness: true
 
 	accepts_nested_attributes_for :books, :allow_destroy => true
+
+	def desc_truncate
+		if self.description.length > 150
+			self.description.first(150).to_s + "..."
+		else
+			self.description
+		end
+	end
+
 end

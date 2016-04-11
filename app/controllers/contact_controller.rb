@@ -4,6 +4,6 @@ class ContactController < ApplicationController
 	    email = params[:email]
 	    body = params[:comments]
 	    ContactMailer.send_mail(name, email, body).deliver
-	    redirect_to pages_contact_path, notice: 'Message sent'
+	    redirect_to root_path
 	end
 end

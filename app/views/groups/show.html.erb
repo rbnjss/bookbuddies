@@ -65,14 +65,12 @@
 	
 </section>
 <div class="group__map rel">
-	<% if @group.meetup_location.present? %>
 		<div class="group__map--edit">
 			<%= link_to edit_group_path(@group), class: "button" do %>
 				<i class="fa fa-cog"></i>Edit Meetup Address
 			<% end %>
 		</div>
 		<div id="map-container" class="map__container"></div>
-	<% end %>
 </div>
 
 
@@ -123,6 +121,8 @@
     $(document).ready(function(){
     	<% if @group.meetup_location.present? %>
       		set_map('<%= @group.meetup_location %>');
+  		<% else %>
+  			set_map('<%= @group.location %>')
       	<% end %>
     });
   </script>

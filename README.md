@@ -9,9 +9,7 @@ _Bookbuddies rails app_
 * Twitter Card + Facebook OG Meta Data
 * Add Postgress db in production (Heroku compatible)
 * Deploy to Heroku
-* Setup Amazon S3 account for image storage
-* Purchase domain (bookbuddi.es)
-* Create rbnjss accounts for Amazon S3, Heroku, Twitter, Mailgun
+* Create rbnjss/bookbuddies accounts for Twitter
 
 ## Nice to have's
 * Pull in Twitter avatar on Twitter signup

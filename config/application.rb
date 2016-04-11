@@ -32,6 +32,17 @@ module Bookbuddies2
         domain: ENV['MG_DOMAIN'],
         authentication: 'login', # Mailgun supports 'plain' or 'login'
       }
+
+    # config/application.rb
+    config.paperclip_defaults = {
+      storage: :s3,
+      s3_credentials: {
+        access_key_id: ENV['AWS_KEY'],
+        secret_access_key: ENV['AWS_SECRET'],
+        bucket: "bookbuddies-images"
+      }
+    }
+
   end
 
 end

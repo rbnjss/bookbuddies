@@ -9,6 +9,7 @@ class Group < ActiveRecord::Base
 	  validates_attachment_content_type :group_image, :content_type => /\Aimage\/.*\Z/
 
 	validates :group_name, presence: true
+	validates :location, presence: true
 
 	accepts_nested_attributes_for :books, :allow_destroy => true
 

@@ -1,6 +1,6 @@
 footer {
 	background-color: $accent;
-	background-image: url('footer_bg.png');
+	background-image: url(asset_path('footer_bg.png'));
 	color: $bg;
 	padding: 40px;
 	.footer--row {

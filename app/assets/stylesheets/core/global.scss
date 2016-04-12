@@ -86,3 +86,7 @@ label {
 	padding: 0;
 	margin: 0;
 }
+
+main {
+	min-height: calc(100vh - (160px + 87px));
+}

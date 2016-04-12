@@ -1,6 +1,6 @@
 <h1>Book buddies Group Invitation</h1>
 
-<p>Hello future book buddy! You've been invited to join a bookclub group on <%= link_to "Book buddies", root_path %> called "<%= @invite.group.group_name %>"</p>
+<p>Hello future book buddy! You've been invited to join a bookclub group on <a href="http://www.bookbuddi.es">bookbuddies</a> called "<%= @invite.group.group_name %>"</p>
 <p>Click the link below, or copy/paste into a browser. This will take you to the create a user page.</p>
 
 <%= @rootURL %><%= joins_path(:invite_token => @invite.token) %>

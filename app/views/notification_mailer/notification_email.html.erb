@@ -2,6 +2,6 @@
 
 <h2>Hey Buddy!  A comment has been made on <%= @book_name %></h2>
 <p><%= @comment.content %> by <%= @comment.user_name %></p>
-<%= link_to "Contribute to the discussion", book_path(@book), class: 'button' %>
+<%= link_to "Contribute to the discussion", book_url(@book), class: 'button' %>
 
 <p>Thanks from the Bookbuddies team!</p>

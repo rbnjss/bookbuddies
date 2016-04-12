@@ -8,6 +8,7 @@ class NotificationMailer < ApplicationMailer
 		@comment = comment
 		@book_name = book_name
 		@book = book_id
+		@rootURL = "http://www.bookbuddi.es"
 		mail to: @user.email, subject: "Bookbuddies: One of your buddies made a new comment!"
 	end
 end

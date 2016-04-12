@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
 	has_many :books, :dependent => :destroy
 	has_many :invites, :dependent => :destroy
 
-	has_attached_file :group_image, :default_url => ActionController::Base.helpers.asset_path('group.jpg'), styles: { large: "1440x250#", medium: "275x275#", thumb: "150x150>" }
+	has_attached_file :group_image, :default_url => lambda { |image| ActionController::Base.helpers.asset_path('group.jpg') }, styles: { large: "1440x250#", medium: "275x275#", thumb: "150x150>" }
 	  validates_attachment_content_type :group_image, :content_type => /\Aimage\/.*\Z/
 
 	validates :group_name, presence: true

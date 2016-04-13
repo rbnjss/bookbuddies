@@ -41,13 +41,9 @@
 		background-color: $white;
 	}
 
-	.group__list--group,
-	.group__list--image {
-		height: 275px;
-	}
-
 	.group__list--image {
 		border-left: 1px solid #eee;
+		min-height: 275px;
 	}
 
 	.group__list--group {

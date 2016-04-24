@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   def ensure_registration!
     if !current_user.groups.include?(@group)
       flash[:error] = "You don't belong to this group"
-      redirect_to root_path
+      redirect_to groups_path
     end
   end
   
@@ -27,7 +27,7 @@ class GroupsController < ApplicationController
     if @group.save
       @gr = @group.group_registrations.build(user_id: current_user.id)
       @gr.save
-      redirect_to root_path
+      redirect_to groups_path
     else
       render :new
     end
@@ -52,7 +52,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Group was successfully destroyed.' }
+      format.html { redirect_to groups_path, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
     end
     # redirect_to root_path

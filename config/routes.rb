@@ -23,8 +23,5 @@ Rails.application.routes.draw do
           'users/omniauth_callbacks#twitter_submit', via: [:post, :patch]
   end
 
-  root to: "pages#home"
-
-  get '/.well-known/acme-challenge/iuk2EFE2Qv9-Ot7MasPLo4Y0sKEdeGkx9UJ9_gica-M' => 'pages#letsencrypt'
-  
+  root to: "pages#home"  
 end

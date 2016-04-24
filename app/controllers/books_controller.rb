@@ -7,7 +7,7 @@ before_action :ensure_registration!, only: [:show]
 def ensure_registration!
   if !current_user.groups.include?(@book.group)
     flash[:error] = "You don't belong to this group"
-    redirect_to root_path
+    redirect_to groups_path
   end
 end
 

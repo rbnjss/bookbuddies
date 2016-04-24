@@ -11,7 +11,7 @@
 				<p><%= @book.description %></p>
 
 				<% if @city == "toronto" %>
-					<%= link_to "Find in Library", "http://www.torontopubliclibrary.ca/search.jsp?Ntt="+@book.lib_search, class: "button", target: "_blank" %>
+					<%= link_to "Search Library", @to_library+@book.lib_search, class: "button", target: "_blank" %>
 				<% end %>
 
 				<!-- Favorite -->

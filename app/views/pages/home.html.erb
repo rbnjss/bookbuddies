@@ -1,0 +1,56 @@
+<div class="text--center hero">
+		<h2>Bookbuddies is a place for book clubs to gather on the web.</h2>
+		<p>Made with real-life book clubs in mind, Bookbuddies is the ideal place to discuss books in between meetups!</p>
+		<%= link_to "Sign Up", "/users/sign_in", class: "button button--medium" %>
+		<%= link_to "Learn More", "#how-it-works", class: "button button--medium button--accent" %>
+	</div>
+<div class="row home template--pad" id="how-it-works">
+	<div class="row text--center pad">
+		<h2>How it Works</h2>
+	</div>
+	<div class="row how-to">
+		<div class="column small-12 medium-4 medium-offset-2 large-3 large-offset-3 how-to__icon">
+			<%= image_tag("step-1.png") %>
+		</div>
+		<div class="column small-12 medium-4 large-3 how-to__item">
+			<h3>Sign Up</h3>
+			<p>It's easy to get your account up and running on Bookbuddies! Just <%= link_to "sign up", "/users/sign_in" %> and follow the instructions to get started.</p>
+		</div>
+	</div>
+	<div class="row how-to">
+		<div class="column small-12 medium-4 medium-offset-2 large-3 large-offset-3">
+			<%= image_tag("step-2.png") %>
+		</div>
+		<div class="column small-12 medium-4 large-3 how-to__item">
+			<h3>Create Your Group</h3>
+			<p>Bookbuddies was made for real-life book clubs. Create your group and invite your book club members to join.</p>
+		</div>
+	</div>
+	<div class="row how-to">
+		<div class="column small-12 medium-4 medium-offset-2 large-3 large-offset-3">
+			<%= image_tag("step-3.png") %>
+		</div>
+		<div class="column small-12 medium-4 large-3 how-to__item">
+			<h3>Add a Book</h3>
+			<p>Add a book to your group. This is where the real fun begins!</p>
+		</div>
+	</div>
+	<div class="row how-to">
+		<div class="column small-12 medium-4 medium-offset-2 large-3 large-offset-3">
+			<%= image_tag("step-4.png") %>
+		</div>
+		<div class="column small-12 medium-4 large-3 how-to__item">
+			<h3>Start the Conversation!</h3>
+			<p>Can't wait for your next meetup to talk about your club's latest book? Get the convo started right away!</p>
+		</div>
+	</div>
+</div>
+<div class="hero text--center">
+	<%= link_to "Get Started Today!", "/users/sign_in", class: "button" %>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$('.hero a').smoothScroll();
+	});
+</script>

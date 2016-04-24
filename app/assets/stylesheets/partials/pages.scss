@@ -32,3 +32,33 @@
 .about--creator__headshot {
 	width: 60%;
 }
+
+.hero {
+	background-image: url("hero.jpg");
+	background-size: cover;
+	padding: 100px 40px;
+
+	p {
+		margin: 20px 0;
+		font-weight: 600;
+		@include font-size(16);
+	}
+}
+
+.how-to {
+	margin: 20px 0;
+
+	a {
+		color: $primary;
+	}
+
+	@media #{$mobile-only}{
+		padding: 0px 40px 40px 40px;
+		text-align: center;
+	}
+}
+
+.how-to__item {
+	padding: 40px 0px 20px;
+	border-bottom: 10px solid #eee;
+}

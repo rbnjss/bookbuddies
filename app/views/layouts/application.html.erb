@@ -25,7 +25,7 @@
 	<header>
 		<div class="header row">
 			<div class="header__logo column small-12 medium-4">
-				<h1><%= link_to "bookbuddies", root_path %></h1>
+				<h1><%= image_tag("bookmark.png") %><%= link_to "bookbuddies", root_path %></h1>
 			</div>
 			<div class="header__nav column small-12 medium-8">
 				<nav>	
@@ -33,7 +33,11 @@
 						<ul class="ul--reset">
 							<li class="header__nav--link"><%= link_to "Groups", groups_path %></li>
 							<li class="header__nav--link"><%= link_to "Profile", '/profile' %></li>
-							<li class="header__nav--link"><%= link_to "Sign out", "/users/sign_out", method: 'delete' %></li>
+							<li class="header__nav--link"><%= link_to "Sign Out", "/users/sign_out", method: 'delete' %></li>
+						</ul>
+					<% else %>
+						<ul class="ul--reset">
+							<li class="header__nav--link"><%= link_to "Sign In", "/users/sign_in" %></li>
 						</ul>
 					<% end %>
 				</nav>
@@ -52,8 +56,8 @@
 	<footer>
 		<div class="footer row">
 			<div class="column small-6">
-				<h4>Book Buddies</h4>
-				<p>By <%= link_to "Robin", "http://www.robinhamill.ca" %> and <%= link_to "Jess", "http://www.heyjess.ca/" %></p>
+				<h3>Book Buddies</h3>
+				<p><%= link_to "Robin Hamill", "http://www.robinhamill.ca" %> and <%= link_to "Jess Jones", "http://www.heyjess.ca/" %> &#169; <%= Time.now.year %></p>
 			</div>
 			<div class="column small-6 text--right">
 				<%= link_to "About", pages_about_path, class: "footer__link" %><br>

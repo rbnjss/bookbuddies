@@ -23,6 +23,6 @@ Rails.application.routes.draw do
           'users/omniauth_callbacks#twitter_submit', via: [:post, :patch]
   end
 
-  root to: "groups#index"
+  root to: "pages#home"
   
 end

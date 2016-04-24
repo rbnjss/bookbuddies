@@ -3,6 +3,10 @@ header {
 	border-bottom: 1px solid $gray;
 	padding-top: 15px;
 	.header__logo {
+		img {
+			position: relative;
+			top: 3px;
+		}
 		@media #{$mobile-only}{
 			text-align: center;
 		}

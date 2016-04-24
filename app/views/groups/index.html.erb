@@ -7,6 +7,7 @@
 			<h2>My Groups</h2>
 			<% unless @grs.present? %>
 				<p>Looks like you don't have any groups!</p>
+				<p>Bookbuddies was made with real-life book clubs in mind. Get started by creating your group and then invite your book club members to join.</p>
 			<% end %>
 			<%= link_to "Create a new group", new_group_path, class: 'groups__links--link button' %>
 		</div>

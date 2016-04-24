@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
 	    @profile.update(profile_params)
 
 	    if @profile.save
-	      redirect_to root_path
+	      redirect_to groups_path
 	    else
 	      render :edit
 	    end

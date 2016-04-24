@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   end
 
   root to: "pages#home"
+
+  get '/.well-known/acme-challenge/iuk2EFE2Qv9-Ot7MasPLo4Y0sKEdeGkx9UJ9_gica-M' => 'pages#letsencrypt'
   
 end

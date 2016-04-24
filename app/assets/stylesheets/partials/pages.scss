@@ -34,7 +34,7 @@
 }
 
 .hero {
-	background-image: url("hero.jpg");
+	background-image: url(asset_path('hero.jpg'));
 	background-size: cover;
 	padding: 100px 40px;
 

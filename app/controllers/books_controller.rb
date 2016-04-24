@@ -22,6 +22,8 @@ end
 		@comments = @book.comments.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
 		@members = @book.group.group_registrations.all
 		@favorite = Comment.where(book_id: @book.id, user_id: current_user.id)
+		@city = current_user.profile.city.downcase
+		@to_library = "http://www.torontopubliclibrary.ca/search.jsp?N=37906&Ntt="
 	end
 
 	def new

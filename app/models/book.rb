@@ -17,4 +17,8 @@ class Book < ActiveRecord::Base
 		end
 	end
 
+	def lib_search
+		self.book_name.parameterize("+")
+	end
+
 end

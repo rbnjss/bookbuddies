@@ -10,9 +10,6 @@
 				<h4>Description</h4>
 				<p><%= @book.description %></p>
 
-				<% if @city == "toronto" %>
-					<%= link_to "Search Library", @to_library+@book.lib_search, class: "button", target: "_blank" %>
-				<% end %>
 
 				<!-- Favorite -->
 				<%= render 'bookFavorite' %>
@@ -21,6 +18,11 @@
 				<br>
 				<small><i class="fa fa-trash"></i> <%= link_to "Delete book", book_path(@book, group_id: @group.id), method: :delete, data: { confirm: "Are you sure?"} %></small>
 			</div>
+			<br />
+			<% if @city == "toronto" %>
+				<h4>Need this book?</h4>
+				<%= link_to "Search Library", @to_library+@book.lib_search, class: "button", target: "_blank" %>
+			<% end %>
 			<%= link_to group_path(@group), class: "button button--accent" do %>
 				<i class="fa fa-caret-left"></i>Back to Group
 			<% end %>

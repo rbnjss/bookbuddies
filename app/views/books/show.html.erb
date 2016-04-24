@@ -10,6 +10,10 @@
 				<h4>Description</h4>
 				<p><%= @book.description %></p>
 
+				<% if @city == "toronto" %>
+					<%= link_to "Find in Library", "http://www.torontopubliclibrary.ca/search.jsp?Ntt="+@book.lib_search, class: "button", target: "_blank" %>
+				<% end %>
+
 				<!-- Favorite -->
 				<%= render 'bookFavorite' %>
 				<br>

@@ -31,16 +31,16 @@ end
 	end
 
 	def create
-    	@book = Book.create(book_params)
-	    if @book.save
-		  @group = @book.group
-	      redirect_to group_path(@group)
-	    else
-	      render :new
-	    end
-  	end
+  	@book = Book.create(book_params)
+    if @book.save
+	  @group = @book.group
+      redirect_to group_path(@group)
+    else
+      render :new
+    end
+	end
 
-  	def edit
+	def edit
 
  	end
 

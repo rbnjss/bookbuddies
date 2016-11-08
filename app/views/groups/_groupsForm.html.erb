@@ -9,11 +9,11 @@
 
 	<div class="field">
 		<%= f.label :group_name %>
-		<%= f.text_field :group_name %>
+		<%= f.text_field :group_name, required: true %>
 	</div>
 	<div class="field">
 		<%= f.label :location, "Group Location" %>
-		<%= f.text_field :location, placeholder: "ie. City Name" %>
+		<%= f.text_field :location, placeholder: "ie. City Name", required: true %>
 	</div>
 	<div class="field">
 		<%= f.label :description %>

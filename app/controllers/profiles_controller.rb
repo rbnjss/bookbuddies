@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
 	      
 	      # redirect_to session["user_return_to"] || root_path
 	    else
-	      render :new
+	      render :edit
 	    end
 	  end
 

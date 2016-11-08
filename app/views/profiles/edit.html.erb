@@ -2,7 +2,7 @@
 	<div class="template--wrapper box-shadow">
 		<div class="profile__header row">
 			<h2>Edit your Profile</h2>
-			<% if current_user.profile.id == nil %>
+			<% if current_user.profile == nil %>
 				<p>Looks like you're new here!  Get started by setting up your profile..</p>
 			<% end %>
 		</div>

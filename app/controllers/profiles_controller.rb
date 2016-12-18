@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-	  before_action :set_profile, only: [:show, :new, :edit, :update, :destroy, :finish_signup]
-	  # skip_before_action :authenticate_has_profile
+	  before_action :set_profile, only: [:show, :edit, :update, :destroy, :finish_signup]
+
 	  def show
 	  	
 	  end

@@ -7,14 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # def after_sign_up_path_for(resource)
-  #   @profile = current_user.profile
-  #   if @profile.nil?
-  #     @profile = Profile.new(user: current_user)
-  #   end
-  #   after_sign_in_path_for(resource)
-  # end
-
   # def new
   #   super
   #    @token = params[:invite_token]

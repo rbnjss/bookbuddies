@@ -21,6 +21,7 @@ gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'
+  gem 'meta_request'
   gem 'spring'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'

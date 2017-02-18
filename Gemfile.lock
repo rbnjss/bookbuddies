@@ -51,6 +51,7 @@ GEM
     buftok (0.2.0)
     builder (3.2.2)
     byebug (8.2.2)
+    callsite (0.0.11)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -85,6 +86,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
+    git-version-bump (0.15.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.3)
@@ -115,6 +117,10 @@ GEM
       rest-client (~> 1.6)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    meta_request (0.4.0)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.1.0)
     mime-types (2.99.1)
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
@@ -144,6 +150,9 @@ GEM
       mimemagic (= 0.3.0)
     pg (0.18.4)
     rack (1.6.4)
+    rack-contrib (1.4.0)
+      git-version-bump (~> 0.15)
+      rack (~> 1.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5.1)
@@ -251,6 +260,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mailgun-ruby
+  meta_request
   omniauth-twitter
   paperclip (~> 4.3)
   pg (~> 0.18.4)
@@ -267,4 +277,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.11.2
+   1.14.3

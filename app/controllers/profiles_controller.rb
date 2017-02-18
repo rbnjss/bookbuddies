@@ -15,7 +15,11 @@ class ProfilesController < ApplicationController
 	    @profile.notifications = false
 
 	    if @profile.save
-	    	redirect_to after_sign_in_path_for(@profile.user)
+	    	if session[:invite_token] != ""
+	    		redirect_to joins_path(invite_token: session[:invite_token])
+	    	else
+		    	redirect_to after_sign_in_path_for(@profile.user)
+	    	end
 	      
 	      # redirect_to session["user_return_to"] || root_path
 	    else

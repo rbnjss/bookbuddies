@@ -1,5 +1,10 @@
 class JoinsController < ApplicationController
+	before_action :invite_session
 	before_action :authenticate_user!
+
+	def invite_session
+		session[:invite_token] = params[:invite_token]
+	end
 
 	def join
 		@token = params[:invite_token]

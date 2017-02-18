@@ -4,16 +4,28 @@
 
 
 .about {
+	padding-left: 20px;
+	padding-right: 20px;
 	@media #{$mobile-only}{
 		padding: 20px;
 	}
 }
+
+.about--container {
+	display: flex;
+	justify-content: space-between;
+	@media #{$mobile-only}{
+		flex-direction: column;
+	}
+}
+
 .about--creator {
-	@include grid-column(5);
+	// @include grid-column(5);
 	background-color: $white;
 	padding: 20px;
 	margin: 20px auto;
-	margin-right: 20px;
+	// margin-right: 20px;
+	width: calc(50% - 25px);
 
 	.fa {
 		transition: all 0.25s ease-out;
@@ -24,8 +36,9 @@
 	}
 
 	@media #{$mobile-only}{
-		@include grid-column(12, $center:true);
+		// @include grid-column(12, $center:true);
 		padding: 20px;
+		width: calc(100% - 25px);
 	}
 }
 

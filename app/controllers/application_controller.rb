@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     groups_path
   end
+
+  def authenticate_has_profile
+		if !current_user.profile.present?
+			@profile = Profile.new(user: current_user)
+			redirect_to edit_profile_path(@profile),
+			notice: 'Please fill out a profile before continuing'   
+		end
+	end
 end
